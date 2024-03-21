@@ -4,12 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Great Wall of Gratitude</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="header">Nav Bar</header>
-    <main class="main">Great Wall of Gratitude</main>
+    <main>
+      <aside>
+        <button id="add-message">+</button>
+      </aside>
+      <section id="form">
+        <label for="name-input">Name</label>
+        <input type="text" id="name-input" />
+        <label for="message-input">Message</label>
+        <input type="text" id="message-input" />
+        <button id="submit">Add message</button>
+      </section>
+
+      <section id="wall"></section>
+    </main>
     <footer class="footer">Footer</footer>
-    <script src="assets/js/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

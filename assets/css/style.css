@@ -19,3 +19,14 @@ body {
 .footer {
   background-color: rgb(217, 86, 15);
 }
+
+.post-it-note {
+  background-color: yellow;
+  height: 100px;
+  width: 100px;
+
+}
+
+#form {
+  display: none;
+}

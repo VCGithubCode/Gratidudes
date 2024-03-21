@@ -1,32 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Great Wall of Gratitude</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <header class="header">Nav Bar</header>
-    <main>
-      <aside>
 
-        <button id="add-message">+</button>
-      </aside>
-      <section id="form">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Great Wall of Gratitude</title>
+
+  <!-- Load local fonts before loading css -->
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('./assets/fonts/Poppins-Light.ttf');
+      font-weight: 300;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('./assets/fonts/Poppins-ExtraBold.ttf');
+      font-weight: 800;
+      font-display: swap;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!-- Favicon Includes-->
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="icon" sizes="16x16 32x32 64x64" href="./favicon.ico">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="./assets/favicon/favicon.svg">
+  <link rel="icon" type="image/png" sizes="160x160" href="./assets/favicon/favicon-160x160.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="./assets/favicon/favicon-64x64.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/favicon-180x180.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/favicon-152x152.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/favicon-144x144.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/favicon-120x120.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/favicon-114x114.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/favicon-76x76.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/favicon-72x72.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/favicon-60x60.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/favicon-57x57.png">
+
+</head>
+
+<body>
+  <!-- Page Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="branding">
+        <a class="logo" href="./" aria-label="link to Home Page"><img src="./assets/images/logo-white.svg" width="116"
+            height="36" alt="The Great Wall of Gratitude"></a>
+      </div>
+      <input id="mobile-menu-toggle" type="checkbox">
+      <label class="hamburger" for="mobile-menu-toggle" aria-label="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="navigation">
+        <ul class="menu">
+          <li><a aria-label="link to Home Page" href="./index.html">The Great Wall</a></li>
+          <li><a aria-label="link to About Page" href="./about.html">About</a></li>
+          <li><a aria-label="link to Contact Page" href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <section class="background-lighter">
+      <div class="home-hero container">
+        <h1>The Great Wall of Gratitude</h1>
+        <p>Share your gratitude with the world. Add a message to the wall.</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <button id="add-message">+</button>
+      <div id="form" class="container">
         <div id="error-message"></div>
         <label for="name-input">To:</label>
         <input type="text" id="name-input" />
         <label for="message-input">Message:</label>
         <input type="text" id="message-input" />
         <label for="sender-input">From:</label>
-        <input type="text" id="sender-input"/>
+        <input type="text" id="sender-input" />
         <button id="submit">Add message</button>
-      </section>
+      </div>
+    </section>
 
-      <section id="wall"></section>
-    </main>
-    <footer class="footer">Footer</footer>
-    <script src="assets/js/script.js"></script>
-  </body>
+    <section id="wall" class="container">
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 The Great Wall of Gratitude</p>
+    </div>
+  </footer>
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>

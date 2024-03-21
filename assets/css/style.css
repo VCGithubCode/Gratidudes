@@ -1,23 +1,424 @@
-* {
-  padding: 0;
-  margin: 0;
+/**
+ *
+ * Index
+ *
+ * 0.0 - Variables
+ * 1.0 - General
+ *  1.1 - Typography
+ *  1.2 - Backgrounds
+ *  1.4 - Forms
+ * 2.0 - Layout
+ * 3.0 - Header
+ * 4.0 - Footer
+ * 5.0 - Pages
+ *  5.1 - Home
+ *  5.2 - About
+ *  5.3 - Contact
+ *  5.4 - Error (404)
+ * 6.0 - Components
+ *  6.1 - Buttons
+ 
+ * 10.0 - Media min 768px
+ *  11.0 - General
+ *  12.0 - Layout
+ *  16.0 - Components
+ *    16.1 - Buttons=
+ */
+
+/* ================================================== */
+/* #0.0 - Variables  ================================ */
+/* ================================================== */
+
+:root {
+  --color-voodoo-50: #fbf8fb;
+  --color-voodoo-100: #f6eff8;
+  --color-voodoo-200: #eddfef;
+  --color-voodoo-300: #e0c5e2;
+  --color-voodoo-400: #cca2d0;
+  --color-voodoo-500: #b47db8;
+  --color-voodoo-600: #975e9b;
+  --color-voodoo-700: #7e4b80;
+  --color-voodoo-800: #663e67;
+  --color-voodoo-900: #583758;
+  --color-voodoo-950: #361c36;
+
+  --color-cabaret-50: #fcf3f6;
+  --color-cabaret-100: #fae9f0;
+  --color-cabaret-200: #f6d4e1;
+  --color-cabaret-300: #f0b1c7;
+  --color-cabaret-400: #e680a2;
+  --color-cabaret-500: #d74c77;
+  --color-cabaret-600: #c73b5f;
+  --color-cabaret-700: #ac2a48;
+  --color-cabaret-800: #8e263d;
+  --color-cabaret-900: #772436;
+  --color-cabaret-950: #480f1b;
+  
+  --color-orange-50: #fff3ed;
+  --color-orange-100: #ffe3d5;
+  --color-orange-200: #fdc3ab;
+  --color-orange-300: #fc9975;
+  --color-orange-400: #fa6d48;
+  --color-orange-500: #f73d18;
+  --color-orange-600: #e8230e;
+  --color-orange-700: #c1160d;
+  --color-orange-800: #991413;
+  --color-orange-900: #7b1413;
+  --color-orange-950: #430709;
+
+  --color-yellow-50: #fff7eb;
+  --color-yellow-100: #ffe9c6;
+  --color-yellow-200: #ffcf88;
+  --color-yellow-300: #ffaf47;
+  --color-yellow-400: #ff9420;
+  --color-yellow-500: #f96e07;
+  --color-yellow-600: #dd4b02;
+  --color-yellow-700: #b73006;
+  --color-yellow-800: #94240c;
+  --color-yellow-900: #7a1f0d;
+  --color-yellow-950: #460c02;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+
+  --color-danger: #f73d18;
+  --color-info: #1F7AF1;
+  --color-success: #2ECC71;
+
+  --color-text: var(--color-neutral-600);
+  --color-text-light: white;
+  --color-headings: var(--color-neutral-700);
+  --color-headings-light: var(--color-neutral-50);
+  --color-link: var(--color-cabaret-700);
+  --color-link-hover: var(--color-cabaret-800);
+  --color-link-light: var(--color-cabaret-300);
+  --color-link-light-hover: var(--color-cabaret-400);
+}
+
+:root {
+  --text-size-sm: 14px;
+  --text-size-md: 16px;
+  --text-size-lg: 20px;
+
+  --text-size-h1: 61px;
+  --text-size-h2: 48px;
+  --text-size-h3: 39px;
+  --text-size-h4: 31px;
+  --text-size-h5: 25px;
+  --text-size-h6: 20px;
+
+  --text-size-h1-sm: 28px;
+  --text-size-h2-sm: 25px;
+  --text-size-h3-sm: 22px;
+  --text-size-h4-sm: 20px;
+  --text-size-h5-sm: 18px;
+  --text-size-h6-sm: 16px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --grid-gap: 32px;
+}
+
+/* ================================================== */
+/* #1.0 - General =================================== */
+/* ================================================== */
+
+html {
+  background-color: var(--color-neutral-50);
   box-sizing: border-box;
+  color: var(--color-text-700);
+  height: 100%;
+  line-height: 1.15;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
-  color: black;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font: 300 16px/1.6 Poppins, Arial, Helvetica, sans-serif;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* ================================================== */
+/* #1.1 Typography ================================== */
+/* ================================================== */
+
+h1,
+.h1 {
+  color: var(--color-headings);
+  font-size: var(--text-size-h1-sm);
+  font-weight: 800;
+  line-height: 1.2;
+}
+h2,
+.h2 {
+  color: var(--color-headings);
+  font-size: var(--text-size-h2-sm);
+  font-weight: 800;
+  line-height: 1.2;
+}
+h3,
+.h3 {
+  color: var(--color-headings);
+  font-size: var(--text-size-h3-sm);
+  font-weight: 800;
+  line-height: 1.2;
+}
+h4,
+.h4 {
+  color: var(--color-headings);
+  font-size: var(--text-size-h4-sm);
+  font-weight: 800;
+  line-height: 1.2;
+}
+h5,
+.h5 {
+  color: var(--color-headings);
+  font-size: var(--text-size-h5-sm);
+  font-weight: 800;
+  line-height: 1.2;
+}
+h6,
+.h6 {
+  color: var(--color-headings);
+  font-size: var(--text-size-h6-sm);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+ul {
+  margin: 16px 0;
+}
+
+h1:first-child,
+.h1:first-child,
+h2:first-child,
+.h2:first-child,
+h3:first-child,
+.h3:first-child,
+h4:first-child,
+.h4:first-child,
+h5:first-child,
+.h5:first-child,
+h6:first-child,
+.h6:first-child,
+p:first-child {
+  margin-top: 0;
+}
+
+/* ================================================== */
+/* #2.0 Layout ====================================== */
+/* ================================================== */
+
+main {
+  margin-bottom: auto;
+}
+
+.container {
+  margin: auto;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.container-small {
+  margin: auto;
+  width: 100%;
+  max-width: 768px;
+}
+
+.page-hero,
+.page-section {
+  padding: 36px 24px;
+}
+
+.footer__content {
+  padding: 32px 24px;
+}
+
+
+/* ================================================== */
+/* #3.0 Header ====================================== */
+/* ================================================== */
 
 .header {
-  background-color:rgb(26, 189, 195);
+  /* position: fixed; */
+  background-color: var(--color-voodoo-800);
+  width: 100%;
+  z-index: 9999;
 }
 
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  padding: 0 24px;
+  max-width: 1280px;
+}
+
+.branding {
+  flex: 50% 1 1;
+  position: relative;
+  z-index: 30;
+}
+
+.logo img {
+  display: block;
+  padding: 24px 0;
+  width: 116px;
+}
+
+.navigation {
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  flex: 50% 1 1;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 30;
+}
+
+#mobile-menu-toggle {
+  display: none;
+}
+
+#mobile-menu-toggle:checked ~ .navigation {
+  height: 100%;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu {
+  padding: var(--spacing-lg) 0;
+  list-style-type: none;
+}
+
+.menu li a {
+  display: inline-block;
+  position: relative;
+  padding: 4px 8px;
+  color: var(--color-neutral-100);
+  font-size: 42px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Mobile menu trigger button */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+
+/* Trigger bars */
+.hamburger span {
+  display: block;
+  background: var(--color-cabaret-100);
+  width: 100%;
+  height: 5px;
+  transform-origin: center;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Animate button bars from hamburger to close button */
+input:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(11px) rotate(-45deg);
+}
+input:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+input:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-12px) rotate(45deg);
+}
+
+/* Add a bottom border to menu item with zero width */
+.menu li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  background: var(--color-primary-200);
+  width: 0;
+  height: 16px;
+  z-index: -1;
+}
+
+/* Use the border to make a dot  for active link */
+.menu li a.active::after {
+  border-radius: 100%;
+  width: 16px;
+}
+
+/* Animate the border on hover */
+.menu li a:hover::after {
+  border-radius: 0;
+  width: 100%;
+  transition: width 0.3s ease-in-out, border-radius 0.1s ease-in-out;
+}
+
+/* ================================================== */
+
 .main {
-  background-color:rgb(223, 151, 42)
+  /* background-color:rgb(223, 151, 42) */
 }
 
 .footer {
-  background-color: rgb(217, 86, 15);
+  padding: var(--spacing-sm) 0;
+  background-color: var(--color-voodoo-800);
+  color: var(--color-neutral-100);
+}
+
+.footer p {
+  margin: 0;
 }
 
 .post-it-note {
@@ -33,5 +434,90 @@ body {
 
 #error-message {
   font-size: 1rem;
-  color: red;
+  color: var(--color-danger);
+}
+
+
+/* ======================================================================== */
+/* ======================================================================== */
+/* #10.0 Media min 768px ================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+
+@media all and (min-width: 768px) {
+  /* ================================================== */
+  /* #11.1 Typography ================================= */
+  /* ================================================== */
+
+  h1 {
+    font-size: var(--text-size-h1);
+  }
+
+  h2 {
+    font-size: var(--text-size-h2);
+  }
+  
+  h3 {
+    font-size: var(--text-size-h3);
+  }
+  
+  h4 {
+    font-size: var(--text-size-h4);
+  }
+  
+  h5 {
+    font-size: var(--text-size-h5);
+  }
+  
+  h6 {
+    font-size: var(--text-size-h6);
+  }
+
+  /* ================================================== */
+  /* #13.0 Header ===================================== */
+  /* ================================================== */
+
+  .header-content {
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .menu {
+    display: flex;
+    padding: 0;
+  }
+
+  .menu li a {
+    padding: 4px 8px;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  /* Link hover animation */
+
+  .menu li a::after {
+    bottom: 6px;
+    height: 12px;
+  }
+
+  .menu li a.active::after {
+    border-radius: 100%;
+    width: 12px;
+  }
+
+  .menu li a.active:hover::after {
+    border-radius: 0;
+    width: 100%;
+  }
 }

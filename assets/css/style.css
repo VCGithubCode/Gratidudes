@@ -244,6 +244,35 @@ p:first-child {
 }
 
 /* ================================================== */
+/* #2.0 Layout ====================================== */
+/* ================================================== */
+
+main {
+  margin-bottom: auto;
+}
+
+.container {
+  margin: auto;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.container-small {
+  margin: auto;
+  width: 100%;
+  max-width: 768px;
+}
+
+.page-hero,
+.page-section {
+  padding: 36px 24px;
+}
+
+.footer__content {
+  padding: 32px 24px;
+}
+
+/* ================================================== */
 
 .header {
   background-color:rgb(26, 189, 195);

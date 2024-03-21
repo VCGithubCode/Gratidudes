@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Great Wall of Gratitude</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <header class="header">Nav Bar</header>
-    <main>
-      <aside>
 
-        <button id="add-message">+</button>
-      </aside>
-      <section id="form">
-        <div id="error-message"></div>
-        <label for="name-input">To:</label>
-        <input type="text" id="name-input" />
-        <label for="message-input">Message:</label>
-        <input type="text" id="message-input" />
-        <label for="sender-input">From:</label>
-        <input type="text" id="sender-input"/>
-        <button id="submit">Add message</button>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Great Wall of Gratitude</title>
 
-      <section id="wall"></section>
-    </main>
-    <footer class="footer">Footer</footer>
-    <script src="assets/js/script.js"></script>
-  </body>
+  <!-- Load local fonts before loading css -->
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('./assets/fonts/Poppins-Light.ttf');
+      font-weight: 300;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('./assets/fonts/Poppins-ExtraBold.ttf');
+      font-weight: 800;
+      font-display: swap;
+    }
+  </style>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header class="header">Nav Bar</header>
+  <main>
+    <aside>
+
+      <button id="add-message">+</button>
+    </aside>
+    <section id="form">
+      <div id="error-message"></div>
+      <label for="name-input">To:</label>
+      <input type="text" id="name-input" />
+      <label for="message-input">Message:</label>
+      <input type="text" id="message-input" />
+      <label for="sender-input">From:</label>
+      <input type="text" id="sender-input" />
+      <button id="submit">Add message</button>
+    </section>
+
+    <section id="wall"></section>
+  </main>
+  <footer class="footer">Footer</footer>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>

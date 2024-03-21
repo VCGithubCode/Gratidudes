@@ -24,19 +24,28 @@
   --color-cabaret-950: #480f1b;
   
   --color-orange-50: #fff3ed;
---color-orange-100: #ffe3d5;
---color-orange-200: #fdc3ab;
---color-orange-300: #fc9975;
---color-orange-400: #fa6d48;
---color-orange-500: #f73d18;
---color-orange-600: #e8230e;
---color-orange-700: #c1160d;
---color-orange-800: #991413;
---color-orange-900: #7b1413;
---color-orange-950: #430709;
+  --color-orange-100: #ffe3d5;
+  --color-orange-200: #fdc3ab;
+  --color-orange-300: #fc9975;
+  --color-orange-400: #fa6d48;
+  --color-orange-500: #f73d18;
+  --color-orange-600: #e8230e;
+  --color-orange-700: #c1160d;
+  --color-orange-800: #991413;
+  --color-orange-900: #7b1413;
+  --color-orange-950: #430709;
 
-
-  
+  --color-yellow-50: #fff7eb;
+  --color-yellow-100: #ffe9c6;
+  --color-yellow-200: #ffcf88;
+  --color-yellow-300: #ffaf47;
+  --color-yellow-400: #ff9420;
+  --color-yellow-500: #f96e07;
+  --color-yellow-600: #dd4b02;
+  --color-yellow-700: #b73006;
+  --color-yellow-800: #94240c;
+  --color-yellow-900: #7a1f0d;
+  --color-yellow-950: #460c02;
 
   --color-neutral-50: #fafafa;
   --color-neutral-100: #f5f5f5;
@@ -50,6 +59,10 @@
   --color-neutral-900: #171717;
   --color-neutral-950: #0a0a0a;
 
+  --color-danger: #f73d18;
+  --color-info: #1F7AF1;
+  --color-success: #2ECC71;
+
   --color-text: var(--color-neutral-600);
   --color-text-light: white;
   --color-headings: var(--color-secondary-700);
@@ -58,6 +71,32 @@
   --color-link-hover: var(--color-primary-800);
   --color-link-light: var(--color-primary-300);
   --color-link-light-hover: var(--color-primary-400);
+}
+
+:root {
+  --text-size-sm: 14px;
+  --text-size-md: 16px;
+  --text-size-lg: 20px;
+
+  --text-size-h1: 61px;
+  --text-size-h2: 48px;
+  --text-size-h3: 39px;
+  --text-size-h4: 31px;
+  --text-size-h5: 25px;
+  --text-size-h6: 20px;
+
+  --text-size-h1-sm: 28px;
+  --text-size-h2-sm: 25px;
+  --text-size-h3-sm: 22px;
+  --text-size-h4-sm: 20px;
+  --text-size-h5-sm: 18px;
+  --text-size-h6-sm: 16px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --grid-gap: 32px;
 }
 
 * {

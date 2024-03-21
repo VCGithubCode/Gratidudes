@@ -13,6 +13,7 @@ let prohibitedWords = ["fuck", "slut", "shit", "kill"];
 // let userMessage = document.getElementById("message-input").value.trim();
 
 let wall = document.getElementById("wall");
+let errorMessage = document.getElementById("error-message");
 
 // Function to filter prohibited words 
 function containsBadWords(userinput) {
@@ -21,6 +22,7 @@ function containsBadWords(userinput) {
     for (let word of prohibitedWords) {
         if (lowerCaseInput.includes(word)) {
             console.log("contains a bad word")
+            errorMessage.innerText = "ERROR: Please stop using foul language";
             return true;
         }
     }
@@ -71,9 +73,11 @@ function validateUserMessage() {
     let userMessage = document.getElementById("message-input").value.trim();
     if (userName === ""){
         console.log("username needs to be filled");
+        errorMessage.innerText = "ERROR: Please write your name";
         return false;
     } else if (userMessage === "") {
         console.log("user needs to write a message");
+        errorMessage.innerText = "ERROR: Please write your message";
         return false;
     } else {
         return true;

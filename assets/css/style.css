@@ -272,18 +272,153 @@ main {
   padding: 32px 24px;
 }
 
+
+/* ================================================== */
+/* #3.0 Header ====================================== */
 /* ================================================== */
 
 .header {
-  background-color:rgb(26, 189, 195);
+  /* position: fixed; */
+  background-color: var(--color-voodoo-800);
+  width: 100%;
+  z-index: 9999;
 }
 
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  padding: 0 24px;
+  max-width: 1280px;
+}
+
+.branding {
+  flex: 50% 1 1;
+  position: relative;
+  z-index: 30;
+}
+
+.logo img {
+  display: block;
+  padding: 24px 0;
+  width: 116px;
+}
+
+.navigation {
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  flex: 50% 1 1;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 30;
+}
+
+#mobile-menu-toggle {
+  display: none;
+}
+
+#mobile-menu-toggle:checked ~ .navigation {
+  height: 100%;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu {
+  padding: var(--spacing-lg) 0;
+  list-style-type: none;
+}
+
+.menu li a {
+  display: inline-block;
+  position: relative;
+  padding: 4px 8px;
+  color: var(--color-neutral-100);
+  font-size: 42px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Mobile menu trigger button */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+
+/* Trigger bars */
+.hamburger span {
+  display: block;
+  background: var(--color-cabaret-100);
+  width: 100%;
+  height: 5px;
+  transform-origin: center;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Animate button bars from hamburger to close button */
+input:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(11px) rotate(-45deg);
+}
+input:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+input:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-12px) rotate(45deg);
+}
+
+/* Add a bottom border to menu item with zero width */
+.menu li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  background: var(--color-primary-200);
+  width: 0;
+  height: 16px;
+  z-index: -1;
+}
+
+/* Use the border to make a dot  for active link */
+.menu li a.active::after {
+  border-radius: 100%;
+  width: 16px;
+}
+
+/* Animate the border on hover */
+.menu li a:hover::after {
+  border-radius: 0;
+  width: 100%;
+  transition: width 0.3s ease-in-out, border-radius 0.1s ease-in-out;
+}
+
+/* ================================================== */
+
 .main {
-  background-color:rgb(223, 151, 42)
+  /* background-color:rgb(223, 151, 42) */
 }
 
 .footer {
-  background-color: rgb(217, 86, 15);
+  padding: var(--spacing-sm) 0;
+  background-color: var(--color-voodoo-800);
+  color: var(--color-neutral-100);
+}
+
+.footer p {
+  margin: 0;
 }
 
 .post-it-note {
@@ -300,4 +435,89 @@ main {
 #error-message {
   font-size: 1rem;
   color: var(--color-danger);
+}
+
+
+/* ======================================================================== */
+/* ======================================================================== */
+/* #10.0 Media min 768px ================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+
+@media all and (min-width: 768px) {
+  /* ================================================== */
+  /* #11.1 Typography ================================= */
+  /* ================================================== */
+
+  h1 {
+    font-size: var(--text-size-h1);
+  }
+
+  h2 {
+    font-size: var(--text-size-h2);
+  }
+  
+  h3 {
+    font-size: var(--text-size-h3);
+  }
+  
+  h4 {
+    font-size: var(--text-size-h4);
+  }
+  
+  h5 {
+    font-size: var(--text-size-h5);
+  }
+  
+  h6 {
+    font-size: var(--text-size-h6);
+  }
+
+  /* ================================================== */
+  /* #13.0 Header ===================================== */
+  /* ================================================== */
+
+  .header-content {
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .menu {
+    display: flex;
+    padding: 0;
+  }
+
+  .menu li a {
+    padding: 4px 8px;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  /* Link hover animation */
+
+  .menu li a::after {
+    bottom: 6px;
+    height: 12px;
+  }
+
+  .menu li a.active::after {
+    border-radius: 100%;
+    width: 12px;
+  }
+
+  .menu li a.active:hover::after {
+    border-radius: 0;
+    width: 100%;
+  }
 }

@@ -47,26 +47,62 @@
 </head>
 
 <body>
-  <header class="header">Nav Bar</header>
-  <main>
-    <aside>
+  <!-- Page Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="branding">
+        <a class="logo" href="./" aria-label="link to Home Page"><img src="./assets/images/logo-white.svg" width="116"
+            height="36" alt="The Great Wall of Gratitude"></a>
+      </div>
+      <input id="mobile-menu-toggle" type="checkbox">
+      <label class="hamburger" for="mobile-menu-toggle" aria-label="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="navigation">
+        <ul class="menu">
+          <li><a aria-label="link to Home Page" href="./index.html">The Great Wall</a></li>
+          <li><a aria-label="link to About Page" href="./about.html">About</a></li>
+          <li><a aria-label="link to Contact Page" href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <button id="add-message">+</button>
-    </aside>
-    <section id="form">
-      <div id="error-message"></div>
-      <label for="name-input">To:</label>
-      <input type="text" id="name-input" />
-      <label for="message-input">Message:</label>
-      <input type="text" id="message-input" />
-      <label for="sender-input">From:</label>
-      <input type="text" id="sender-input" />
-      <button id="submit">Add message</button>
+  <main class="page">
+
+    <section class="background-lighter">
+      <div class="home-hero container">
+        <h1>The Great Wall of Gratitude</h1>
+        <p>Share your gratitude with the world. Add a message to the wall.</p>
+      </div>
     </section>
 
-    <section id="wall"></section>
+    <section class="container">
+      <button id="add-message">+</button>
+      <div id="form" class="container">
+        <div id="error-message"></div>
+        <label for="name-input">To:</label>
+        <input type="text" id="name-input" />
+        <label for="message-input">Message:</label>
+        <input type="text" id="message-input" />
+        <label for="sender-input">From:</label>
+        <input type="text" id="sender-input" />
+        <button id="submit">Add message</button>
+      </div>
+    </section>
+
+    <section id="wall" class="container">
+
+    </section>
   </main>
-  <footer class="footer">Footer</footer>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 The Great Wall of Gratitude</p>
+    </div>
+  </footer>
   <script src="./assets/js/script.js"></script>
 </body>
 

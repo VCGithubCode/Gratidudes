@@ -1,9 +1,11 @@
 let post = [{
     name: "mika",
-    message: "Thank you!"
+    message: "Thank you!",
+    sender: "Mika"
 }, {
     name: "vernell",
-    message: "You're Amazing"
+    message: "You're Amazing",
+    sender: "vernell"
 }];
 
 // prohibited words:
@@ -32,7 +34,7 @@ function containsBadWords(userinput) {
 function generatePost(post) {
     let postItNote = document.createElement("div");
     postItNote.classList.add("post-it-note");
-    postItNote.innerText = `${post.name} message: ${post.message}`;
+    postItNote.innerText = `To: ${post.name} message: ${post.message} From: ${post.sender}`;
     wall.append(postItNote);
 }
 
@@ -71,33 +73,41 @@ function handleAddButton() {
 function validateUserMessage() {
     let userName = document.getElementById("name-input").value.trim();
     let userMessage = document.getElementById("message-input").value.trim();
+    let userSender = document.getElementById("sender-input").value.trim();
     if (userName === ""){
-        console.log("username needs to be filled");
-        errorMessage.innerText = "ERROR: Please write your name";
+        console.log("Name needs to be filled");
+        errorMessage.innerText = "ERROR: Please write the name of who you want to write a message";
         return false;
     } else if (userMessage === "") {
         console.log("user needs to write a message");
         errorMessage.innerText = "ERROR: Please write your message";
         return false;
+    } else if (userSender === "") {
+        console.log("user needs to write their name");
+        errorMessage.innerText = "ERROR: Please write your name";
+        return false;
     } else {
         return true;
     }
 }
+
 // Function to initialize event listener for adding a user message
 function initializeAddUserMessage() {
     let submitBtn = document.getElementById("submit");
     submitBtn.addEventListener("click", function () {
         let userName = document.getElementById("name-input").value.trim();
         let userMessage = document.getElementById("message-input").value.trim();
+        let userSender = document.getElementById("sender-input").value.trim();
         // Verify that the input fields are not empty
         if (!(containsBadWords(userMessage)) && validateUserMessage()) {
-            let newPost = { name: userName, message: userMessage };
+            let newPost = { name: userName, message: userMessage, sender: userSender };
             addRecentMessage(newPost); // Add the recent message to the wall
             addToLocalStorage(newPost); // Save the new post to local storage
             console.log("message added successfully");
             document.getElementById("form").style.display = "none"; // Optionally hide form
             document.getElementById("name-input").value = ''; // Clear input
             document.getElementById("message-input").value = ''; // Clear input
+            document.getElementById("sender-input").value = ''; // Clear input
         } else {
             console.log("Error: message not loaded");
         }

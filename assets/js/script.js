@@ -52,6 +52,7 @@ function generatePost(post) {
     postItNote.appendChild(deleteButton);
     postItNote.appendChild(likeButton);
     wall.append(postItNote);
+    deletePost();
 }
 
 // Function to add recently added message to the wall
@@ -138,7 +139,6 @@ function initializeAddUserMessage() {
 }
 
 
-
 // Function to get a random message from the stored posts without removing it from the array
 function getRandomMessage() {
     let posts = JSON.parse(localStorage.getItem('posts')) || [];
@@ -147,6 +147,34 @@ function getRandomMessage() {
         return posts[randomNumber];
     }
     return null; // Return null if there are no posts
+}
+
+function deletePost() {
+    let deleteButtonArray = document.getElementsByClassName("delete-button");
+
+    for (let btn of deleteButtonArray) {
+        btn.addEventListener("click", (event) => {
+            console.log("im clicked");
+            deleteLastEntry();
+            btn.parentNode.remove();       
+        });
+    }
+}
+function deleteLastEntry() {
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
+    // Check if there are entries to delete
+    if (posts.length > 0) {
+      // Remove the last entry from the array
+      console.log(posts.pop());
+
+      
+      // Update local storage with the modified array
+      localStorage.setItem('posts', JSON.stringify(posts));
+      console.log(posts);
+
+    } else {
+      console.log('No entries to delete.');
+    }
 }
 
 // Initialize functions on DOMContentLoaded

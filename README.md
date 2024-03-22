@@ -1,15 +1,18 @@
 # Great Wall of Gratitude
-[Gratidudes Repo](https://vcgithubcode.github.io/Gratidudes/)
 
-Visit the deployed site: [Gratidudes](https://vcgithubcode.github.io/)
+![An image of our landingpage](/documentation/images/#.webp)
+
+Great Wall of Gratitude - GitHub repository: [GitHub repository](https://vcgithubcode.github.io/Gratidudes/)
+
+Visit the deployed site: [Great Wall of Gratitude](https://vcgithubcode.github.io/Gratidudes/index.html)
 
 ## Introduction
 
-The Gratitude Wall  is an innovative site designed for World Happiness Day, aiming to cultivate a culture of gratitude and positivity. It provides a platform for users to anonymously share and explore expressions of gratitude, fostering a sense of community and connection. With features allowing categorization of posts, reactions through emojis or comments, and integration with social media, the site encourages users to engage deeply with the content and each other.
+The Gratitude Wall celebrates World Happiness Day by creating a vibrant space for sharing gratitude. This innovative platform invites users to anonymously express thanks, uplifting stories, and moments of joy. It's designed to foster a sense of belonging and community spirit, encouraging positive interactions through categorized posts, emoji reactions, comments, and social media sharing.
 
-Our vision is to create a global community where positivity and appreciation flourish, underpinned by acts of kindness. The site’s functionalities, including daily digests of top gratitude posts and analytics on gratitude trends, are crafted to inspire a continuous cycle of goodwill and happiness.
+Our mission is to nurture a culture of appreciation and kindness, contributing to a happier, more connected world. The Gratitude Wall offers daily inspirations through top gratitude posts, promoting continuous engagement and acts of kindness. Our user-centric design ensures an intuitive and rewarding experience, making every visit a step towards spreading positivity.
 
-Central to our mission are user-centric designs that facilitate seamless interaction, from the simplicity of posting for new visitors to the rewarding experience of participating in random acts of kindness for frequent users. "Gratitude Wall" isn't just an site; it's a movement towards acknowledging the beauty in life's small moments and the transformative power of gratitude in building a happier world.
+Join us in embracing the power of gratitude. Together, we can make a difference, one thank-you at a time.
 
 ![x](/documentation/images/amiresponsive.webp)
 

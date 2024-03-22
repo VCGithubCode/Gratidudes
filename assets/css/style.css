@@ -456,6 +456,20 @@ input:checked~.hamburger span:nth-child(3) {
   min-height: 80vh;
 }
 
+/* Sticky note animation. Amended from : */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
+@keyframes fadeInSpin {
+  from {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
 .thank-you .sticky-note {
   background-image: radial-gradient(circle,
       var(--color-yellow-300),
@@ -477,6 +491,7 @@ input:checked~.hamburger span:nth-child(3) {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  animation: fadeInSpin 2s ease-in-out forwards;
 }
 
 

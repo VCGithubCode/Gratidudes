@@ -16,6 +16,11 @@ let prohibitedWords = ["fuck", "slut", "shit", "kill"];
 
 let wall = document.getElementById("wall");
 let errorMessage = document.getElementById("error-message");
+let recentEntry = false;
+let oldEntry = false;
+let cards = document.getElementsByClassName("post-it-note");
+let deleteButtonArray = document.getElementsByClassName("delete-button");
+console.log(deleteButtonArray);
 
 // Function to filter prohibited words 
 function containsBadWords(userinput) {
@@ -32,9 +37,20 @@ function containsBadWords(userinput) {
 }
 // Function to generate a post on the wall
 function generatePost(post) {
+    hideDeleteButton();
     let postItNote = document.createElement("div");
+    const deleteButton = document.createElement("button");
+    const likeButton = document.createElement("button");
+    likeButton.innerText = "❤️";
+    likeButton.classList.add("like-button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.innerText = "x";
+    likeButton.style.display ="inline-block"
+    deleteButton.style.display ="inline-block";
     postItNote.classList.add("post-it-note");
     postItNote.innerText = `To: ${post.name} message: ${post.message} From: ${post.sender}`;
+    postItNote.appendChild(deleteButton);
+    postItNote.appendChild(likeButton);
     wall.append(postItNote);
 }
 
@@ -91,6 +107,12 @@ function validateUserMessage() {
     }
 }
 
+// Function to hide the delete buttons 
+function hideDeleteButton() {
+    for (button of deleteButtonArray) {
+        button.style.display = "none";
+    }
+}
 // Function to initialize event listener for adding a user message
 function initializeAddUserMessage() {
     let submitBtn = document.getElementById("submit");
@@ -111,8 +133,11 @@ function initializeAddUserMessage() {
         } else {
             console.log("Error: message not loaded");
         }
+        
     });
 }
+
+
 
 // Function to get a random message from the stored posts without removing it from the array
 function getRandomMessage() {
@@ -129,4 +154,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     retrieveAndDisplayPosts();
     handleAddButton();
     initializeAddUserMessage();
+    setInterval(hideDeleteButton(), 5000);
 });

@@ -16,6 +16,8 @@ let prohibitedWords = ["fuck", "slut", "shit", "kill"];
 
 let wall = document.getElementById("wall");
 let errorMessage = document.getElementById("error-message");
+let cards = document.getElementsByClassName("post-it-note");
+let deleteButtonArray = document.getElementsByClassName("delete-button");
 
 // Function to filter prohibited words 
 function containsBadWords(userinput) {
@@ -23,23 +25,35 @@ function containsBadWords(userinput) {
 
     for (let word of prohibitedWords) {
         if (lowerCaseInput.includes(word)) {
-            console.log("contains a bad word")
             errorMessage.innerText = "ERROR: Please stop using foul language";
             return true;
         }
     }
-    
+
 }
 // Function to generate a post on the wall
+// Function to generate a post on the wall
 function generatePost(post) {
+    hideDeleteButton();
     let postItNote = document.createElement("div");
+    const deleteButton = document.createElement("button");
+    const likeButton = document.createElement("button");
+    likeButton.innerText = "❤️";
+    likeButton.classList.add("like-button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.innerText = "x";
+    likeButton.style.display = "inline-block"
+    deleteButton.style.display = "inline-block";
     postItNote.classList.add("post-it-note");
     postItNote.innerText = `To: ${post.name} message: ${post.message} From: ${post.sender}`;
+    postItNote.appendChild(deleteButton);
+    postItNote.appendChild(likeButton);
     wall.append(postItNote);
+    deletePost();
 }
 
 // Function to add recently added message to the wall
-function addRecentMessage(recentPost) {    
+function addRecentMessage(recentPost) {
     generatePost(recentPost); // Use the generatePost function to add the post
 }
 
@@ -74,7 +88,7 @@ function validateUserMessage() {
     let userName = document.getElementById("name-input").value.trim();
     let userMessage = document.getElementById("message-input").value.trim();
     let userSender = document.getElementById("sender-input").value.trim();
-    if (userName === ""){
+    if (userName === "") {
         console.log("Name needs to be filled");
         errorMessage.innerText = "ERROR: Please write the name of who you want to write a message";
         return false;
@@ -100,7 +114,11 @@ function initializeAddUserMessage() {
         let userSender = document.getElementById("sender-input").value.trim();
         // Verify that the input fields are not empty
         if (!(containsBadWords(userMessage)) && validateUserMessage()) {
-            let newPost = { name: userName, message: userMessage, sender: userSender };
+            let newPost = {
+                name: userName,
+                message: userMessage,
+                sender: userSender
+            };
             addRecentMessage(newPost); // Add the recent message to the wall
             addToLocalStorage(newPost); // Save the new post to local storage
             console.log("message added successfully");
@@ -124,9 +142,43 @@ function getRandomMessage() {
     return null; // Return null if there are no posts
 }
 
+// Function to hide the delete buttons 
+function hideDeleteButton() {
+    for (button of deleteButtonArray) {
+        button.style.display = "none";
+    }
+}
+
+function deletePost() {
+    let deleteButtonArray = document.getElementsByClassName("delete-button");
+
+    for (let btn of deleteButtonArray) {
+        btn.addEventListener("click", (event) => {
+            deleteLastEntry();
+            btn.parentNode.remove();
+        });
+    }
+}
+
+function deleteLastEntry() {
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
+    // Check if there are entries to delete
+    if (posts.length > 0) {
+        // Remove the last entry from the array
+        posts.pop();
+
+
+        // Update local storage with the modified array
+        localStorage.setItem('posts', JSON.stringify(posts));
+    } else {
+        console.log('No entries to delete.');
+    }
+}
+
 // Initialize functions on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", (event) => {
     retrieveAndDisplayPosts();
     handleAddButton();
     initializeAddUserMessage();
+    setInterval(hideDeleteButton(), 5000);
 });

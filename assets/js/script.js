@@ -64,7 +64,7 @@ function generatePost(post) {
     postOptions.appendChild(likeButton);
     postOptions.appendChild(deleteButton);
 
-    wall.append(postItNote);
+    wall.prepend(postItNote);
     deletePost();
 }
 
@@ -78,7 +78,7 @@ function addToLocalStorage(post) {
     // Retrieve posts from localStorage, parse it, or default to an empty array if undefined
     let posts = JSON.parse(localStorage.getItem("posts")) || [];
     // Add the new post to the array
-    posts.push(post);
+    posts.unshift(post);
     // Save the updated array back to local storage
     localStorage.setItem("posts", JSON.stringify(posts));
 }
@@ -201,6 +201,19 @@ function closeForm() {
     document.getElementById("form").style.display = "none";
 }
 
+function isWallFull() {
+    return cards.length %9 === 1 && cards.length > 1;
+}
+
+// Load More button 
+function handleLoadMoreButton() {
+    const loadMoreBtn = document.getElementById("load-more-btn")
+    if(isWallFull()) {
+       loadMoreBtn.style.display = "block";
+    } else {
+        loadMoreBtn.style.display = "none";
+    }
+}
 
 // Initialize functions on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -208,4 +221,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initializeAddUserMessage();
     addPostTile()
     setInterval(hideDeleteButton(), 5000);
+    setInterval(handleLoadMoreButton, 500);
+    console.log(isWallFull());
+
 });

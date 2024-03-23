@@ -436,9 +436,7 @@ input:checked~.hamburger span:nth-child(3) {
 
 }
 
-#form {
-  
-}
+#form {}
 
 .form {
   position: fixed;
@@ -452,6 +450,7 @@ input:checked~.hamburger span:nth-child(3) {
   height: 100vh;
   z-index: 99999;
 }
+
 .form-content {
   display: flex;
   flex-direction: column;
@@ -462,7 +461,8 @@ input:checked~.hamburger span:nth-child(3) {
 
 .field {
   display: flex;
-  flex-direction: column;}
+  flex-direction: column;
+}
 
 #error-message {
   font-size: 1rem;
@@ -661,17 +661,15 @@ input:checked~.hamburger span:nth-child(3) {
       width: 12px;
     }
 
-  .menu li a.active:hover::after {
-    border-radius: 0;
-    width: 100%;
+    .menu li a.active:hover::after {
+      border-radius: 0;
+      width: 100%;
+    }
   }
-}
-
 
   /* ================================================== */
   /* #  Add Post ===================================== */
   /* ================================================== */
-
 
   .wall {
     display: flex;
@@ -679,6 +677,7 @@ input:checked~.hamburger span:nth-child(3) {
     justify-content: center;
     align-items: center;
   }
+
   .post-add {
     background: var(--color-voodoo-300);
     border: dashed 3px var(--color-voodoo-500);
@@ -687,3 +686,19 @@ input:checked~.hamburger span:nth-child(3) {
     justify-content: center;
     align-items: center;
   }
+
+  /* ======================================================================== */
+  /* Media Queries for Thank You Page ======================================= */
+  /* ======================================================================== */
+
+  .thank-you .pin {
+    width: 24px;
+    height: 24px;
+    top: -45px;
+  }
+
+  .thank-you .pin::after {
+    left: 11px;
+    height: 35px;
+  }
+}

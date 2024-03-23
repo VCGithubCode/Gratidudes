@@ -230,19 +230,8 @@ function closeForm() {
     document.getElementById("form").style.display = "none";
 }
 
-function isWallFull() {
-    return cards.length %9 === 1 && cards.length > 1;
-}
 
-// Load More button 
-function handleLoadMoreButton() {
-    const loadMoreBtn = document.getElementById("load-more-btn")
-    if(isWallFull()) {
-       loadMoreBtn.style.display = "block";
-    } else {
-        loadMoreBtn.style.display = "none";
-    }
-}
+
 
 // Initialize functions on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -250,7 +239,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initializeAddUserMessage();
     addPostTile()
     setInterval(hideDeleteButton(), 5000);
-    setInterval(handleLoadMoreButton, 500);
-    console.log(isWallFull());
+    // https://www.solodev.com/blog/web-design/adding-a-load-more-button-to-your-content.stml
+    // Adding load more button
+    $(".post-it-note").css("display", "none");
+    $(".post-it-note").slice(0, 9).show();
+    if ($(".post-it-note:hidden").length != 0) {
+    $("#load-more-btn").show();
+    }   
+    $("#load-more-btn").on('click', function (e) {
+    e.preventDefault();
+    const currentPage = $(".post-it-note:visible").length / 9;
+    $(".post-it-note").slice(currentPage * 9, (currentPage + 1) * 9).slideDown();
+    if ($(".post-it-note:hidden").length == 0) {
+    $("#load-more-btn").fadeOut('slow');
+    }
+    });
 
 });

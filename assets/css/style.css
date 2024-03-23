@@ -480,8 +480,14 @@ input:checked~.hamburger span:nth-child(3) {
   min-height: 80vh;
 }
 
+.thank-you .container {
+  position: relative;
+}
+
 /* Sticky note animation. Amended from : */
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
+/* CSS animations: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations */
+/* The @keyframes Rule and properties: https://www.w3schools.com/css/css3_animations.asp */
+/* @keyframes examples: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
 @keyframes fadeInSpin {
   from {
     opacity: 0;
@@ -515,87 +521,145 @@ input:checked~.hamburger span:nth-child(3) {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  position: relative;
   animation: fadeInSpin 2s ease-in-out forwards;
+  transform: rotate(2deg);
+  z-index: 0;
 }
 
+/* Pin head & shadow */
+/* Inner shadow was modified using guidance from: https://devdevout.com/css/css-inner-shadow */
+.thank-you .pin {
+  /* Pin head size*/
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  /* Pin relative to sticky note */
+  position: absolute;
+  /* Adjusts so the pin head appears at the top of the needle */
+  top: -25px;
+  /* Positions the center of the pin head */
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow:
+    inset 0 0 0 1px hsla(0, 0%, 0%, .1),
+    inset 3px 3px 3px hsla(0, 0%, 100%, .2),
+    inset -3px -3px 3px hsla(0, 0%, 0%, .2),
+    30px 5px 6px hsla(0, 0%, 0%, .3);
+  z-index: 1;
+}
 
-/* ======================================================================== */
-/* ======================================================================== */
-/* #10.0 Media min 768px ================================================== */
-/* ======================================================================== */
-/* ======================================================================== */
+/* Needle body shadow with angle */
+.thank-you .pin::before {
+  /* to display pseude element */
+  content: '';
+  position: absolute;
+  /* horizontal position */
+  left: 6px;
+  /* vertical position */
+  top: 25px;
+  width: 30px;
+  height: 1px;
+  /* Makes the pseudo-element itself invisible, showing only the shadow */
+  background: transparent;
+  box-shadow: 2px 5px 3px hsla(0, 0%, 0%, .2);
+  /* Angle of the shadow */
+  transform: rotate(-35deg);
+  /* Below the needle body */
+  z-index: 1;
+}
 
-@media all and (min-width: 768px) {
-  /* ================================================== */
-  /* #11.1 Typography ================================= */
-  /* ================================================== */
+/* Needle */
+.thank-you .pin::after {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 20px;
+  width: 2px;
+  height: 20px;
+  background-color: #555;
+  /* Keep above shadow */
+  z-index: 2;
 
-  h1 {
-    font-size: var(--text-size-h1);
-  }
 
-  h2 {
-    font-size: var(--text-size-h2);
-  }
+  /* ======================================================================== */
+  /* ======================================================================== */
+  /* #10.0 Media min 768px ================================================== */
+  /* ======================================================================== */
+  /* ======================================================================== */
 
-  h3 {
-    font-size: var(--text-size-h3);
-  }
+  @media all and (min-width: 768px) {
+    /* ================================================== */
+    /* #11.1 Typography ================================= */
+    /* ================================================== */
 
-  h4 {
-    font-size: var(--text-size-h4);
-  }
+    h1 {
+      font-size: var(--text-size-h1);
+    }
 
-  h5 {
-    font-size: var(--text-size-h5);
-  }
+    h2 {
+      font-size: var(--text-size-h2);
+    }
 
-  h6 {
-    font-size: var(--text-size-h6);
-  }
+    h3 {
+      font-size: var(--text-size-h3);
+    }
 
-  /* ================================================== */
-  /* #13.0 Header ===================================== */
-  /* ================================================== */
+    h4 {
+      font-size: var(--text-size-h4);
+    }
 
-  .header-content {
-    align-items: center;
-  }
+    h5 {
+      font-size: var(--text-size-h5);
+    }
 
-  .hamburger {
-    display: none;
-  }
+    h6 {
+      font-size: var(--text-size-h6);
+    }
 
-  .navigation {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    height: 100%;
-    opacity: 1;
-  }
+    /* ================================================== */
+    /* #13.0 Header ===================================== */
+    /* ================================================== */
 
-  .menu {
-    display: flex;
-    padding: 0;
-  }
+    .header-content {
+      align-items: center;
+    }
 
-  .menu li a {
-    padding: 4px 8px;
-    font-size: 16px;
-    text-decoration: none;
-  }
+    .hamburger {
+      display: none;
+    }
 
-  /* Link hover animation */
+    .navigation {
+      display: flex;
+      justify-content: flex-end;
+      width: 50%;
+      height: 100%;
+      opacity: 1;
+    }
 
-  .menu li a::after {
-    bottom: 6px;
-    height: 12px;
-  }
+    .menu {
+      display: flex;
+      padding: 0;
+    }
 
-  .menu li a.active::after {
-    border-radius: 100%;
-    width: 12px;
-  }
+    .menu li a {
+      padding: 4px 8px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    /* Link hover animation */
+
+    .menu li a::after {
+      bottom: 6px;
+      height: 12px;
+    }
+
+    .menu li a.active::after {
+      border-radius: 100%;
+      width: 12px;
+    }
 
   .menu li a.active:hover::after {
     border-radius: 0;

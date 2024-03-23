@@ -91,15 +91,24 @@
             <textarea rows="10" name="query" class="contactbox" id="contactbox-query" required></textarea>
             <br>
     
-            <button type="submit" id="contactbox-submit" aria-label="Clicking submit will open a response form in a new tab">Submit</button> 
+            <button type="submit" id="contactbox-submit" onclick="sendThanks()" aria-label="Clicking submit will open the thank you page">Submit</button>
                 </form>
         </div>
 
 
 
-  </main>
-
-  <footer class="footer">Footer</footer>
+</main>
+<!-- This code was inspired by GeeksforGeeks https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/-->
+    <button onclick="sendThanks()">Click me</button> 
+  
+      <footer class="footer">Footer</footer> 
+    <!--script to redirect to another thank-you.html-->
+    <script> 
+        function sendThanks() { 
+            window.location.href = "thank-you.html"; 
+        } 
+    </script>
+    
   <script src="./assets/js/script.js"></script>
 </body>
 

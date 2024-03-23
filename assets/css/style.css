@@ -437,8 +437,32 @@ input:checked~.hamburger span:nth-child(3) {
 }
 
 #form {
-  display: none;
+  
 }
+
+.form {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+}
+.form-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  /* background-color: red; */
+  max-width: 740px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;}
 
 #error-message {
   font-size: 1rem;

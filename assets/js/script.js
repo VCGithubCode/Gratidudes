@@ -19,10 +19,6 @@ let errorMessage = document.getElementById("error-message");
 let cards = document.getElementsByClassName("post-it-note");
 let deleteButtonArray = document.getElementsByClassName("delete-button");
 
-
-
-
-
 // Function to filter prohibited words 
 function containsBadWords(userinput) {
     let lowerCaseInput = userinput.toLowerCase();
@@ -35,7 +31,7 @@ function containsBadWords(userinput) {
     }
 
 }
-// Function to generate a post on the wall
+
 // Function to generate a post on the wall
 function generatePost(post) {
     hideDeleteButton();
@@ -120,6 +116,7 @@ function initializeAddUserMessage() {
         let userName = document.getElementById("name-input").value.trim();
         let userMessage = document.getElementById("message-input").value.trim();
         let userSender = document.getElementById("sender-input").value.trim();
+        
         // Verify that the input fields are not empty
         if (!(containsBadWords(userMessage)) && validateUserMessage()) {
             let newPost = {
@@ -181,6 +178,13 @@ function deleteLastEntry() {
         console.log('No entries to delete.');
     }
 }
+
+const closeFormButton = document.getElementById("close-form");
+closeFormButton.addEventListener("click", closeForm);
+function closeForm() {
+    document.getElementById("form").style.display = "none";
+}
+
 
 // Initialize functions on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", (event) => {

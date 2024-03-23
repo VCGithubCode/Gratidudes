@@ -40,6 +40,7 @@ function generatePost(post) {
     const postOptions = document.createElement("div")
     const deleteButton = document.createElement("button");
     const likeButton = document.createElement("button");
+    const likeIcon = document.createElement("span");
 
     postItem.classList.add("post-it-note", "post-card");
     postItem.innerHTML = `
@@ -49,11 +50,12 @@ function generatePost(post) {
     `; 
 
     likeButton.classList.add("like-button");
-    likeButton.innerHTML = `
+    likeIcon.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <path d="M31.11,11.85c0,8.35-13.85,18.15-15.11,18.15S.89,20.2.89,11.85,10.96-.75,16,6.81c5.04-7.56,15.11-3.31,15.11,5.04Z"/>
         </svg>
     `;
+    likeButton.appendChild(likeIcon);
 
     deleteButton.classList.add("delete-button");
     deleteButton.innerText = "delete";
@@ -65,8 +67,35 @@ function generatePost(post) {
     postOptions.appendChild(deleteButton);
 
     wall.prepend(postItem);
-    deletePost();
+
+    // Add click event listener to the like button
+    likeButton.addEventListener("click", function () {
+        // Toggle between SVG heart and "Liked❤️" text
+        if (likeButton.innerHTML.includes("Liked")) {
+            likeButton.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path d="M31.11,11.85c0,8.35-13.85,18.15-15.11,18.15S.89,20.2.89,11.85,10.96-.75,16,6.81c5.04-7.56,15.11-3.31,15.11,5.04Z"/>
+                </svg>
+            `;
+        } else {
+            likeButton.innerHTML = "Liked❤️";
+        }
+    });
+
+    // Add click event listener to the delete button
+    deleteButton.addEventListener("click", function () {
+        // Remove the corresponding post from local storage
+        let posts = JSON.parse(localStorage.getItem('posts')) || [];
+        let index = posts.findIndex(p => p.name === post.name && p.message === post.message && p.sender === post.sender);
+        if (index !== -1) {
+            posts.splice(index, 1);
+            localStorage.setItem('posts', JSON.stringify(posts));
+        }
+        postItNote.remove(); 
+        // Remove the entire post element
+    });
 }
+
 
 // Function to add recently added message to the wall
 function addRecentMessage(recentPost) {

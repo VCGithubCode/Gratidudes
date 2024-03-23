@@ -790,3 +790,47 @@ input:checked~.hamburger span:nth-child(3) {
   left: 11px;
   height: 35px;
 }
+
+
+.card {
+  width: 90%; 
+}
+
+.card .card-img-top {
+  width: 100%; 
+  height: auto; Maintain aspect ratio
+}
+
+.card-body {
+  padding: 1.25rem; 
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem; 
+}
+
+.card-text {
+  font-size: 1rem; 
+  margin-top: 10px; 
+}
+
+.card .card-img-top {
+  width: 80%; 
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 50%; 
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .card-img-top {
+
+  margin: 0 auto; 
+}
+

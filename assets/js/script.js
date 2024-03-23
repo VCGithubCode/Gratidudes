@@ -36,16 +36,16 @@ function containsBadWords(userinput) {
 function generatePost(post) {
     hideDeleteButton();
     
-    const postItNote = document.createElement("div");
+    const postItem = document.createElement("div");
     const postOptions = document.createElement("div")
     const deleteButton = document.createElement("button");
     const likeButton = document.createElement("button");
 
-    postItNote.classList.add("post-it-note", "card");
-    postItNote.innerHTML = `
-        <div class="pin-too"><span>To:</span> ${post.name}</div>
-        <div class="pin-from"><span>From:</span> ${post.sender}</div>
-        <div class="pin-message">"${post.message}"</div>
+    postItem.classList.add("post-it-note", "post-card");
+    postItem.innerHTML = `
+        <div class="post-too"><span>To:</span> ${post.name}</div>
+        <div class="post-from"><span>From:</span> ${post.sender}</div>
+        <div class="post-message">"${post.message}"</div>
     `; 
 
     likeButton.classList.add("like-button");
@@ -58,13 +58,13 @@ function generatePost(post) {
     deleteButton.classList.add("delete-button");
     deleteButton.innerText = "delete";
     
-    postItNote.appendChild(postOptions);
+    postItem.appendChild(postOptions);
 
     postOptions.classList.add("post-options");
     postOptions.appendChild(likeButton);
     postOptions.appendChild(deleteButton);
 
-    wall.prepend(postItNote);
+    wall.prepend(postItem);
     deletePost();
 }
 

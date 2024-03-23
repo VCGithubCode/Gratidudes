@@ -731,3 +731,7 @@ input:checked~.hamburger span:nth-child(3) {
 
 
   
+
+  #load-more-btn {
+    display: none;
+  }

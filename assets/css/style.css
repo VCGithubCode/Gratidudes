@@ -437,7 +437,7 @@ input:checked~.hamburger span:nth-child(3) {
 }
 
 #form {
-  
+  display: none;
 }
 
 .form {

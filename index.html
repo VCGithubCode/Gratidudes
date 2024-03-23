@@ -79,22 +79,27 @@
       </div>
     </section>
 
-    <section class="container">
-      <div id="form" class="container">
+    <div id="form" class="form">
+      <button id="close-form">X</button>
+      <div class="form-content">
         <div id="error-message"></div>
-        <label for="name-input">To:</label>
-        <input type="text" id="name-input" />
-        <label for="message-input">Message:</label>
-        <input type="text" id="message-input" />
-        <label for="sender-input">From:</label>
-        <input type="text" id="sender-input" />
+        <div class="field">
+          <label for="name-input">To:</label>
+          <input type="text" id="name-input" />
+        </div>
+        <div class="field">
+          <label for="sender-input">From:</label>
+          <input type="text" id="sender-input" />
+        </div>
+        <div class="field">
+          <label for="message-input">Message:</label>
+          <input type="text" id="message-input" />
+        </div>
         <button id="submit">Add message</button>
       </div>
-    </section>
+    </div>
 
-    <section id="wall" class="container">
-
-    </section>
+    <section id="wall" class="container"></section>
   </main>
 
   <footer class="footer">

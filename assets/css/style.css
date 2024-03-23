@@ -15,6 +15,7 @@
  *  5.2 - About
  *  5.3 - Contact
  *  5.4 - Error (404)
+ *  5.5 - Thank You
  * 6.0 - Components
  *  6.1 - Buttons
  
@@ -53,7 +54,7 @@
   --color-cabaret-800: #8e263d;
   --color-cabaret-900: #772436;
   --color-cabaret-950: #480f1b;
-  
+
   --color-orange-50: #fff3ed;
   --color-orange-100: #ffe3d5;
   --color-orange-200: #fdc3ab;
@@ -174,6 +175,7 @@ h1,
   font-weight: 800;
   line-height: 1.2;
 }
+
 h2,
 .h2 {
   color: var(--color-headings);
@@ -181,6 +183,7 @@ h2,
   font-weight: 800;
   line-height: 1.2;
 }
+
 h3,
 .h3 {
   color: var(--color-headings);
@@ -188,6 +191,7 @@ h3,
   font-weight: 800;
   line-height: 1.2;
 }
+
 h4,
 .h4 {
   color: var(--color-headings);
@@ -195,6 +199,7 @@ h4,
   font-weight: 800;
   line-height: 1.2;
 }
+
 h5,
 .h5 {
   color: var(--color-headings);
@@ -202,6 +207,7 @@ h5,
   font-weight: 800;
   line-height: 1.2;
 }
+
 h6,
 .h6 {
   color: var(--color-headings);
@@ -326,7 +332,7 @@ main {
   display: none;
 }
 
-#mobile-menu-toggle:checked ~ .navigation {
+#mobile-menu-toggle:checked~.navigation {
   height: 100%;
   opacity: 1;
   transition: all 0.2s ease-in-out;
@@ -369,13 +375,15 @@ main {
 }
 
 /* Animate button bars from hamburger to close button */
-input:checked ~ .hamburger span:nth-child(1) {
+input:checked~.hamburger span:nth-child(1) {
   transform: translateY(11px) rotate(-45deg);
 }
-input:checked ~ .hamburger span:nth-child(2) {
+
+input:checked~.hamburger span:nth-child(2) {
   opacity: 0;
 }
-input:checked ~ .hamburger span:nth-child(3) {
+
+input:checked~.hamburger span:nth-child(3) {
   transform: translateY(-12px) rotate(45deg);
 }
 
@@ -437,6 +445,55 @@ input:checked ~ .hamburger span:nth-child(3) {
   color: var(--color-danger);
 }
 
+/* ================================================== */
+/* #5.5 Thank You =================================== */
+/* ================================================== */
+
+.thank-you {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Sticky note animation. Amended from : */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
+@keyframes fadeInSpin {
+  from {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+.thank-you .sticky-note {
+  background-image: radial-gradient(circle,
+      var(--color-yellow-300),
+      var(--color-yellow-400),
+      var(--color-cabaret-500));
+  padding: 20px;
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.2),
+    0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 0.5px solid rgba(255, 165, 0, 0.5);
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  font-family: inherit;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  animation: fadeInSpin 2s ease-in-out forwards;
+}
+
 
 /* ======================================================================== */
 /* ======================================================================== */
@@ -456,19 +513,19 @@ input:checked ~ .hamburger span:nth-child(3) {
   h2 {
     font-size: var(--text-size-h2);
   }
-  
+
   h3 {
     font-size: var(--text-size-h3);
   }
-  
+
   h4 {
     font-size: var(--text-size-h4);
   }
-  
+
   h5 {
     font-size: var(--text-size-h5);
   }
-  
+
   h6 {
     font-size: var(--text-size-h6);
   }

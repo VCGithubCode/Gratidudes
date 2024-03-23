@@ -19,6 +19,10 @@ let errorMessage = document.getElementById("error-message");
 let cards = document.getElementsByClassName("post-it-note");
 let deleteButtonArray = document.getElementsByClassName("delete-button");
 
+
+
+
+
 // Function to filter prohibited words 
 function containsBadWords(userinput) {
     let lowerCaseInput = userinput.toLowerCase();
@@ -74,11 +78,15 @@ function retrieveAndDisplayPosts() {
     posts.forEach(generatePost); // Display each post on the wall
 }
 
-// Function that displays the form
-function handleAddButton() {
-    let addButton = document.getElementById("add-message");
-    let form = document.getElementById("form");
-    addButton.addEventListener("click", function () {
+/**
+ * Function to add a post tile to the wall
+ */
+function addPostTile() {
+    const postTile = document.createElement("div");
+    postTile.classList.add("post-add");
+    postTile.innerText = "Add a new Card";
+    wall.appendChild(postTile);
+    postTile.addEventListener("click", function () {
         form.style.display = "block";
     });
 }
@@ -151,7 +159,6 @@ function hideDeleteButton() {
 
 function deletePost() {
     let deleteButtonArray = document.getElementsByClassName("delete-button");
-
     for (let btn of deleteButtonArray) {
         btn.addEventListener("click", (event) => {
             deleteLastEntry();
@@ -178,7 +185,7 @@ function deleteLastEntry() {
 // Initialize functions on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", (event) => {
     retrieveAndDisplayPosts();
-    handleAddButton();
     initializeAddUserMessage();
+    addPostTile()
     setInterval(hideDeleteButton(), 5000);
 });

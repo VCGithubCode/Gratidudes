@@ -578,3 +578,24 @@ input:checked~.hamburger span:nth-child(3) {
     width: 100%;
   }
 }
+
+
+  /* ================================================== */
+  /* #  Add Post ===================================== */
+  /* ================================================== */
+
+
+  .wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .post-add {
+    background: var(--color-voodoo-300);
+    border: dashed 3px var(--color-voodoo-500);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

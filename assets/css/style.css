@@ -452,7 +452,6 @@ input:checked~.hamburger span:nth-child(3) {
   display: flex;
   flex-direction: column;
   padding: 16px;
-  /* background-color: red; */
   max-width: 740px;
 }
 
@@ -617,20 +616,28 @@ input:checked~.hamburger span:nth-child(3) {
 /* ================================================== */
 
 .wall {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr;
   gap: 16px;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
-.card {
-  width: 100%;
+.post-card {
   padding: 16px;
+}
+
+.post-message {
+  font-size: 22px;
+  padding: 16px 0;
 }
 
 .post-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 }
 
 .like-button {
@@ -756,8 +763,8 @@ input:checked~.hamburger span:nth-child(3) {
   /* #  Add Post ===================================== */
   /* ================================================== */
 
-  .card {
-    width: 31%;
+  .wall {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 

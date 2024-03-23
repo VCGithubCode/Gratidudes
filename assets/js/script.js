@@ -35,19 +35,35 @@ function containsBadWords(userinput) {
 // Function to generate a post on the wall
 function generatePost(post) {
     hideDeleteButton();
-    let postItNote = document.createElement("div");
+    
+    const postItNote = document.createElement("div");
+    const postOptions = document.createElement("div")
     const deleteButton = document.createElement("button");
     const likeButton = document.createElement("button");
-    likeButton.innerText = "❤️";
+
+    postItNote.classList.add("post-it-note", "card");
+    postItNote.innerHTML = `
+        <div class="pin-too"><span>To:</span> ${post.name}</div>
+        <div class="pin-from"><span>From:</span> ${post.sender}</div>
+        <div class="pin-message">"${post.message}"</div>
+    `; 
+
     likeButton.classList.add("like-button");
+    likeButton.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path d="M31.11,11.85c0,8.35-13.85,18.15-15.11,18.15S.89,20.2.89,11.85,10.96-.75,16,6.81c5.04-7.56,15.11-3.31,15.11,5.04Z"/>
+        </svg>
+    `;
+
     deleteButton.classList.add("delete-button");
-    deleteButton.innerText = "x";
-    likeButton.style.display = "inline-block"
-    deleteButton.style.display = "inline-block";
-    postItNote.classList.add("post-it-note");
-    postItNote.innerText = `To: ${post.name} message: ${post.message} From: ${post.sender}`;
-    postItNote.appendChild(deleteButton);
-    postItNote.appendChild(likeButton);
+    deleteButton.innerText = "delete";
+    
+    postItNote.appendChild(postOptions);
+
+    postOptions.classList.add("post-options");
+    postOptions.appendChild(likeButton);
+    postOptions.appendChild(deleteButton);
+
     wall.append(postItNote);
     deletePost();
 }
@@ -79,7 +95,7 @@ function retrieveAndDisplayPosts() {
  */
 function addPostTile() {
     const postTile = document.createElement("div");
-    postTile.classList.add("post-add");
+    postTile.classList.add("post-add", "card");
     postTile.innerText = "Add a new Card";
     wall.appendChild(postTile);
     postTile.addEventListener("click", function () {

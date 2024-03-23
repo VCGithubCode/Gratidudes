@@ -429,12 +429,7 @@ input:checked~.hamburger span:nth-child(3) {
   margin: 0;
 }
 
-.post-it-note {
-  background-color: yellow;
-  height: 100px;
-  width: 100px;
 
-}
 
 #form {
   display: none;
@@ -581,109 +576,158 @@ input:checked~.hamburger span:nth-child(3) {
   background-color: #555;
   /* Keep above shadow */
   z-index: 2;
+}
 
 
-  /* ======================================================================== */
-  /* ======================================================================== */
-  /* #10.0 Media min 768px ================================================== */
-  /* ======================================================================== */
-  /* ======================================================================== */
+/* ================================================== */
+/* #  Add Post ===================================== */
+/* ================================================== */
 
-  @media all and (min-width: 768px) {
-    /* ================================================== */
-    /* #11.1 Typography ================================= */
-    /* ================================================== */
+.wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
 
-    h1 {
-      font-size: var(--text-size-h1);
-    }
+.card {
+  width: 100%;
+  padding: 16px;
+}
 
-    h2 {
-      font-size: var(--text-size-h2);
-    }
+.post-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    h3 {
-      font-size: var(--text-size-h3);
-    }
+.like-button {
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0.2;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
 
-    h4 {
-      font-size: var(--text-size-h4);
-    }
+.like-button:hover {
+  opacity: 0.4;
+}
 
-    h5 {
-      font-size: var(--text-size-h5);
-    }
+.like-button svg {
+  fill: white;
+}
 
-    h6 {
-      font-size: var(--text-size-h6);
-    }
+.post-it-note {
+  background: var(--color-orange-400);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
 
-    /* ================================================== */
-    /* #13.0 Header ===================================== */
-    /* ================================================== */
+.post-add {
+  border: dashed 3px var(--color-voodoo-500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .header-content {
-      align-items: center;
-    }
 
-    .hamburger {
-      display: none;
-    }
+/* ======================================================================== */
+/* ======================================================================== */
+/* #10.0 Media min 768px ================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
 
-    .navigation {
-      display: flex;
-      justify-content: flex-end;
-      width: 50%;
-      height: 100%;
-      opacity: 1;
-    }
+@media all and (min-width: 768px) {
+  /* ================================================== */
+  /* #11.1 Typography ================================= */
+  /* ================================================== */
 
-    .menu {
-      display: flex;
-      padding: 0;
-    }
+  h1 {
+    font-size: var(--text-size-h1);
+  }
 
-    .menu li a {
-      padding: 4px 8px;
-      font-size: 16px;
-      text-decoration: none;
-    }
+  h2 {
+    font-size: var(--text-size-h2);
+  }
 
-    /* Link hover animation */
+  h3 {
+    font-size: var(--text-size-h3);
+  }
 
-    .menu li a::after {
-      bottom: 6px;
-      height: 12px;
-    }
+  h4 {
+    font-size: var(--text-size-h4);
+  }
 
-    .menu li a.active::after {
-      border-radius: 100%;
-      width: 12px;
-    }
+  h5 {
+    font-size: var(--text-size-h5);
+  }
+
+  h6 {
+    font-size: var(--text-size-h6);
+  }
+
+  /* ================================================== */
+  /* #13.0 Header ===================================== */
+  /* ================================================== */
+
+  .header-content {
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .menu {
+    display: flex;
+    padding: 0;
+  }
+
+  .menu li a {
+    padding: 4px 8px;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  /* Link hover animation */
+
+  .menu li a::after {
+    bottom: 6px;
+    height: 12px;
+  }
+
+  .menu li a.active::after {
+    border-radius: 100%;
+    width: 12px;
+  }
 
   .menu li a.active:hover::after {
     border-radius: 0;
     width: 100%;
   }
-}
-
 
   /* ================================================== */
   /* #  Add Post ===================================== */
   /* ================================================== */
 
+  .card {
+    width: 31%;
+  }
+}
 
-  .wall {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .post-add {
-    background: var(--color-voodoo-300);
-    border: dashed 3px var(--color-voodoo-500);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
+
+  

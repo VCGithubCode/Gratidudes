@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,43 +72,49 @@
   </header>
 
   <main class="page">
-
     <section>
       <h1>Contact</h1>
     </section>
 
-    <h1>Contact us</h1><br>
-        <div id="contactus">
-            <form action="response.html" method="GET" target="_blank">
-            <label for="name" class="contactlabel">Your name</label>
-            <input type="text" name="name" class="contactbox" id="name" required>
-            <br>
-    
-            <label for="email" class="contactlabel">Your email</label>
-            <input type="email"  name="emailaddress" class="contactbox" id="email" required>
-            <br>
-    
-            <label for="contactbox-query" class="contactlabel">Your query</label>
-            <textarea rows="10" name="query" class="contactbox" id="contactbox-query" required></textarea>
-            <br>
-    
-            <button type="submit" id="contactbox-submit" onclick="sendThanks()" aria-label="Clicking submit will open the thank you page">Submit</button>
-                </form>
-        </div>
+    <h1>Contact us</h1>
+    <div id="contactus">
+      <form id="contactForm" action="response.html" method="GET" target="_blank">
+        <label for="name" class="contactlabel">Your name</label>
+        <input type="text" name="name" class="contactbox" id="name" required><br>
 
+        <label for="email" class="contactlabel">Your email</label>
+        <input type="email" name="emailaddress" class="contactbox" id="email" required><br>
 
+        <label for="contactbox-query" class="contactlabel">Your query</label>
+        <textarea rows="10" name="query" class="contactbox" id="contactbox-query" required></textarea><br>
 
-</main>
+        <button type="submit" id="contactbox-submit" aria-label="Clicking submit will open the thank you page">Submit</button>
+      </form>
+    </div>
+  </main>
 <!-- This code was inspired by GeeksforGeeks https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/-->
-    <button onclick="sendThanks()">Click me</button> 
-  
-      <footer class="footer">Footer</footer> 
+
+<footer class="footer">Footer</footer> 
     <!--script to redirect to another thank-you.html-->
     <script> 
-        function sendThanks() { 
-            window.location.href = "thank-you.html"; 
-        } 
-    </script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        if (!contactForm.checkValidity()) {
+          // If the form is invalid, do not proceed with submission
+          console.log("Form is invalid");
+          return;
+        }
+
+        // If the form is valid, proceed with form submission
+        // For demonstration purposes, we're redirecting to a thank-you page
+        window.location.href = "thank-you.html";
+      });
+    });
+  </script>
     
   <script src="./assets/js/script.js"></script>
 </body>

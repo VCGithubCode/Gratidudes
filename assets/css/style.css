@@ -773,6 +773,17 @@ input:checked~.hamburger span:nth-child(3) {
 /* Media Queries for Thank You Page ======================================= */
 /* ======================================================================== */
 
+/* Sticky note style*/
+.thank-you .sticky-note {
+  /* Set element's width to 100% of its parent */
+  width: 100%;
+  /* Element does not exceed 300px. */
+  max-width: 500px;
+  /* That element keeps a quadratic box shape */
+  aspect-ratio: 1 / 1;
+  margin: auto;
+}
+
 .thank-you .pin {
   width: 24px;
   height: 24px;

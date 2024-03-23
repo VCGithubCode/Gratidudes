@@ -35,7 +35,7 @@ function containsBadWords(userinput) {
 // Function to generate a post on the wall
 function generatePost(post) {
     hideDeleteButton();
-    
+
     const postItem = document.createElement("div");
     const postOptions = document.createElement("div")
     const deleteButton = document.createElement("button");
@@ -47,7 +47,7 @@ function generatePost(post) {
         <div class="post-too"><span>To:</span> ${post.name}</div>
         <div class="post-from"><span>From:</span> ${post.sender}</div>
         <div class="post-message">"${post.message}"</div>
-    `; 
+    `;
 
     likeButton.classList.add("like-button");
     likeIcon.innerHTML = `
@@ -59,12 +59,12 @@ function generatePost(post) {
 
     deleteButton.classList.add("delete-button");
     deleteButton.innerText = "delete";
-    
+
     postItem.appendChild(postOptions);
 
     postOptions.classList.add("post-options");
     postOptions.appendChild(likeButton);
-    postOptions.appendChild(deleteButton);
+    postItem.appendChild(deleteButton);
 
     wall.prepend(postItem);
 
@@ -81,19 +81,7 @@ function generatePost(post) {
             likeButton.innerHTML = "Liked❤️";
         }
     });
-
-    // Add click event listener to the delete button
-    deleteButton.addEventListener("click", function () {
-        // Remove the corresponding post from local storage
-        let posts = JSON.parse(localStorage.getItem('posts')) || [];
-        let index = posts.findIndex(p => p.name === post.name && p.message === post.message && p.sender === post.sender);
-        if (index !== -1) {
-            posts.splice(index, 1);
-            localStorage.setItem('posts', JSON.stringify(posts));
-        }
-        postItNote.remove(); 
-        // Remove the entire post element
-    });
+    deletePost();
 }
 
 
@@ -161,7 +149,7 @@ function initializeAddUserMessage() {
         let userName = document.getElementById("name-input").value.trim();
         let userMessage = document.getElementById("message-input").value.trim();
         let userSender = document.getElementById("sender-input").value.trim();
-        
+
         // Verify that the input fields are not empty
         if (!(containsBadWords(userMessage)) && validateUserMessage()) {
             let newPost = {
@@ -226,6 +214,7 @@ function deleteLastEntry() {
 
 const closeFormButton = document.getElementById("close-form");
 closeFormButton.addEventListener("click", closeForm);
+
 function closeForm() {
     document.getElementById("form").style.display = "none";
 }
@@ -244,15 +233,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     $(".post-it-note").css("display", "none");
     $(".post-it-note").slice(0, 9).show();
     if ($(".post-it-note:hidden").length != 0) {
-    $("#load-more-btn").show();
-    }   
-    $("#load-more-btn").on('click', function (e) {
-    e.preventDefault();
-    const currentPage = $(".post-it-note:visible").length / 9;
-    $(".post-it-note").slice(currentPage * 9, (currentPage + 1) * 9).slideDown();
-    if ($(".post-it-note:hidden").length == 0) {
-    $("#load-more-btn").fadeOut('slow');
+        $("#load-more-btn").show();
     }
+    $("#load-more-btn").on('click', function (e) {
+        e.preventDefault();
+        const currentPage = $(".post-it-note:visible").length / 9;
+        $(".post-it-note").slice(currentPage * 9, (currentPage + 1) * 9).slideDown();
+        if ($(".post-it-note:hidden").length == 0) {
+            $("#load-more-btn").fadeOut('slow');
+        }
     });
 
 });

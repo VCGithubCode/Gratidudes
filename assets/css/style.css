@@ -447,6 +447,7 @@ input:checked~.hamburger span:nth-child(3) {
   height: 100vh;
   z-index: 99999;
 }
+
 .form-content {
   display: flex;
   flex-direction: column;
@@ -457,7 +458,8 @@ input:checked~.hamburger span:nth-child(3) {
 
 .field {
   display: flex;
-  flex-direction: column;}
+  flex-direction: column;
+}
 
 #error-message {
   font-size: 1rem;
@@ -479,7 +481,7 @@ input:checked~.hamburger span:nth-child(3) {
   position: relative;
 }
 
-/* Sticky note animation. Amended from : */
+/* Sticky note animation. Amended from, */
 /* CSS animations: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations */
 /* The @keyframes Rule and properties: https://www.w3schools.com/css/css3_animations.asp */
 /* @keyframes examples: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
@@ -495,40 +497,58 @@ input:checked~.hamburger span:nth-child(3) {
   }
 }
 
+/* Pin appears after sticky note stopped spinning */
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+/* Sticky note style*/
 .thank-you .sticky-note {
   background-image: radial-gradient(circle,
       var(--color-yellow-300),
       var(--color-yellow-400),
       var(--color-cabaret-500));
   padding: 20px;
+  /* Apply two levels of shadow to give a 3D effect */
   box-shadow:
     0 10px 15px rgba(0, 0, 0, 0.2),
     0 4px 6px rgba(0, 0, 0, 0.2);
   border: 0.5px solid rgba(255, 165, 0, 0.5);
+  /* Set element's width to 100% of its parent */
   width: 100%;
-  max-width: 300px;
+  /* Element does not exceed 300px. */
+  max-width: 270px;
+  /* That element keeps a quadratic box shape */
   aspect-ratio: 1 / 1;
   margin: auto;
-  font-family: inherit;
   border-radius: 5px;
+  /* Centers child elements using flex. */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
   position: relative;
+  /* Apply animation */
   animation: fadeInSpin 2s ease-in-out forwards;
-  transform: rotate(2deg);
+  /* Stack order of the element */
   z-index: 0;
 }
 
 /* Pin head & shadow */
-/* Inner shadow was modified using guidance from: https://devdevout.com/css/css-inner-shadow */
 .thank-you .pin {
-  /* Pin head size*/
+  /* Pin head size (width+height)*/
   width: 20px;
   height: 20px;
-  background-color: red;
+  background-color: var(--color-voodoo-400);
   border-radius: 50%;
   /* Pin relative to sticky note */
   position: absolute;
@@ -537,32 +557,41 @@ input:checked~.hamburger span:nth-child(3) {
   /* Positions the center of the pin head */
   left: 50%;
   transform: translateX(-50%);
+  /* Inner shadow was modified using guidance from: https://devdevout.com/css/css-inner-shadow */
   box-shadow:
     inset 0 0 0 1px hsla(0, 0%, 0%, .1),
     inset 3px 3px 3px hsla(0, 0%, 100%, .2),
     inset -3px -3px 3px hsla(0, 0%, 0%, .2),
-    30px 5px 6px hsla(0, 0%, 0%, .3);
+    33px 18px 6px hsla(0, 0%, 0%, .3);
   z-index: 1;
+  /* Initially hides pin; fades in post-sticky-note spin */
+  visibility: hidden;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 2.1s;
 }
 
 /* Needle body shadow with angle */
 .thank-you .pin::before {
-  /* to display pseude element */
+  /* to display pseudo element */
   content: '';
   position: absolute;
   /* horizontal position */
-  left: 6px;
+  left: 9px;
   /* vertical position */
-  top: 25px;
+  top: 40px;
   width: 30px;
   height: 1px;
   /* Makes the pseudo-element itself invisible, showing only the shadow */
   background: transparent;
-  box-shadow: 2px 5px 3px hsla(0, 0%, 0%, .2);
+  box-shadow: -4px 6px 2px hsla(0, 0%, 0%, .2);
   /* Angle of the shadow */
   transform: rotate(-35deg);
   /* Below the needle body */
   z-index: 1;
+  /* Initially hides shadow; fades in post-sticky-note spin */
+  visibility: hidden;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 2.1s;
 }
 
 /* Needle */
@@ -570,12 +599,16 @@ input:checked~.hamburger span:nth-child(3) {
   content: '';
   position: absolute;
   left: 9px;
-  top: 20px;
+  top: 23px;
   width: 2px;
   height: 20px;
   background-color: #555;
   /* Keep above shadow */
   z-index: 2;
+  /* Initially hides needle; fades in post-sticky-note spin */
+  visibility: hidden;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 2.1s;
 }
 
 
@@ -730,4 +763,67 @@ input:checked~.hamburger span:nth-child(3) {
 
 
 
-  
+
+
+#load-more-btn {
+  display: none;
+}
+
+/* ======================================================================== */
+/* Media Queries for Thank You Page ======================================= */
+/* ======================================================================== */
+
+.thank-you .pin {
+  width: 24px;
+  height: 24px;
+  top: -45px;
+}
+
+.thank-you .pin::after {
+  left: 11px;
+  height: 35px;
+}
+
+
+.card {
+  width: 90%; 
+}
+
+.card .card-img-top {
+  width: 100%; 
+  height: auto; Maintain aspect ratio
+}
+
+.card-body {
+  padding: 1.25rem; 
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem; 
+}
+
+.card-text {
+  font-size: 1rem; 
+  margin-top: 10px; 
+}
+
+.card .card-img-top {
+  width: 80%; 
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 50%; 
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .card-img-top {
+
+  margin: 0 auto; 
+}
+

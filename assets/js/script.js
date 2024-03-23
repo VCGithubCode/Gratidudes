@@ -64,9 +64,25 @@ function generatePost(post) {
     postOptions.appendChild(likeButton);
     postOptions.appendChild(deleteButton);
 
-    wall.append(postItNote);
+    wall.prepend(postItNote);
+
+    // Add click event listener to the like button
+    likeButton.addEventListener("click", function () {
+        // Toggle between SVG heart and "Liked❤️" text
+        if (likeButton.innerHTML.includes("Liked")) {
+            likeButton.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path d="M31.11,11.85c0,8.35-13.85,18.15-15.11,18.15S.89,20.2.89,11.85,10.96-.75,16,6.81c5.04-7.56,15.11-3.31,15.11,5.04Z"/>
+                </svg>
+            `;
+        } else {
+            likeButton.innerHTML = "Liked❤️";
+        }
+    });
+
     deletePost();
 }
+
 
 // Function to add recently added message to the wall
 function addRecentMessage(recentPost) {
@@ -78,7 +94,7 @@ function addToLocalStorage(post) {
     // Retrieve posts from localStorage, parse it, or default to an empty array if undefined
     let posts = JSON.parse(localStorage.getItem("posts")) || [];
     // Add the new post to the array
-    posts.push(post);
+    posts.unshift(post);
     // Save the updated array back to local storage
     localStorage.setItem("posts", JSON.stringify(posts));
 }
@@ -201,6 +217,19 @@ function closeForm() {
     document.getElementById("form").style.display = "none";
 }
 
+function isWallFull() {
+    return cards.length %9 === 1 && cards.length > 1;
+}
+
+// Load More button 
+function handleLoadMoreButton() {
+    const loadMoreBtn = document.getElementById("load-more-btn")
+    if(isWallFull()) {
+       loadMoreBtn.style.display = "block";
+    } else {
+        loadMoreBtn.style.display = "none";
+    }
+}
 
 // Initialize functions on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -208,4 +237,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initializeAddUserMessage();
     addPostTile()
     setInterval(hideDeleteButton(), 5000);
+    setInterval(handleLoadMoreButton, 500);
+    console.log(isWallFull());
+
 });

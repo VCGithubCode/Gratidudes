@@ -803,7 +803,7 @@ input:checked~.hamburger span:nth-child(3) {
 
 .card .card-img-top {
   width: 100%; 
-  height: auto; Maintain aspect ratio
+  height: auto; /* Maintain aspect ratio */
 }
 
 .card-body {

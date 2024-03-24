@@ -99,19 +99,6 @@ function retrieveAndDisplayPosts() {
     posts.forEach(generatePost); // Display each post on the wall
 }
 
-/**
- * Function to add a post tile to the wall
- */
-function addPostTile() {
-    const postTile = document.createElement("div");
-    postTile.classList.add("post-add", "card");
-    postTile.innerText = "Add a new Card";
-    wall.appendChild(postTile);
-    postTile.addEventListener("click", function () {
-        form.style.display = "block";
-    });
-}
-
 // Function to make ensure user fills input, Future feature: make sure we check alphanumeric responses.
 function validateUserMessage() {
     let userName = document.getElementById("name-input").value.trim();
@@ -152,7 +139,6 @@ function initializeAddUserMessage() {
             addRecentMessage(newPost); // Add the recent message to the wall
             addToLocalStorage(newPost); // Save the new post to local storage
             console.log("message added successfully");
-            document.getElementById("form").style.display = "none"; // Optionally hide form
             document.getElementById("name-input").value = ''; // Clear input
             document.getElementById("message-input").value = ''; // Clear input
             document.getElementById("sender-input").value = ''; // Clear input
@@ -197,8 +183,8 @@ function deleteLastEntry() {
     }
 }
 
-const closeFormButton = document.getElementById("close-form");
-closeFormButton.addEventListener("click", closeForm);
+// const closeFormButton = document.getElementById("close-form");
+// closeFormButton.addEventListener("click", closeForm);
 
 function closeForm() {
     document.getElementById("form").style.display = "none";
@@ -226,7 +212,6 @@ function handleLoadMoreButton() {
 document.addEventListener("DOMContentLoaded", (event) => {
     retrieveAndDisplayPosts();
     initializeAddUserMessage();
-    addPostTile()
     setInterval(hideDeleteButton(), 5000);
     handleLoadMoreButton();
 });

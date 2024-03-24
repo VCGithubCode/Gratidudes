@@ -429,12 +429,6 @@ input:checked~.hamburger span:nth-child(3) {
   margin: 0;
 }
 
-
-
-#form {
-  display: none;
-}
-
 .form {
   position: fixed;
   display: flex;

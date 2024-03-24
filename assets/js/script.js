@@ -64,12 +64,12 @@ function generatePost(post) {
     
     // Create delete button
     const deleteButton = document.createElement("button");
-    deleteButton.classList.add("delete-button");
+    deleteButton.classList.add("delete-button", "btn", "btn-outline-light");
     deleteButton.innerText = "delete";
     
     // Build the post and append it to the wall
     postOptions.appendChild(likeButton);
-    postItem.appendChild(deleteButton);
+    postOptions.appendChild(deleteButton);
     postItem.appendChild(postOptions);
     wall.prepend(postItem);
 

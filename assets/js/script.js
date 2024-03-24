@@ -219,16 +219,9 @@ function closeForm() {
     document.getElementById("form").style.display = "none";
 }
 
-
-
-// Initialize functions on DOMContentLoaded
-document.addEventListener("DOMContentLoaded", (event) => {
-    retrieveAndDisplayPosts();
-    initializeAddUserMessage();
-    addPostTile()
-    setInterval(hideDeleteButton(), 5000);
-    // https://www.solodev.com/blog/web-design/adding-a-load-more-button-to-your-content.stml
-    // Adding load more button
+// https://www.solodev.com/blog/web-design/adding-a-load-more-button-to-your-content.stml JQuery
+// Adding load more button 
+function handleLoadMoreButton() {
     $(".post-it-note").css("display", "none");
     $(".post-it-note").slice(0, 9).show();
     if ($(".post-it-note:hidden").length != 0) {
@@ -243,4 +236,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 
+}
+
+// Initialize functions on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", (event) => {
+    retrieveAndDisplayPosts();
+    initializeAddUserMessage();
+    addPostTile()
+    setInterval(hideDeleteButton(), 5000);
+   handleLoadMoreButton();
 });

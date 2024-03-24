@@ -855,6 +855,7 @@ input:checked~.hamburger span:nth-child(3) {
 .card-body {
   padding: 1.25rem; 
   text-align: center;
+  
 }
 
 .card-title {
@@ -878,10 +879,10 @@ input:checked~.hamburger span:nth-child(3) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .card .card-img-top {
-
   margin: 10px auto; 
 }
 
@@ -909,3 +910,20 @@ input:checked~.hamburger span:nth-child(3) {
 .card:hover .card-img-overlay {
   opacity: 1; /* Show overlay on hover */
 }
+
+.about-us-section {
+  background-color: #D74C77;
+  color: white;
+  padding: 5px; 
+  border-radius: 10px;
+}
+
+.page > .about-us-section > .container > .row > h1 {
+  font-weight: bolder;
+  color: #1F7AF1;
+}
+
+.members > h1 {
+  font-weight: bolder;
+}
+

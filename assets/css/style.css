@@ -2,28 +2,36 @@
  *
  * Index
  *
- * 0.0 - Variables
- * 1.0 - General
+ * 0.0  - Variables
+ * 1.0  - General
  *  1.1 - Typography
  *  1.2 - Backgrounds
  *  1.4 - Forms
- * 2.0 - Layout
- * 3.0 - Header
- * 4.0 - Footer
- * 5.0 - Pages
+ * 2.0  - Layout
+ * 3.0  - Header
+ * 4.0  - Footer
+ * 5.0  - Pages
  *  5.1 - Home
  *  5.2 - About
  *  5.3 - Contact
  *  5.4 - Error (404)
  *  5.5 - Thank You
- * 6.0 - Components
+ * 6.0  - Components
  *  6.1 - Buttons
+ *  6.2 - Divider
+ *  6.3 - Key Frames
  
- * 10.0 - Media min 768px
+ * 10.0  - Media min 768px
  *  11.0 - General
  *  12.0 - Layout
- *  16.0 - Components
- *    16.1 - Buttons=
+ * 15.0  - Pages
+ *  15.1 - Home
+ *  15.2 - About
+ *  15.3 - Contact
+ *  15.4 - Error (404)
+ *  15.5 - Thank You
+ * 16.0  - Components
+ *  16.1 - Buttons
  */
 
 /* ================================================== */
@@ -106,24 +114,6 @@
 }
 
 :root {
-  --text-size-sm: 14px;
-  --text-size-md: 16px;
-  --text-size-lg: 20px;
-
-  --text-size-h1: 61px;
-  --text-size-h2: 48px;
-  --text-size-h3: 39px;
-  --text-size-h4: 31px;
-  --text-size-h5: 25px;
-  --text-size-h6: 20px;
-
-  --text-size-h1-sm: 28px;
-  --text-size-h2-sm: 25px;
-  --text-size-h3-sm: 22px;
-  --text-size-h4-sm: 20px;
-  --text-size-h5-sm: 18px;
-  --text-size-h6-sm: 16px;
-
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -135,25 +125,10 @@
 /* #1.0 - General =================================== */
 /* ================================================== */
 
-html {
-  background-color: var(--color-neutral-50);
-  box-sizing: border-box;
-  color: var(--color-text-700);
-  line-height: 1.15;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
 body {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  min-height: 100vh;
   font: 300 16px/1.6 Poppins, Arial, Helvetica, sans-serif;
 }
 
@@ -162,90 +137,19 @@ img {
   height: auto;
 }
 
-
 /* ================================================== */
 /* #1.1 Typography ================================== */
 /* ================================================== */
 
-h1,
-.h1 {
+body h1, 
+body h2, 
+body h3, 
+body h4, 
+body h5, 
+body h6 {
   color: var(--color-headings);
-  font-size: var(--text-size-h1-sm);
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
-  line-height: 1.2;
-}
-
-h2,
-.h2 {
-  color: var(--color-headings);
-  font-size: var(--text-size-h2-sm);
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-h3,
-.h3 {
-  color: var(--color-headings);
-  font-size: var(--text-size-h3-sm);
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-h4,
-.h4 {
-  color: var(--color-headings);
-  font-size: var(--text-size-h4-sm);
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-h5,
-.h5 {
-  color: var(--color-headings);
-  font-size: var(--text-size-h5-sm);
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-h6,
-.h6 {
-  color: var(--color-headings);
-  font-size: var(--text-size-h6-sm);
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6,
-p,
-ul {
-  margin: 16px 0;
-}
-
-h1:first-child,
-.h1:first-child,
-h2:first-child,
-.h2:first-child,
-h3:first-child,
-.h3:first-child,
-h4:first-child,
-.h4:first-child,
-h5:first-child,
-.h5:first-child,
-h6:first-child,
-.h6:first-child,
-p:first-child {
-  margin-top: 0;
 }
 
 /* ================================================== */
@@ -276,7 +180,6 @@ main {
 .footer__content {
   padding: 32px 24px;
 }
-
 
 /* ================================================== */
 /* #3.0 Header ====================================== */
@@ -309,6 +212,8 @@ main {
   padding: 24px 0;
   width: 116px;
 }
+
+/* Navigation */
 
 .navigation {
   width: 100%;
@@ -412,11 +317,13 @@ input:checked~.hamburger span:nth-child(3) {
   transition: width 0.3s ease-in-out, border-radius 0.1s ease-in-out;
 }
 
-/* ================================================== */
-
-.main {
-  /* background-color:rgb(223, 151, 42) */
+main {  
+  margin-bottom: auto; 
 }
+
+/* ================================================== */
+/* #4.0 Header ====================================== */
+/* ================================================== */
 
 .footer {
   padding: var(--spacing-sm) 0;
@@ -435,10 +342,74 @@ input:checked~.hamburger span:nth-child(3) {
   border-radius: 12px;
 }
 
+/* ================================================== */
+/* #5.1 Home Page =================================== */
+/* ================================================== */
+
+/* Home Hero ======================================== */
+
+.home-hero {
+  background-color: var(--color-voodoo-200);
+}
+
+/* Add Post ========================================== */
+
+.wall {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.post-card {
+  padding: 16px;
+}
+
+.post-message {
+  font-size: 22px;
+  padding: 16px 0;
+}
+
+.post-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.post-it-note {
+  /* background: var(--color-orange-400); */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.post-add {
+  border: dashed 3px var(--color-voodoo-500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #error-message {
   font-size: 1rem;
   color: var(--color-danger);
 }
+
+/* ================================================== */
+/* #5.2 About Page ================================== */
+/* ================================================== */
+
+/* ================================================== */
+/* #5.3 Contact Page ================================ */
+/* ================================================== */
+
+/* ================================================== */
+/* #5.4 Error Page ================================== */
+/* ================================================== */
 
 /* ================================================== */
 /* #5.5 Thank You =================================== */
@@ -453,35 +424,6 @@ input:checked~.hamburger span:nth-child(3) {
 
 .thank-you .container {
   position: relative;
-}
-
-/* Sticky note animation. Amended from, */
-/* CSS animations: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations */
-/* The @keyframes Rule and properties: https://www.w3schools.com/css/css3_animations.asp */
-/* @keyframes examples: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
-@keyframes fadeInSpin {
-  from {
-    opacity: 0;
-    transform: rotate(-360deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-}
-
-/* Pin appears after sticky note stopped spinning */
-@keyframes fadeIn {
-  0% {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  100% {
-    visibility: visible;
-    opacity: 1;
-  }
 }
 
 /* Sticky note style*/
@@ -585,35 +527,12 @@ input:checked~.hamburger span:nth-child(3) {
   animation-delay: 2.1s;
 }
 
-
 /* ================================================== */
-/* #  Add Post ===================================== */
+/* #6.1 Buttons ===================================== */
 /* ================================================== */
 
-.wall {
-  display: grid;
-  grid-auto-rows: 1fr;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
-}
 
-.post-card {
-  padding: 16px;
-}
-
-.post-message {
-  font-size: 22px;
-  padding: 16px 0;
-}
-
-.post-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-}
+/* Like Button Styles */
 
 .like-button {
   width: 32px;
@@ -643,131 +562,7 @@ input:checked~.hamburger span:nth-child(3) {
   fill: white;
 }
 
-.post-it-note {
-  /* background: var(--color-orange-400); */
-  color: white;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-}
-
-.post-add {
-  border: dashed 3px var(--color-voodoo-500);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* ======================================================================== */
-/* ======================================================================== */
-/* #10.0 Media min 768px ================================================== */
-/* ======================================================================== */
-/* ======================================================================== */
-
-@media all and (min-width: 768px) {
-  /* ================================================== */
-  /* #11.1 Typography ================================= */
-  /* ================================================== */
-
-  h1 {
-    font-size: var(--text-size-h1);
-  }
-
-  h2 {
-    font-size: var(--text-size-h2);
-  }
-
-  h3 {
-    font-size: var(--text-size-h3);
-  }
-
-  h4 {
-    font-size: var(--text-size-h4);
-  }
-
-  h5 {
-    font-size: var(--text-size-h5);
-  }
-
-  h6 {
-    font-size: var(--text-size-h6);
-  }
-
-  /* ================================================== */
-  /* #13.0 Header ===================================== */
-  /* ================================================== */
-
-  .header-content {
-    align-items: center;
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-  .navigation {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    height: 100%;
-    opacity: 1;
-  }
-
-  .menu {
-    display: flex;
-    padding: 0;
-  }
-
-  .menu li a {
-    padding: 4px 8px;
-    font-size: 16px;
-    text-decoration: none;
-  }
-
-  /* Link hover animation */
-
-  .menu li a::after {
-    bottom: 6px;
-    height: 12px;
-  }
-
-  .menu li a.active::after {
-    border-radius: 100%;
-    width: 12px;
-  }
-
-  .menu li a.active:hover::after {
-    border-radius: 0;
-    width: 100%;
-  }
-
-
-  /* Home Hero */
-
-  .home-hero {
-    background-color: var(--color-voodoo-200);
-  }
-
-
-/* Divider */
-
-.divider {
-  line-height: 0;
-  background: var(--color-voodoo-200);
-  fill: white;
-}
-
-
-  /* ================================================== */
-  /* #  Add Post ===================================== */
-  /* ================================================== */
-
-  .wall {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
+/* Scroll Button */
 .scroll-arrows {
   display: flex;
   justify-content: center;
@@ -782,21 +577,6 @@ input:checked~.hamburger span:nth-child(3) {
 .arrows path {
 	animation: arrow-animation 3s infinite;
 	-webkit-animation: arrow-animation 3s infinite; 
-}
-
-@keyframes arrow-animation
-{
-0% {opacity:0}
-25% {opacity:1}
-50% {opacity:0}
-100% {opacity:0}
-}
-
-@-webkit-keyframes arrow-animation {
-0% {opacity:0}
-25% {opacity:1}
-50% {opacity:0}
-100% {opacity:0}
 }
 
 .arrows .arrow-1 {
@@ -819,6 +599,64 @@ input:checked~.hamburger span:nth-child(3) {
 
 #load-more-btn {
   display: none;
+}
+
+/* ================================================== */
+/* #6.2 Divider ===================================== */
+/* ================================================== */
+
+.divider {
+  line-height: 0;
+  background: var(--color-voodoo-200);
+  fill: white;
+}
+
+/* ================================================== */
+/* #6.4 Key Frames ================================== */
+/* ================================================== */
+
+/* Sticky note animation. Amended from, */
+/* CSS animations: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations */
+/* The @keyframes Rule and properties: https://www.w3schools.com/css/css3_animations.asp */
+/* @keyframes examples: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
+@keyframes fadeInSpin {
+  from {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+/* Pin appears after sticky note stopped spinning */
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes arrow-animation
+{
+  0% {opacity:0}
+  25% {opacity:1}
+  50% {opacity:0}
+  100% {opacity:0}
+}
+
+@-webkit-keyframes arrow-animation {
+  0% {opacity:0}
+  25% {opacity:1}
+  50% {opacity:0}
+  100% {opacity:0}
 }
 
 /* ======================================================================== */
@@ -846,7 +684,6 @@ input:checked~.hamburger span:nth-child(3) {
   left: 11px;
   height: 35px;
 }
-
 
 .card {
   width: 90%; 
@@ -926,5 +763,90 @@ input:checked~.hamburger span:nth-child(3) {
 
 .members > h1 {
   font-weight: bolder;
+}
+
+
+/* ======================================================================== */
+/* ======================================================================== */
+/* #10.0 Media min 768px ================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+
+@media all and (min-width: 768px) {
+  /* ================================================== */
+  /* #11.1 Typography ================================= */
+  /* ================================================== */
+
+  /* ================================================== */
+  /* #13.0 Header ===================================== */
+  /* ================================================== */
+
+  .header-content {
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .menu {
+    display: flex;
+    padding: 0;
+  }
+
+  .menu li a {
+    padding: 4px 8px;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  /* Link hover animation */
+
+  .menu li a::after {
+    bottom: 6px;
+    height: 12px;
+  }
+
+  .menu li a.active::after {
+    border-radius: 100%;
+    width: 12px;
+  }
+
+  .menu li a.active:hover::after {
+    border-radius: 0;
+    width: 100%;
+  }
+
+  /* ================================================== */
+  /* #15.1 Home Page ================================== */
+  /* ================================================== */
+
+  .wall {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* ================================================== */
+  /* #15.2 About Page ================================= */
+  /* ================================================== */
+
+  /* ================================================== */
+  /* #15.3 Contact Page =============================== */
+  /* ================================================== */
+  
+  /* ================================================== */
+  /* #15.4 Error Page ================================= */
+  /* ================================================== */
+  
+  /* ================================================== */
+  /* #15.5 Thank You Page ============================= */
+  /* ================================================== */
 }
 

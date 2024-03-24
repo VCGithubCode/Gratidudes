@@ -69,7 +69,7 @@ function generatePost(post) {
     
     // Build the post and append it to the wall
     postOptions.appendChild(likeButton);
-    postOptions.appendChild(deleteButton);
+    postItem.appendChild(deleteButton);
     postItem.appendChild(postOptions);
     wall.prepend(postItem);
 

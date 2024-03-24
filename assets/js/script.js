@@ -95,7 +95,7 @@ function addToLocalStorage(post) {
     // Retrieve posts from localStorage, parse it, or default to an empty array if undefined
     let posts = JSON.parse(localStorage.getItem("posts")) || [];
     // Add the new post to the array
-    posts.unshift(post);
+    posts.push(post);
     // Save the updated array back to local storage
     localStorage.setItem("posts", JSON.stringify(posts));
 }
@@ -218,7 +218,6 @@ closeFormButton.addEventListener("click", closeForm);
 function closeForm() {
     document.getElementById("form").style.display = "none";
 }
-
 
 
 

@@ -429,28 +429,10 @@ input:checked~.hamburger span:nth-child(3) {
 }
 
 .form {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 99999;
-}
-
-.form-content {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  max-width: 740px;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
+  background-color: var(--color-orange-400);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: 12px;
 }
 
 #error-message {
@@ -751,6 +733,23 @@ input:checked~.hamburger span:nth-child(3) {
     border-radius: 0;
     width: 100%;
   }
+
+
+  /* Home Hero */
+
+  .home-hero {
+    background-color: var(--color-voodoo-200);
+  }
+
+
+/* Divider */
+
+.divider {
+  line-height: 0;
+  background: var(--color-voodoo-200);
+  fill: white;
+}
+
 
   /* ================================================== */
   /* #  Add Post ===================================== */

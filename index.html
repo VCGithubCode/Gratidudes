@@ -77,50 +77,67 @@
   <main class="page">
 
     <!-- Home Hero -->
-    <section class="home-hero container">
-      <div class="row">
-        <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-content-center">
-          <h1>The Great Wall of Gratitude</h1>
-          <p>Welcome to our gratitude wall! Here, you can post messages of appreciation and positivity to inspire
-            others. Join us in spreading kindness and celebrating the little joys in life.</p>
+    <section class="home-hero">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-start">
+            <h1>The Great Wall of Gratitude</h1>
+            <p>Welcome to our gratitude wall! Here, you can post messages of appreciation and positivity to inspire
+              others. Join us in spreading kindness and celebrating the little joys in life.</p>
+            <a href="#form" class="btn btn-primary">Start adding your </a>
+          </div>
+          <div class="col-lg-6 col-12 d-flex justify-content-center align-content-center">
+            <dotlottie-player src="./assets/lottie/hero.lottie" background="transparent" speed="1"
+              style="width: 512px; height: 512px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+          </div>
         </div>
-        <div class="col-lg-6 col-12 d-flex justify-content-center align-content-center">
-          <dotlottie-player src="./assets/lottie/hero.lottie" background="transparent" speed="1"
-            style="width: 512px; height: 512px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+        <div class="scroll-arrows">
+          <a href="#form" aria-label="scroll to form">
+            <svg class="arrows" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path class="arrow-1"
+                d="M16.61,30.11h0s-.61.61-.61.61L3.13,17.85l.61-.61,12.26,12.26,12.26-12.26.61.61-12.26,12.26Z" />
+              <path class="arrow-2"
+                d="M16.61,22.43h0s-.61.61-.61.61L3.13,10.18l.61-.61,12.26,12.26,12.26-12.26.61.61-12.26,12.26Z" />
+              <path class="arrow-3"
+                d="M16.61,14.76h0s-.61.61-.61.61L3.13,2.5l.61-.61,12.26,12.26L28.26,1.89l.61.61-12.26,12.26Z" />
+            </svg>
+          </a>
         </div>
-      </div>
-      <div class="scroll-arrows">
-        <a href="#form" aria-label="scroll to form">
-          <svg class="arrows" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-            <path class="arrow-1"
-              d="M16.61,30.11h0s-.61.61-.61.61L3.13,17.85l.61-.61,12.26,12.26,12.26-12.26.61.61-12.26,12.26Z" />
-            <path class="arrow-2"
-              d="M16.61,22.43h0s-.61.61-.61.61L3.13,10.18l.61-.61,12.26,12.26,12.26-12.26.61.61-12.26,12.26Z" />
-            <path class="arrow-3"
-              d="M16.61,14.76h0s-.61.61-.61.61L3.13,2.5l.61-.61,12.26,12.26L28.26,1.89l.61.61-12.26,12.26Z" />
-          </svg>
-        </a>
       </div>
     </section>
 
+    <!-- Divider -->
+    <div class="divider divider--lighter-to-base divider--invert">
+      <svg viewBox="0 0 650 39">
+        <path d="M325,37.4C145.5,37.4,0,20.7,0,0v40h650V0C650,20.7,504.5,37.4,325,37.4z" />
+      </svg>
+    </div>
 
     <!-- Add Post Form -->
-    <section class="container">
-      <div id="form">
+    <section class="container py-5">
+      <div id="form" class="form">
         <div class="form-content">
           <div id="error-message"></div>
-          <div class="field">
-            <label for="name-input">To:</label>
-            <input type="text" id="name-input" />
+          <div class="row">
+            <div class="col">
+              <div class="mb-2">
+                <label for="name-input">To:</label>
+                <input type="text" id="name-input" class="form-control" />
+              </div>
+              <div class="mb-4">
+                <label for="sender-input">From:</label>
+                <input type="text" id="sender-input" class="form-control" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="">
+                <label for="message-input">Message:</label>
+                <textarea id="message-input" class="form-control" rows="4"></textarea>
+              </div>
+            </div>
           </div>
-          <div class="field">
-            <label for="sender-input">From:</label>
-            <input type="text" id="sender-input" />
-          </div>
-          <div class="field">
-            <label for="message-input">Message:</label>
-            <input type="text" id="message-input" />
-          </div>
+          <button type="button" class="btn btn-primary" id="submit">Submit</button>
+
         </div>
       </div>
     </section>

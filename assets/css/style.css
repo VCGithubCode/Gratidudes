@@ -395,7 +395,7 @@ main {
 }
 
 .post-it-note {
-  /* background: var(--color-orange-400); */
+  position: relative;
   color: white;
   display: flex;
   flex-direction: column;
@@ -594,6 +594,11 @@ main {
 /* #6.1 Buttons ===================================== */
 /* ================================================== */
 
+.delete-button {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
 
 .btn-primary {
   background-color: var(--color-cabaret-500);

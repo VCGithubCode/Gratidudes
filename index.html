@@ -90,19 +90,40 @@
         </div>
       </div>
       <div class="scroll-arrows">
-        <svg class="arrows" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-          <path class="arrow-1"
-            d="M16.61,30.11h0s-.61.61-.61.61L3.13,17.85l.61-.61,12.26,12.26,12.26-12.26.61.61-12.26,12.26Z" />
-          <path class="arrow-2"
-            d="M16.61,22.43h0s-.61.61-.61.61L3.13,10.18l.61-.61,12.26,12.26,12.26-12.26.61.61-12.26,12.26Z" />
-          <path class="arrow-3"
-            d="M16.61,14.76h0s-.61.61-.61.61L3.13,2.5l.61-.61,12.26,12.26L28.26,1.89l.61.61-12.26,12.26Z" />
-        </svg>
+        <a href="#form" aria-label="scroll to form">
+          <svg class="arrows" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path class="arrow-1"
+              d="M16.61,30.11h0s-.61.61-.61.61L3.13,17.85l.61-.61,12.26,12.26,12.26-12.26.61.61-12.26,12.26Z" />
+            <path class="arrow-2"
+              d="M16.61,22.43h0s-.61.61-.61.61L3.13,10.18l.61-.61,12.26,12.26,12.26-12.26.61.61-12.26,12.26Z" />
+            <path class="arrow-3"
+              d="M16.61,14.76h0s-.61.61-.61.61L3.13,2.5l.61-.61,12.26,12.26L28.26,1.89l.61.61-12.26,12.26Z" />
+          </svg>
+        </a>
       </div>
     </section>
 
 
-
+    <!-- Add Post Form -->
+    <section class="container">
+      <div id="form">
+        <div class="form-content">
+          <div id="error-message"></div>
+          <div class="field">
+            <label for="name-input">To:</label>
+            <input type="text" id="name-input" />
+          </div>
+          <div class="field">
+            <label for="sender-input">From:</label>
+            <input type="text" id="sender-input" />
+          </div>
+          <div class="field">
+            <label for="message-input">Message:</label>
+            <input type="text" id="message-input" />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Great Wall of Gratitude -->
     <section id="wall" class="container wall"></section>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,6 +44,10 @@
   <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/favicon-60x60.png">
   <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/favicon-57x57.png">
 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -88,19 +91,25 @@
         <label for="contactbox-query" class="contactlabel">Your query</label>
         <textarea rows="10" name="query" class="contactbox" id="contactbox-query" required></textarea><br>
 
-        <button type="submit" id="contactbox-submit" aria-label="Clicking submit will open the thank you page">Submit</button>
+        <button type="submit" id="contactbox-submit"
+          aria-label="Clicking submit will open the thank you page">Submit</button>
       </form>
     </div>
   </main>
-<!-- This code was inspired by GeeksforGeeks https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/-->
+  <!-- This code was inspired by GeeksforGeeks https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/-->
 
-<footer class="footer">Footer</footer> 
-    <!--script to redirect to another thank-you.html-->
-    <script> 
-    document.addEventListener("DOMContentLoaded", function() {
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 The Great Wall of Gratitude</p>
+    </div>
+  </footer>
+
+  <!--script to redirect to another thank-you.html-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
       const contactForm = document.getElementById("contactForm");
 
-      contactForm.addEventListener("submit", function(event) {
+      contactForm.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission
 
         if (!contactForm.checkValidity()) {
@@ -115,7 +124,7 @@
       });
     });
   </script>
-    
+
   <script src="./assets/js/script.js"></script>
 </body>
 

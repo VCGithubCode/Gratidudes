@@ -1,19 +1,11 @@
 let post = [{
-    name: "mika",
-    message: "Thank you!",
-    sender: "Mika"
-}, {
-    name: "vernell",
-    message: "You're Amazing",
-    sender: "vernell"
+    name: "",
+    message: "",
+    sender: ""
 }];
 
 // prohibited words:
 let prohibitedWords = ["fuck", "slut", "shit", "kill"];
-
-// let userName = document.getElementById("name-input").value.trim();
-// let userMessage = document.getElementById("message-input").value.trim();
-
 let wall = document.getElementById("wall");
 let errorMessage = document.getElementById("error-message");
 let cards = document.getElementsByClassName("post-it-note");
@@ -142,7 +134,7 @@ function validateUserMessage() {
     }
 }
 
-// Function to initialize event listener for adding a user message
+/** Function to initialize event listener for adding a user message */
 function initializeAddUserMessage() {
     let submitBtn = document.getElementById("submit");
     submitBtn.addEventListener("click", function () {
@@ -170,23 +162,15 @@ function initializeAddUserMessage() {
     });
 }
 
-// Function to get a random message from the stored posts without removing it from the array
-function getRandomMessage() {
-    let posts = JSON.parse(localStorage.getItem('posts')) || [];
-    if (posts.length > 0) {
-        let randomNumber = Math.floor(Math.random() * posts.length);
-        return posts[randomNumber];
-    }
-    return null; // Return null if there are no posts
-}
 
-// Function to hide the delete buttons 
+/**  Function to hide the delete buttons */
 function hideDeleteButton() {
     for (button of deleteButtonArray) {
         button.style.display = "none";
     }
 }
 
+/** Function to handle delete button and delete recent post */
 function deletePost() {
     let deleteButtonArray = document.getElementsByClassName("delete-button");
     for (let btn of deleteButtonArray) {
@@ -197,6 +181,7 @@ function deletePost() {
     }
 }
 
+/** Function to delete last entry and update the local storage */
 function deleteLastEntry() {
     let posts = JSON.parse(localStorage.getItem('posts')) || [];
     // Check if there are entries to delete
@@ -220,7 +205,7 @@ function closeForm() {
 }
 
 // https://www.solodev.com/blog/web-design/adding-a-load-more-button-to-your-content.stml JQuery
-// Adding load more button 
+/** Function handle load more button  using JQuery*/
 function handleLoadMoreButton() {
     $(".post-it-note").css("display", "none");
     $(".post-it-note").slice(0, 9).show();
@@ -235,7 +220,6 @@ function handleLoadMoreButton() {
             $("#load-more-btn").fadeOut('slow');
         }
     });
-
 }
 
 // Initialize functions on DOMContentLoaded
@@ -244,5 +228,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initializeAddUserMessage();
     addPostTile()
     setInterval(hideDeleteButton(), 5000);
-   handleLoadMoreButton();
+    handleLoadMoreButton();
 });

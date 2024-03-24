@@ -21,58 +21,63 @@ function containsBadWords(userinput) {
             return true;
         }
     }
-
 }
 
 // Function to generate a post on the wall
 function generatePost(post) {
     hideDeleteButton();
 
-    const postItem = document.createElement("div");
-    const postOptions = document.createElement("div")
-    const deleteButton = document.createElement("button");
-    const likeButton = document.createElement("button");
-    const likeIcon = document.createElement("span");
+    // List of radial gradient values
+    const gradients = [
+        'radial-gradient(circle at 60% 80%, var(--color-voodoo-700), var(--color-orange-500))',
+        'radial-gradient(circle at 60% 80%, var(--color-cabaret-500), var(--color-yellow-500))',
+        'radial-gradient(circle at 60% 80%, var(--color-yellow-500), var(--color-cabaret-500))',
+        'radial-gradient(circle at 60% 80%, var(--color-orange-500), var(--color-voodoo-700))'
+    ];
 
+    // Randomly select a radial gradient from the list
+    const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+
+    // Create postItem element
+    const postItem = document.createElement("div");
     postItem.classList.add("post-it-note", "post-card");
+    // Set background using CSS radial gradient
+    postItem.style.backgroundImage = randomGradient;
     postItem.innerHTML = `
         <div class="post-too"><span>To:</span> ${post.name}</div>
         <div class="post-from"><span>From:</span> ${post.sender}</div>
         <div class="post-message">"${post.message}"</div>
     `;
 
+    // Create postOptions element
+    const postOptions = document.createElement("div")
+    postOptions.classList.add("post-options");
+
+    // Create delete buttons
+    const likeButton = document.createElement("button");
     likeButton.classList.add("like-button");
-    likeIcon.innerHTML = `
+    likeButton.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <path d="M31.11,11.85c0,8.35-13.85,18.15-15.11,18.15S.89,20.2.89,11.85,10.96-.75,16,6.81c5.04-7.56,15.11-3.31,15.11,5.04Z"/>
         </svg>
     `;
-    likeButton.appendChild(likeIcon);
-
+    
+    // Create delete button
+    const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
     deleteButton.innerText = "delete";
-
-    postItem.appendChild(postOptions);
-
-    postOptions.classList.add("post-options");
+    
+    // Build the post and append it to the wall
     postOptions.appendChild(likeButton);
-    postItem.appendChild(deleteButton);
-
+    postOptions.appendChild(deleteButton);
+    postItem.appendChild(postOptions);
     wall.prepend(postItem);
 
-    // Add click event listener to the like button
-    likeButton.addEventListener("click", function () {
-        // Toggle between SVG heart and "Liked❤️" text
-        if (likeButton.innerHTML.includes("Liked")) {
-            likeButton.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                    <path d="M31.11,11.85c0,8.35-13.85,18.15-15.11,18.15S.89,20.2.89,11.85,10.96-.75,16,6.81c5.04-7.56,15.11-3.31,15.11,5.04Z"/>
-                </svg>
-            `;
-        } else {
-            likeButton.innerHTML = "Liked❤️";
-        }
+    // Toggle like button
+    likeButton.addEventListener("click", () => {
+        likeButton.classList.toggle("liked");
     });
+    
     deletePost();
 }
 

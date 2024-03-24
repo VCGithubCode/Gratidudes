@@ -627,8 +627,16 @@ input:checked~.hamburger span:nth-child(3) {
   cursor: pointer;
 }
 
+.like-button.liked {
+  opacity: 1;
+}
+
 .like-button:hover {
   opacity: 0.4;
+}
+
+.like-button.liked:hover {
+  opacity: 0.8;
 }
 
 .like-button svg {

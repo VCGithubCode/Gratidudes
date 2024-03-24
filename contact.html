@@ -21,6 +21,33 @@
       font-weight: 800;
       font-display: swap;
     }
+
+    .contact-container{
+      background: #FA6D48ed;
+    }
+
+    .contact-container h1 {
+      color: #fff;
+    }
+
+    .contact-container p {
+      color: #fff;
+    }
+    
+    .btn--red {
+      background: #FA6D48;
+      border: #FA6D48;
+      color: #fff;
+      padding: 0.3rem 1.5rem;
+      border-radius: 1.5rem;
+    }
+
+    .btn-red a:hover{
+      background: #ffae78;
+      color: #ff4800;
+    }
+
+
   </style>
 
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -86,26 +113,43 @@
   </header>
 
   <main class="page">
-    <section>
-      <h1>Contact</h1>
+    <section class=" contact-container pt-5 pb-3">
+      <div class="text-center row ">
+        <h1>Contact Us</h1>
+        <p>Have any question? We'd love to hear from you.</p>
+      </div>
     </section>
 
-    <h1>Contact us</h1>
 
     <div id="email-feedback"></div>
-    <div id="contactus">
+    <div id="contactus" class="contact-info container mt-4 ">
       <form id="contactForm" name="contactForm" onsubmit="return sendMail(this);">
-        <label for="name" class="contactlabel">Your name</label>
-        <input type="text" name="name" id="name" required><br>
+        <div class="mb-2 ">
+          <label for="name" class="contactlabel form-label">Your name</label>
+          <input type="text" name="name" id="name" class="form-control" required>
+          <div id="emailHelp" class="form-text">Please provide your preferred name.</div><br>
+        </div>
 
-        <label for="email" class="contactlabel">Your email</label>
-        <input type="email" name="email" id="email" required><br>
+        <div class="mb-2">
+          <label for="email" class="contactlabel form-label">Your email</label>
+          <input type="email" name="email" id="email" class="form-control" required>
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div><br>
+        </div>
 
-        <label for="enquiry" class="contactlabel">Your query</label>
-        <textarea rows="10" name="enquiry" id="enquiry" required></textarea><br>
+        <div class="mb-3">
+          <label for="enquiry" class="contactlabel form-label">Your query</label>
+          <textarea rows="10" name="enquiry" id="enquiry" class="form-control" required></textarea>
+        </div>
 
-        <input id="submit-button" type="submit" value="Submit Message"
-          aria-label="clicking submit will redirect to another page">
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+          <label class="form-check-label" for="exampleCheck1">I have read and agree to the <a href="#">privacy policy</a></label>
+        </div>
+
+        <div class="mb-2">
+          <input id="submit-button" class="btn--red" type="submit" value="Submit Message"
+            aria-label="clicking submit will redirect to another page">
+        </div>
       </form>
     </div>
   </main>

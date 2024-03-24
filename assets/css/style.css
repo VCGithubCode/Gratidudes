@@ -139,7 +139,6 @@ html {
   background-color: var(--color-neutral-50);
   box-sizing: border-box;
   color: var(--color-text-700);
-  height: 100%;
   line-height: 1.15;
 }
 

@@ -142,11 +142,11 @@ img {
 /* #1.1 Typography ================================== */
 /* ================================================== */
 
-body h1, 
-body h2, 
-body h3, 
-body h4, 
-body h5, 
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
 body h6 {
   color: var(--color-headings);
   font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -332,8 +332,8 @@ input:checked~.hamburger span:nth-child(3) {
   transition: width 0.3s ease-in-out, border-radius 0.1s ease-in-out;
 }
 
-main {  
-  margin-bottom: auto; 
+main {
+  margin-bottom: auto;
 }
 
 /* ================================================== */
@@ -666,55 +666,42 @@ main {
   }
 }
 
-@keyframes arrow-animation
-{
-  0% {opacity:0}
-  25% {opacity:1}
-  50% {opacity:0}
-  100% {opacity:0}
+@keyframes arrow-animation {
+  0% {
+    opacity: 0
+  }
+
+  25% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 0
+  }
 }
 
 @-webkit-keyframes arrow-animation {
-  0% {opacity:0}
-  25% {opacity:1}
-  50% {opacity:0}
-  100% {opacity:0}
+  0% {
+    opacity: 0
+  }
+
+  25% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 0
+  }
 }
 
-/* ======================================================================== */
-/* Media Queries for Thank You Page ======================================= */
-/* ======================================================================== */
-
-
-.sticky-note p {
-  margin: 15px 0;
-}
-
-.sticky-note .btn {
-  margin-top: 20px;
-}
-
-/* Sticky note style*/
-.thank-you .sticky-note {
-  /* Set element's width to 100% of its parent */
-  width: 100%;
-  /* Element does not exceed 300px. */
-  max-width: 485px;
-  /* That element keeps a quadratic box shape */
-  aspect-ratio: 1 / 1;
-  margin: auto;
-}
-
-.thank-you .pin {
-  width: 24px;
-  height: 24px;
-  top: -45px;
-}
-
-.thank-you .pin::after {
-  left: 11px;
-  height: 35px;
-}
 
 /* add style for images and text in about us page */
 
@@ -793,7 +780,7 @@ main {
   color: var(--color-text-light);
 }
 
-.members > h1 {
+.members>h1 {
   font-weight: bolder;
 }
 
@@ -869,13 +856,45 @@ main {
   /* ================================================== */
   /* #15.3 Contact Page =============================== */
   /* ================================================== */
-  
+
   /* ================================================== */
   /* #15.4 Error Page ================================= */
   /* ================================================== */
-  
+
   /* ================================================== */
   /* #15.5 Thank You Page ============================= */
   /* ================================================== */
-}
 
+  .sticky-note p {
+    margin: 15px 0;
+  }
+
+  .sticky-note .btn {
+    margin-top: 20px;
+  }
+
+  /* Sticky note style*/
+  .thank-you .sticky-note {
+    /* Set element's width to 100% of its parent */
+    width: 100%;
+    /* Element does not exceed 300px. */
+    max-width: 485px;
+    /* That element keeps a quadratic box shape */
+    aspect-ratio: 1 / 1;
+    margin: auto;
+  }
+
+  .thank-you .pin {
+    width: 24px;
+    height: 24px;
+    top: -45px;
+  }
+
+  .thank-you .pin::after {
+    left: 11px;
+    height: 35px;
+  }
+
+
+
+}

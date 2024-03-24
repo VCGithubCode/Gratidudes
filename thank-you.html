@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank you | Great Wall of Gratitude</title>
 
   <!-- Load local fonts before loading css -->
@@ -23,7 +23,8 @@
     }
   </style>
 
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
   <!-- Favicon Includes-->
   <link rel="shortcut icon" href="./favicon.ico">
@@ -78,13 +79,22 @@
 
     <section class="thank-you">
       <div class="container">
-        <div class="pin"></div>
-        <div class="sticky-note">
-          <h4>Thank You for contacting Us!</h4>
-          <p>We're thrilled you took a moment to add your spark to our collective happiness.</p>
-          <p>Team GratiDudes are excited to explore your thought(s) and see how we can make our space even
-            more delightful. <br> Your Happiness Matters to Us!</p>
-          <a href="index.html" aria-label="Link back to homepage">Return to Great Wall of Gratitude</a>
+        <!-- Bootstrap row for grid system -->
+        <div class="row">
+          <!-- Responsive column -->
+          <div class="pin"></div>
+          <div class="col-12 col-md-8 offset-md-2">
+            <!--custom style -->
+            <div class="sticky-note">
+              <h2>Thank You for contacting Us!</h2>
+              <p>We're thrilled you took a moment to add your spark to our collective happiness.</p>
+              <p>Team GratiDudes are excited to explore your thought(s) and see how we can make our space even
+                more delightful. <br> Your Happiness Matters to Us!</p>
+              <!-- Bootstrap btn -->
+              <a href="index.html" class="btn btn-primary" aria-label="Link back to homepage">Return to Great Wall of
+                Gratitude</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

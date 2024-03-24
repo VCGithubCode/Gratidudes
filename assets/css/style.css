@@ -147,7 +147,6 @@ body h3,
 body h4, 
 body h5, 
 body h6 {
-  color: var(--color-headings);
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
 }
@@ -419,7 +418,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 82vh;
 }
 
 .thank-you .container {
@@ -437,7 +436,8 @@ main {
   box-shadow:
     0 10px 15px rgba(0, 0, 0, 0.2),
     0 4px 6px rgba(0, 0, 0, 0.2);
-  border: 0.5px solid rgba(255, 165, 0, 0.5);
+  /* color-yellow-400 w. opacity */
+  border: 0.5px solid rgba(255, 148, 32, 0.5);
   /* Set element's width to 100% of its parent */
   width: 100%;
   /* Element does not exceed 300px. */
@@ -570,31 +570,31 @@ main {
 }
 
 .arrows {
-	width: 64px;
-	height: 64px;
+  width: 64px;
+  height: 64px;
 }
 
 .arrows path {
-	animation: arrow-animation 3s infinite;
-	-webkit-animation: arrow-animation 3s infinite; 
+  animation: arrow-animation 3s infinite;
+  -webkit-animation: arrow-animation 3s infinite;
 }
 
 .arrows .arrow-1 {
   fill: #663E67;
-	animation-delay: -1s;
-	-webkit-animation-delay: -1s;
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s;
 }
 
 .arrows .arrow-2 {
   fill: #D74C77;
-	animation-delay: -0.5s;
-	-webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
 }
 
 .arrows .arrow-3 {
   fill: #FA6D48;
-	animation-delay: 0s;
-	-webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
 }
 
 #load-more-btn {
@@ -663,12 +663,21 @@ main {
 /* Media Queries for Thank You Page ======================================= */
 /* ======================================================================== */
 
+
+.sticky-note p {
+  margin: 15px 0;
+}
+
+.sticky-note .btn {
+  margin-top: 20px;
+}
+
 /* Sticky note style*/
 .thank-you .sticky-note {
   /* Set element's width to 100% of its parent */
   width: 100%;
   /* Element does not exceed 300px. */
-  max-width: 500px;
+  max-width: 485px;
   /* That element keeps a quadratic box shape */
   aspect-ratio: 1 / 1;
   margin: auto;
@@ -685,35 +694,38 @@ main {
   height: 35px;
 }
 
+/* add style for images and text in about us page */
+
 .card {
-  width: 90%; 
+  width: 90%;
 }
 
 .card .card-img-top {
-  width: 100%; 
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  height: auto;
+  /* Maintain aspect ratio */
 }
 
 .card-body {
-  padding: 1.25rem; 
+  padding: 1.25rem;
   text-align: center;
-  
+
 }
 
 .card-title {
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
 }
 
 .card-text {
-  font-size: 1rem; 
-  margin-top: 10px; 
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
 .card .card-img-top {
-  width: 80%; 
-  height: 100%; 
-  object-fit: cover; 
-  border-radius: 50%; 
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .card {
@@ -721,11 +733,11 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 .card .card-img-top {
-  margin: 10px auto; 
+  margin: 10px auto;
 }
 
 
@@ -736,29 +748,33 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2); /* Dark overlay color */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth transition */
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Dark overlay color */
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 0.3s ease;
+  /* Smooth transition */
 }
 
 .card:hover .card-img-top {
-  filter: brightness(1.1); /* Restore original brightness on hover */
+  filter: brightness(1.1);
+  /* Restore original brightness on hover */
 }
 
 .card:hover .card-img-overlay {
-  opacity: 1; /* Show overlay on hover */
+  opacity: 1;
+  /* Show overlay on hover */
 }
 
 .about-us-section {
   background-color: #D74C77;
   color: white;
-  padding: 5px; 
+  padding: 5px;
   border-radius: 10px;
 }
 
-.page > .about-us-section > .container > .row > h1 {
+.members>h1 {
   font-weight: bolder;
-  color: #1F7AF1;
 }
 
 .members > h1 {

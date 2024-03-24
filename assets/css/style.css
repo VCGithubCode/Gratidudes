@@ -139,7 +139,6 @@ html {
   background-color: var(--color-neutral-50);
   box-sizing: border-box;
   color: var(--color-text-700);
-  height: 100%;
   line-height: 1.15;
 }
 
@@ -430,28 +429,10 @@ input:checked~.hamburger span:nth-child(3) {
 }
 
 .form {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 99999;
-}
-
-.form-content {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  max-width: 740px;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
+  background-color: var(--color-orange-400);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: 12px;
 }
 
 #error-message {
@@ -753,6 +734,23 @@ input:checked~.hamburger span:nth-child(3) {
     width: 100%;
   }
 
+
+  /* Home Hero */
+
+  .home-hero {
+    background-color: var(--color-voodoo-200);
+  }
+
+
+/* Divider */
+
+.divider {
+  line-height: 0;
+  background: var(--color-voodoo-200);
+  fill: white;
+}
+
+
   /* ================================================== */
   /* #  Add Post ===================================== */
   /* ================================================== */
@@ -762,9 +760,54 @@ input:checked~.hamburger span:nth-child(3) {
   }
 }
 
+.scroll-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.arrows {
+	width: 64px;
+	height: 64px;
+}
 
+.arrows path {
+	animation: arrow-animation 3s infinite;
+	-webkit-animation: arrow-animation 3s infinite; 
+}
 
+@keyframes arrow-animation
+{
+0% {opacity:0}
+25% {opacity:1}
+50% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow-animation {
+0% {opacity:0}
+25% {opacity:1}
+50% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows .arrow-1 {
+  fill: #663E67;
+	animation-delay: -1s;
+	-webkit-animation-delay: -1s;
+}
+
+.arrows .arrow-2 {
+  fill: #D74C77;
+	animation-delay: -0.5s;
+	-webkit-animation-delay: -0.5s;
+}
+
+.arrows .arrow-3 {
+  fill: #FA6D48;
+	animation-delay: 0s;
+	-webkit-animation-delay: 0s;
+}
 
 #load-more-btn {
   display: none;

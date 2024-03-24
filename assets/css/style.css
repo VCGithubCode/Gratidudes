@@ -105,8 +105,8 @@
 
   --color-text: var(--color-neutral-600);
   --color-text-light: white;
-  --color-headings: var(--color-neutral-700);
-  --color-headings-light: var(--color-neutral-50);
+  --color-headings: var(--color-voodoo-900);
+  --color-headings-light: var(--color-voodoo-100);
   --color-link: var(--color-cabaret-700);
   --color-link-hover: var(--color-cabaret-800);
   --color-link-light: var(--color-cabaret-300);
@@ -126,6 +126,7 @@
 /* ================================================== */
 
 body {
+  background-color: var(--color-neutral-100) !important;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -147,8 +148,13 @@ body h3,
 body h4, 
 body h5, 
 body h6 {
+  color: var(--color-headings);
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 800;
+}
+
+.heading-light {
+  color: var(--color-headings-light);
 }
 
 /* ================================================== */
@@ -185,7 +191,6 @@ main {
 /* ================================================== */
 
 .header {
-  /* position: fixed; */
   background-color: var(--color-voodoo-800);
   width: 100%;
   z-index: 9999;
@@ -196,8 +201,6 @@ main {
   flex-wrap: wrap;
   align-items: center;
   margin: auto;
-  padding: 0 24px;
-  max-width: 1280px;
 }
 
 .branding {
@@ -209,7 +212,7 @@ main {
 .logo img {
   display: block;
   padding: 24px 0;
-  width: 116px;
+  width: 260px;
 }
 
 /* Navigation */
@@ -244,6 +247,7 @@ main {
 .menu {
   padding: var(--spacing-lg) 0;
   list-style-type: none;
+  margin: 0;
 }
 
 .menu li a {
@@ -251,10 +255,22 @@ main {
   position: relative;
   padding: 4px 8px;
   color: var(--color-neutral-100);
-  font-size: 42px;
+  font-size: 26px;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.menu li a.active {
+  color: var(--color-cabaret-300);
+}
+
+.menu li:hover a {
+  opacity: 0.8;
+}
+
+.menu li:hover a.active {
+  opacity: 1;
 }
 
 /* Mobile menu trigger button */
@@ -321,7 +337,7 @@ main {
 }
 
 /* ================================================== */
-/* #4.0 Header ====================================== */
+/* #4.0 Footer ====================================== */
 /* ================================================== */
 
 .footer {
@@ -405,6 +421,12 @@ main {
 /* ================================================== */
 /* #5.3 Contact Page ================================ */
 /* ================================================== */
+
+.hero-contact {
+  background-color: var(--color-cabaret-500);
+  color: var(--color-text-light);
+  padding: var(--spacing-lg) 0;
+}
 
 /* ================================================== */
 /* #5.4 Error Page ================================== */
@@ -608,7 +630,7 @@ main {
 .divider {
   line-height: 0;
   background: var(--color-voodoo-200);
-  fill: white;
+  fill: var(--color-neutral-100);
 }
 
 /* ================================================== */
@@ -767,14 +789,8 @@ main {
 }
 
 .about-us-section {
-  background-color: #D74C77;
-  color: white;
-  padding: 5px;
-  border-radius: 10px;
-}
-
-.members>h1 {
-  font-weight: bolder;
+  background-color: var(--color-cabaret-500);
+  color: var(--color-text-light);
 }
 
 .members > h1 {
@@ -789,9 +805,6 @@ main {
 /* ======================================================================== */
 
 @media all and (min-width: 768px) {
-  /* ================================================== */
-  /* #11.1 Typography ================================= */
-  /* ================================================== */
 
   /* ================================================== */
   /* #13.0 Header ===================================== */

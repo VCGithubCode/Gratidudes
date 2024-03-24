@@ -762,9 +762,54 @@ input:checked~.hamburger span:nth-child(3) {
   }
 }
 
+.scroll-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.arrows {
+	width: 64px;
+	height: 64px;
+}
 
+.arrows path {
+	animation: arrow-animation 3s infinite;
+	-webkit-animation: arrow-animation 3s infinite; 
+}
 
+@keyframes arrow-animation
+{
+0% {opacity:0}
+25% {opacity:1}
+50% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow-animation {
+0% {opacity:0}
+25% {opacity:1}
+50% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows .arrow-1 {
+  fill: #663E67;
+	animation-delay: -1s;
+	-webkit-animation-delay: -1s;
+}
+
+.arrows .arrow-2 {
+  fill: #D74C77;
+	animation-delay: -0.5s;
+	-webkit-animation-delay: -0.5s;
+}
+
+.arrows .arrow-3 {
+  fill: #FA6D48;
+	animation-delay: 0s;
+	-webkit-animation-delay: 0s;
+}
 
 #load-more-btn {
   display: none;

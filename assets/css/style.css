@@ -919,11 +919,6 @@ input:checked~.hamburger span:nth-child(3) {
   border-radius: 10px;
 }
 
-.page > .about-us-section > .container > .row > h1 {
-  font-weight: bolder;
-  color: #1F7AF1;
-}
-
 .members > h1 {
   font-weight: bolder;
 }

@@ -553,6 +553,30 @@ main {
 /* #6.1 Buttons ===================================== */
 /* ================================================== */
 
+.btn-primary {
+  background-color: var(--color-cabaret-500);
+  border-color: var(--color-cabaret-500);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-cabaret-500);
+  border-color: var(--color-cabaret-500);
+  color: white;
+}
+
+.btn-light {
+  background-color: var(--color-neutral-100);
+  border-color: var(--color-neutral-100);
+  color: var(--color-text);
+}
+
+.btn-light:hover {
+  background-color: var(--color-neutral-100);
+  border-color: var(--color-neutral-100);
+  color: var(--color-text);
+}
+
 
 /* Like Button Styles */
 
@@ -894,7 +918,4 @@ main {
     left: 11px;
     height: 35px;
   }
-
-
-
 }

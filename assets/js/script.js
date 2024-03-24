@@ -44,8 +44,8 @@ function generatePost(post) {
     // Set background using CSS radial gradient
     postItem.style.backgroundImage = randomGradient;
     postItem.innerHTML = `
+        <div class="post-from"><span>From:</span> ${post.sender}</div>    
         <div class="post-too"><span>To:</span> ${post.name}</div>
-        <div class="post-from"><span>From:</span> ${post.sender}</div>
         <div class="post-message">"${post.message}"</div>
     `;
 

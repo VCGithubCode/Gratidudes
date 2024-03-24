@@ -428,9 +428,50 @@ main {
   padding: var(--spacing-lg) 0;
 }
 
+.contact-container {
+  background: #FA6D48ed;
+}
+
+.contact-container h1 {
+  color: #fff;
+}
+
+.contact-container p {
+  color: #fff;
+}
+
 /* ================================================== */
 /* #5.4 Error Page ================================== */
 /* ================================================== */
+
+.error-content {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.error-content h1 {
+  font-size: 9rem;
+  margin: 0;
+  font-weight: 1000;
+  background: url(assets/images/404_bg.png) center no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.error-content h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+
+.error-content p {
+  padding-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.error-content a:hover {
+  background: #ffae78;
+  color: #ff4800;
+}
 
 /* ================================================== */
 /* #5.5 Thank You =================================== */

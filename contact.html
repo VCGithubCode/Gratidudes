@@ -48,6 +48,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+  <!-- Email Js -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script>
+    (function () {
+      emailjs.init({
+        publicKey: "hgYJhUBNTbpB6cwlp",
+      });
+    })();
+  </script>
+
 </head>
 
 <body>
@@ -80,19 +91,21 @@
     </section>
 
     <h1>Contact us</h1>
+
+    <div id="email-feedback"></div>
     <div id="contactus">
-      <form id="contactForm" action="response.html" method="GET" target="_blank">
+      <form id="contactForm" name="contactForm" onsubmit="return sendMail(this);">
         <label for="name" class="contactlabel">Your name</label>
-        <input type="text" name="name" class="contactbox" id="name" required><br>
+        <input type="text" name="name" id="name" required><br>
 
         <label for="email" class="contactlabel">Your email</label>
-        <input type="email" name="emailaddress" class="contactbox" id="email" required><br>
+        <input type="email" name="email" id="email" required><br>
 
-        <label for="contactbox-query" class="contactlabel">Your query</label>
-        <textarea rows="10" name="query" class="contactbox" id="contactbox-query" required></textarea><br>
+        <label for="enquiry" class="contactlabel">Your query</label>
+        <textarea rows="10" name="enquiry" id="enquiry" required></textarea><br>
 
-        <button type="submit" id="contactbox-submit"
-          aria-label="Clicking submit will open the thank you page">Submit</button>
+        <input id="submit-button" type="submit" value="Submit Message"
+          aria-label="clicking submit will redirect to another page">
       </form>
     </div>
   </main>
@@ -104,28 +117,7 @@
     </div>
   </footer>
 
-  <!--script to redirect to another thank-you.html-->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const contactForm = document.getElementById("contactForm");
-
-      contactForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
-
-        if (!contactForm.checkValidity()) {
-          // If the form is invalid, do not proceed with submission
-          console.log("Form is invalid");
-          return;
-        }
-
-        // If the form is valid, proceed with form submission
-        // For demonstration purposes, we're redirecting to a thank-you page
-        window.location.href = "thank-you.html";
-      });
-    });
-  </script>
-
-  <script src="./assets/js/script.js"></script>
+  <script src="assets/js/email.js"></script>
 </body>
 
 </html>

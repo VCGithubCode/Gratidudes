@@ -34,10 +34,10 @@ function validateForm() {
     let emailInput = document.forms["contactForm"]["email"];
     let enquiryInput = document.forms["contactForm"]["enquiry"];
     if (nameInput.value === "") {
-        emailFeedBack.innerText = "Please input name";
+        nameInput.classList.add("is-invalid");
         return false;
     } else if (emailInput.value === "") {
-        emailFeedBack.innerText = "Please input email";
+        emailInput.classList.add("is-invalid");
         return false;
     } else if (enquiryInput.value === "") {
         emailFeedBack.innerText = "Please input your message";

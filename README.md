@@ -1,4 +1,3 @@
-
 <h1 align="center"><strong>Hackathon 2024 March :smiley: World Happiness Day! :smiley: </strong>
 </h1>
 <img src="https://res.cloudinary.com/djdefbnij/image/upload/v1709637871/March_hackathon_banner_krwvza.jpg" alt="HackathonHappy" width="1200"/>
@@ -9,9 +8,17 @@
 
 ![An image of our landingpage](/documentation/doc-img/amiresponsiv.webp)
 
+
 Great Wall of Gratitude - GitHub repository: [GitHub repository](https://github.com/VCGithubCode/Gratidudes)
 
 Visit the deployed site: [Great Wall of Gratitude](https://vcgithubcode.github.io/Gratidudes/)
+
+
+![GitHub Issues](https://img.shields.io/github/issues/VCGithubCode/Gratidudes?style=flat)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/VCGithubCode/Gratidudes/main?style=flat)
+![GitHub language count](https://img.shields.io/github/languages/count/VCGithubCode/Gratidudes?style=flat)
+![GitHub top language](https://img.shields.io/github/languages/top/VCGithubCode/Gratidudes?style=flat)
+![Contributors](https://img.shields.io/github/contributors/VCGithubCode/Gratidudes?style=flat)
 
 ## Introduction
 

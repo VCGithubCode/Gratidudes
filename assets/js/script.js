@@ -1,4 +1,4 @@
-
+/* jshint esversion: 11, jquery: true */
 // prohibited words:
 let prohibitedWords = ["fuck", "slut", "shit", "kill"];
 let wall = document.getElementById("wall");

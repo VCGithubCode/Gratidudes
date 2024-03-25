@@ -1,6 +1,6 @@
-
+/* jshint esversion: 11, jquery: true */
 // Implemented from my(Mikaela)'s project https://github.com/mikavir/rx-decoder/blob/main/assets/scripts/email.js from email js.
-let contactForm = document.getElementById("contactForm");
+
 
 /** Function to send mail once validated using emailjs */
 function sendMail(contactForm){

@@ -340,7 +340,7 @@ Please visit [AmIResonsive](https://ui.dev/amiresponsive?url=https://vcgithubcod
 
 -   [HTML](https://en.wikipedia.org/wiki/HTML)
 -   [CSS](https://en.wikipedia.org/wiki/CSS)   
--   [JavaScript]([https://sv.wikipedia.org/wiki/Javascript](https://sv.wikipedia.org/wiki/Javascript))
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 <details><b><summary>### Tools and Libraries</b></summary>
 
@@ -372,7 +372,7 @@ Please visit [AmIResonsive](https://ui.dev/amiresponsive?url=https://vcgithubcod
 
 The development of our project follows a structured yet flexible approach, ensuring that we can adapt to changes and feedback while maintaining progress towards our goals. Our methodology emphasizes collaboration, iterative development, and a high degree of transparency both within the development team and with our stakeholders.
 
-For details please visit our project team slack [canvas](/documentation/canvas/hackaton-world-happiness-teamGratiDudes-Canvas.pdf) and our [Kanban board](https://github.com/users/VCGithubCode/projects/3)
+For details please visit our project team slack [Canvas](/documentation/canvas/hackaton-world-happiness-teamGratiDudes-Canvas.pdf) and our [Kanban board](https://github.com/users/VCGithubCode/projects/3)
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
@@ -384,7 +384,7 @@ At the start of each sprint, our team engages in sprint planning to set the dire
 
 for our upcoming work, involving prioritization of the product backlog to address the most critical tasks first, defining clear sprint goals aligned with project milestones, and assigning tasks based on expertise and workload. Throughout development, we navigate trade-offs between scope, quality, time, and resources to maintain a balance between delivering high-quality work efficiently and managing priorities. Adopting Agile methodologies allows us to remain adaptable and focused, ensuring we meet user needs while striving for excellence.
 
-For details please visit our project team slack [canvas](/documentation/canvas/hackaton-world-happiness-teamGratiDudes-Canvas.pdf) and our [Kanban board](https://github.com/users/VCGithubCode/projects/3)
+For details please visit our project team slack [Canvas](/documentation/canvas/hackaton-world-happiness-teamGratiDudes-Canvas.pdf) and our [Kanban board](https://github.com/users/VCGithubCode/projects/3)
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 

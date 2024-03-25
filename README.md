@@ -34,55 +34,33 @@ Our project, "The Great Wall of Gratitude", is designed to foster a community of
 -  Our project introduces features and functionality, offering unique value and engagement.
 -   A cornerstone of our project is the collaborative spirit among our team members. Through active participation, inclusive practices, and a commitment to quality, we've fostered an environment of mutual support and excellence.
 
-**Content**
+## Content
 
 * [Great Wall of Gratitude](#great-wall-of-gratitude)
 * [Introduction](#introduction)
 * [Criteria](#criteria)
 * [Goal & UX](#goal--ux)
   * [User Experience](#user-experience)
-      * [Strategy](#strategy)
-        * [Site goals](#site-goals)
-      * [Problem Statement](#problem-sttement)
-      * [Target Audience](#target-audience)
-      * [Benefits](#benefits)
-  * [The Scope & Benefit](#the-scope--benfit)
-  * [The Structure](#the-structure)
-    * [User Stories](#user-stories)
-    * [Feature](#feature)
-    * [Future Features](#future-features)
-  * [The Skeleton](#the-skeleton)
-      * [Wireframe](#wireframe)
+  * [Scope and benefit](#scope-and-benefit)
+  * [Structure](#structure)
+  * [Skeleton](#skeleton)
   * [Surface](#surface)
-      * [Design Elements](#design-elements)
-        * [Color Scheme](#color-scheme)
-        * [Typography](#typography)
-        * [Imagery](#imagery)
   * [Accessibility](#accessibility)
   * [Responsiveness](#responsiveness)
-* [Technologies Stack](#technologies-stack)
-  * [Language](#language)
-  * [Tools](#tools)
+* [Technology Stack](#technology-stack)
 * [Development Process](#development-process)
   * [Agile Methodology](#agile-methodology)
   * [Collaboration Tools](#collaboration-tools)
-    * [Team canvas](#team-canvas)
-  * [Programming paradigm](#programming-paradigm)
+  * [Programming paradigms](#programming-paradigms)
 * [Testing](#testing)
-  * [Validation](#validation)
 * [Prerequisites and Deployment](#prerequisites-and-deployment)
   * [Local Deployment](#local-deployment)
-      * [How to Fork](#how-to-fork)
-      * [How to Clone](#how-to-clone)
   * [Version Control](#version-control)
 * [Credits and Acknowledgements](#credits-and-acknowledgements)
-    * [Content](#content)
-    * [Media](#media)
-    * [Acknowledgements](#acknowledgements)
 
 ## Goal & UX
 
-### User Experience (UX)
+### User Experience
 
 Our platform offers a seamless user experience, encouraging easy navigation and interaction. Whether posting a message of gratitude or browsing through others' contributions, users find a space that is intuitive, engaging, and uplifting.
 
@@ -112,7 +90,7 @@ Our platform is designed for anyone looking to share or discover messages of gra
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-### Scope / Benefit
+### Scope and benefit
 
 The scope of our project includes the development of a responsive website where users can post and interact with gratitude messages, the implementation of user authentication to ensure privacy, and the creation of an engaging user interface that promotes interaction.
 
@@ -133,6 +111,7 @@ Pls visit our Kanban board for details [[link](https://github.com/users/VCGithub
 ### Structure
 
 <details><b><summary> #### User Stories</b></summary>
+
 
 This is an excerpt of our user stories, please visit our [Kanban board](https://github.com/users/VCGithubCode/projects/3) for details.
 
@@ -156,10 +135,10 @@ This is an excerpt of our user stories, please visit our [Kanban board](https://
  
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-
 </details>
 
 <details><b><summary>#### Feature</b></summary>
+
 
 The website features three main web pages:
 
@@ -241,7 +220,7 @@ Contact page
 
 Thank you page
 
-![Thank you Page](#)
+![Thank you Page](/documentation/wireframes/thank-you.webp)
 
 404 
 
@@ -344,6 +323,7 @@ Accessibility is a core consideration for "The Great Wall of Gratitude". Our pla
 ### Responsiveness
 
 The website is fully responsive, providing a seamless experience on devices of all sizes, from smartphones to desktops. 
+Please visit [AmIResonsive](https://ui.dev/amiresponsive?url=https://vcgithubcode.github.io/Gratidudes/)
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
@@ -354,8 +334,6 @@ The website is fully responsive, providing a seamless experience on devices of a
 -   [HTML](https://en.wikipedia.org/wiki/HTML)
 -   [CSS](https://en.wikipedia.org/wiki/CSS)   
 -   [JavaScript]([https://sv.wikipedia.org/wiki/Javascript](https://sv.wikipedia.org/wiki/Javascript))
-
-*<span style="color: blue;">[Back to Content](#content)</span>*
 
 <details><b><summary>### Tools and Libraries</b></summary>
 
@@ -387,7 +365,7 @@ The website is fully responsive, providing a seamless experience on devices of a
 
 The development of our project follows a structured yet flexible approach, ensuring that we can adapt to changes and feedback while maintaining progress towards our goals. Our methodology emphasizes collaboration, iterative development, and a high degree of transparency both within the development team and with our stakeholders.
 
-For details please visit our project team slack [canvas](/pdf) and our [Kanban board](https://github.com/users/VCGithubCode/projects/3)
+For details please visit our project team slack [canvas](/documentation/canvas/hackaton-world-happiness-teamGratiDudes-Canvas.pdf) and our [Kanban board](https://github.com/users/VCGithubCode/projects/3)
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
@@ -399,7 +377,7 @@ At the start of each sprint, our team engages in sprint planning to set the dire
 
 for our upcoming work, involving prioritization of the product backlog to address the most critical tasks first, defining clear sprint goals aligned with project milestones, and assigning tasks based on expertise and workload. Throughout development, we navigate trade-offs between scope, quality, time, and resources to maintain a balance between delivering high-quality work efficiently and managing priorities. Adopting Agile methodologies allows us to remain adaptable and focused, ensuring we meet user needs while striving for excellence.
 
-For details please visit our project team slack [canvas](/pdf) and our [Kanban board](https://github.com/users/VCGithubCode/projects/3)
+For details please visit our project team slack [canvas](/documentation/canvas/hackaton-world-happiness-teamGratiDudes-Canvas.pdf) and our [Kanban board](https://github.com/users/VCGithubCode/projects/3)
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
@@ -407,11 +385,7 @@ For details please visit our project team slack [canvas](/pdf) and our [Kanban b
  
 The team used [Slack](https://slack.com/) for quick collaboration purposes and Github projects to track User Stories, Bugs and Time plan.
 
-#### Team Canvas
-
-Lorem Ipsum
-
-[GratiDudes Canvas](#)
+The Team used slack team channel Canvas to ensure everyone stayed updated on project progress and discussions, see [GratiDudes Canvas](/documentation/canvas/hackaton-world-happiness-teamGratiDudes-Canvas.pdf)
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
@@ -435,20 +409,17 @@ This paradigm is centered around the handling of user-generated events. The scri
 
 ## Testing
 
-*<span style="color: blue;">[Back to Content](#content)</span>*
-
 We performed continuous manual testing of our site while developing it.
+Validation of HTML, CSS and JavaScript is OK.
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-## Prerequisites & Deployment
+## Prerequisites and Deployment
 
 The site was developed in VS Code/Gitpod, stored in GitHub as the local repository.
 Github Pages was used to deploy the live website. The instructions to achieve this are below.
 
-*<span style="color: blue;">[Back to Content](#content)</span>*
-
-### Local Development
+### Local Deployment
 
 #### How to Fork
 
@@ -459,8 +430,6 @@ To fork “The Great Gratitude Wall”
 2. Go to the repository for this project, [VCGithubCodel/Gratidudes](https://github.com/vcgithubcode/gratidudes)
 
 3. Click the Fork button in the top right corner.
-
-*<span style="color: blue;">[Back to Content](#content)</span>*
 
 #### How to Clone
 
@@ -478,9 +447,55 @@ To clone “The Great Gratitude Wall”
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
+#### Obtaining EmailJS API 
+
+1. Sign up for a [EmailJS](https://www.emailjs.com/docs/) account in the EmailJS website.
+2. Create an email service in your EmailJS dashboard.
+3. Install EmailJS Library. You can do this by including the EmailJS script in your HTML file or by installing it via npm if you're using a package manager like npm or yarn.
+
+```
+npm install --save @emailjs/browser
+```
+
+or
+
+```
+$ yarn add @emailjs/browser
+```
+
+4. In your EmailJS dashboard, navigate to the "API Keys" section and copy your API key.
+5. Add this code snippet before your closing tags. Making sure you have added your public key.
+
+```js
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+      emailjs.init({
+        publicKey: "YOUR_PUBLIC_KEY",
+      });
+  })();
+</script>
+```
+
+6.  Create an email template in your EmailJS dashboard. This template will define the content and structure of the emails you'll send.
+7. Write JavaScript function to send email using EmailJS. Below is a basic syntax for the code: 
+
+```
+emailjs.send(serviceID, templateID, templateParams, options);
+```
+
+8. Call your function whenever you want to send an email.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
+
+
 ### Version Control
 
 Throughout the development and testing phases of the project, Git and GitHub were utilized for version control management, along with the implementation of a Kanban board for task tracking and workflow organization.
+
+*<span style="color: blue;">[Back to Content](#content)</span>*
 
 ## Credits and Acknowledgements
 
@@ -658,11 +673,11 @@ The GratiDudes would like to thank
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-## The GratiDudesTeam and contributors
+## The GratiDudes Team and contributors
   
 | Dude | Role |  
 |--|--|
-| Amirhossein Bayani | Frontend and Design |
+| [Amirhossein Bayani](https://github.com/teman67/) | Frontend and Design |
 | [Vernell C](https://github.com/VCGithubCode) | Scrum master and Frontend/content |
 | [Patrick Hladun](https://github.com/patrickhladun) | Design Lead and Frontend |
 | [Jacqueline K](https://github.com/JaqiKal) | Frontend and documentation |

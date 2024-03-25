@@ -251,6 +251,10 @@ main {
   margin: 0;
 }
 
+.menu li {
+  margin: 0 8px;
+}
+
 .menu li a {
   display: inline-block;
   position: relative;
@@ -313,8 +317,8 @@ input:checked~.hamburger span:nth-child(3) {
   display: block;
   position: absolute;
   left: 0;
-  bottom: 14px;
-  background: var(--color-primary-200);
+  bottom: 24px;
+  background: var(--color-voodoo-600);
   width: 0;
   height: 16px;
   z-index: -1;
@@ -926,7 +930,7 @@ main {
   /* Link hover animation */
 
   .menu li a::after {
-    bottom: 6px;
+    bottom: 2px;
     height: 12px;
   }
 

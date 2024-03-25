@@ -11,7 +11,7 @@ function containsBadWords(userinput) {
 
     for (let word of prohibitedWords) {
         if (lowerCaseInput.includes(word)) {
-            errorMessage.innerText = "ERROR: Please stop using foul language";
+            showAlert("Please stop using foul language", "danger")
             return true;
         }
     }
@@ -113,7 +113,9 @@ function validateUserMessage() {
         showAlert("ERROR: Please write your name", "danger");
         return false;
     } else {
+        showAlert("Card added successfully", "Success");
         return true;
+
     }
 }
 

@@ -1,14 +1,8 @@
-let post = [{
-    name: "",
-    message: "",
-    sender: ""
-}];
 
 // prohibited words:
 let prohibitedWords = ["fuck", "slut", "shit", "kill"];
 let wall = document.getElementById("wall");
 let errorMessage = document.getElementById("error-message");
-let cards = document.getElementsByClassName("post-it-note");
 let deleteButtonArray = document.getElementsByClassName("delete-button");
 
 // Function to filter prohibited words 
@@ -152,7 +146,7 @@ function initializeAddUserMessage() {
 
 /**  Function to hide the delete buttons */
 function hideDeleteButton() {
-    for (button of deleteButtonArray) {
+    for (let button of deleteButtonArray) {
         button.style.display = "none";
     }
 }
@@ -184,12 +178,7 @@ function deleteLastEntry() {
     }
 }
 
-// const closeFormButton = document.getElementById("close-form");
-// closeFormButton.addEventListener("click", closeForm);
 
-function closeForm() {
-    document.getElementById("form").style.display = "none";
-}
 
 // https://www.solodev.com/blog/web-design/adding-a-load-more-button-to-your-content.stml JQuery
 /** Function handle load more button  using JQuery*/

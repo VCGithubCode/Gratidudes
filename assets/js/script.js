@@ -10,7 +10,7 @@ function containsBadWords(userinput) {
 
     for (let word of prohibitedWords) {
         if (lowerCaseInput.includes(word)) {
-            showAlert("ERROR: Please stop using foul language", "danger");
+            showAlert("Please stop using foul language", "danger");
             return true;
         }
     }
@@ -112,7 +112,9 @@ function validateUserMessage() {
         showAlert("ERROR: Please write your name", "danger");
         return false;
     } else {
+        showAlert("Card added successfully", "Success");
         return true;
+
     }
 }
 
@@ -152,13 +154,13 @@ function hideDeleteButton() {
 
 /** Function to handle delete button and delete recent post */
 function deletePost() {
-    let deleteButtonArray = document.getElementsByClassName("delete-button");
-    for (let btn of deleteButtonArray) {
-        btn.addEventListener("click", (event) => {
+    let deleteButtonArray = document.querySelectorAll(".delete-button");
+    deleteButtonArray.forEach(btn => {
+        btn.addEventListener("click", function () {
             deleteLastEntry();
             btn.parentNode.remove();
         });
-    }
+    });
 }
 
 /** Function to delete last entry and update the local storage */

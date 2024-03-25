@@ -406,7 +406,7 @@ main {
 
 .post-message::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: var(--color-cabaret-700);
+  background-color: var(--color-cabaret-600);
 }
 
 .post-options {

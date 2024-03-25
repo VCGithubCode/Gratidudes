@@ -1,14 +1,8 @@
-let post = [{
-    name: "",
-    message: "",
-    sender: ""
-}];
 
 // prohibited words:
 let prohibitedWords = ["fuck", "slut", "shit", "kill"];
 let wall = document.getElementById("wall");
 let errorMessage = document.getElementById("error-message");
-let cards = document.getElementsByClassName("post-it-note");
 let deleteButtonArray = document.getElementsByClassName("delete-button");
 
 // Function to filter prohibited words 
@@ -50,7 +44,7 @@ function generatePost(post) {
     `;
 
     // Create postOptions element
-    const postOptions = document.createElement("div")
+    const postOptions = document.createElement("div");
     postOptions.classList.add("post-options");
 
     // Create delete buttons
@@ -110,15 +104,12 @@ function validateUserMessage() {
     let userMessage = document.getElementById("message-input").value.trim();
     let userSender = document.getElementById("sender-input").value.trim();
     if (userName === "") {
-        console.log("Name needs to be filled");
         errorMessage.innerText = "ERROR: Please write the name of who you want to write a message";
         return false;
     } else if (userMessage === "") {
-        console.log("user needs to write a message");
         errorMessage.innerText = "ERROR: Please write your message";
         return false;
     } else if (userSender === "") {
-        console.log("user needs to write their name");
         errorMessage.innerText = "ERROR: Please write your name";
         return false;
     } else {
@@ -143,7 +134,6 @@ function initializeAddUserMessage() {
             };
             addRecentMessage(newPost); // Add the recent message to the wall
             addToLocalStorage(newPost); // Save the new post to local storage
-            console.log("message added successfully");
             document.getElementById("name-input").value = ''; // Clear input
             document.getElementById("message-input").value = ''; // Clear input
             document.getElementById("sender-input").value = ''; // Clear input
@@ -156,7 +146,7 @@ function initializeAddUserMessage() {
 
 /**  Function to hide the delete buttons */
 function hideDeleteButton() {
-    for (button of deleteButtonArray) {
+    for (let button of deleteButtonArray) {
         button.style.display = "none";
     }
 }
@@ -188,12 +178,7 @@ function deleteLastEntry() {
     }
 }
 
-// const closeFormButton = document.getElementById("close-form");
-// closeFormButton.addEventListener("click", closeForm);
 
-function closeForm() {
-    document.getElementById("form").style.display = "none";
-}
 
 // https://www.solodev.com/blog/web-design/adding-a-load-more-button-to-your-content.stml JQuery
 /** Function handle load more button  using JQuery*/

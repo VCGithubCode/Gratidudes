@@ -376,7 +376,6 @@ main {
 
 .wall {
   display: grid;
-  grid-auto-rows: 1fr;
   grid-template-columns: 1fr;
   gap: 16px;
   margin-top: var(--spacing-lg);

@@ -112,7 +112,7 @@ function validateUserMessage() {
         showAlert("ERROR: Please write your name", "danger");
         return false;
     } else {
-        showAlert("Card added successfully", "Success");
+        showAlert("Card added successfully!", "success");
         return true;
 
     }
@@ -159,6 +159,7 @@ function deletePost() {
         btn.addEventListener("click", function () {
             deleteLastEntry();
             btn.parentNode.remove();
+            showAlert("Message deleted!", "success");
         });
     });
 }

@@ -1,14 +1,7 @@
-let post = [{
-    name: "",
-    message: "",
-    sender: ""
-}];
 
 // prohibited words:
 let prohibitedWords = ["fuck", "slut", "shit", "kill"];
 let wall = document.getElementById("wall");
-let errorMessage = document.getElementById("error-message");
-let cards = document.getElementsByClassName("post-it-note");
 let deleteButtonArray = document.getElementsByClassName("delete-button");
 
 // Function to filter prohibited words 
@@ -17,7 +10,7 @@ function containsBadWords(userinput) {
 
     for (let word of prohibitedWords) {
         if (lowerCaseInput.includes(word)) {
-            errorMessage.innerText = "ERROR: Please stop using foul language";
+            showAlert("Please stop using foul language", "danger");
             return true;
         }
     }
@@ -110,16 +103,18 @@ function validateUserMessage() {
     let userMessage = document.getElementById("message-input").value.trim();
     let userSender = document.getElementById("sender-input").value.trim();
     if (userName === "") {
-        errorMessage.innerText = "ERROR: Please write the name of who you want to write a message";
+        showAlert("ERROR: Please write the name of who you want to write a message", "danger");
         return false;
     } else if (userMessage === "") {
-        errorMessage.innerText = "ERROR: Please write your message";
+        showAlert("ERROR: Please write your message", "danger");
         return false;
     } else if (userSender === "") {
-        errorMessage.innerText = "ERROR: Please write your name";
+        showAlert("ERROR: Please write your name", "danger");
         return false;
     } else {
+        showAlert("Card added successfully", "Success");
         return true;
+
     }
 }
 
@@ -152,20 +147,20 @@ function initializeAddUserMessage() {
 
 /**  Function to hide the delete buttons */
 function hideDeleteButton() {
-    for (button of deleteButtonArray) {
+    for (let button of deleteButtonArray) {
         button.style.display = "none";
     }
 }
 
 /** Function to handle delete button and delete recent post */
 function deletePost() {
-    let deleteButtonArray = document.getElementsByClassName("delete-button");
-    for (let btn of deleteButtonArray) {
-        btn.addEventListener("click", (event) => {
+    let deleteButtonArray = document.querySelectorAll(".delete-button");
+    deleteButtonArray.forEach(btn => {
+        btn.addEventListener("click", function () {
             deleteLastEntry();
             btn.parentNode.remove();
         });
-    }
+    });
 }
 
 /** Function to delete last entry and update the local storage */
@@ -184,12 +179,7 @@ function deleteLastEntry() {
     }
 }
 
-// const closeFormButton = document.getElementById("close-form");
-// closeFormButton.addEventListener("click", closeForm);
 
-function closeForm() {
-    document.getElementById("form").style.display = "none";
-}
 
 // https://www.solodev.com/blog/web-design/adding-a-load-more-button-to-your-content.stml JQuery
 /** Function handle load more button  using JQuery*/
@@ -208,6 +198,37 @@ function handleLoadMoreButton() {
         }
     });
 }
+
+/**
+   * Shows an alert message on the UI.
+   * The method creates a new alert element, appends it to the alert container,
+   * and removes it after 2 seconds.
+   * @param {string} message
+   * @param {string} type
+   * @returns {void}
+   * @static
+   */
+function showAlert(message, type) {
+    const alertContainer = document.getElementById("alert-container");
+    const alertDiv = document.createElement("div");
+
+    if (type === "danger") {
+      alertDiv.classList.add("alert", "alert--danger");
+    } else if (type === "success") {
+      alertDiv.classList.add("alert", "alert--success");
+    } else {
+      alertDiv.classList.add("alert", "alert--info");
+    }
+
+    alertDiv.innerText = message;
+
+    alertContainer.appendChild(alertDiv);
+
+    // Remove the alert after 2 seconds
+    setTimeout(() => {
+      alertContainer.removeChild(alertDiv);
+    }, 3000);
+  }
 
 // Initialize functions on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", (event) => {

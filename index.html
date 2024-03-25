@@ -85,7 +85,7 @@
             <h1>The Great Wall of Gratitude</h1>
             <p>Welcome to our gratitude wall! Here, you can post messages of appreciation and positivity to inspire
               others. Join us in spreading kindness and celebrating the little joys in life.</p>
-            <a href="#form" class="btn btn-primary">Start Sharing Your Appreciation</a>
+            <a href="#instructions" class="btn btn-primary">Start Sharing Your Appreciation</a>
           </div>
           <div class="col-lg-6 col-12 d-flex justify-content-center align-content-center">
             <dotlottie-player src="./assets/lottie/hero.lottie" background="transparent" speed="1"
@@ -93,7 +93,7 @@
           </div>
         </div>
         <div class="scroll-arrows">
-          <a href="#form" aria-label="scroll to form">
+          <a href="#instructions" aria-label="scroll to form">
             <svg class="arrows" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
               <path class="arrow-1"
                 d="M16.61,30.11h0s-.61.61-.61.61L3.13,17.85l.61-.61,12.26,12.26,12.26-12.26.61.61-12.26,12.26Z" />
@@ -113,12 +113,28 @@
         <path d="M325,37.4C145.5,37.4,0,20.7,0,0v40h650V0C650,20.7,504.5,37.4,325,37.4z" />
       </svg>
     </div>
+    <div class="instructions text-center mt-4 container-fluid" id="instructions">
+      <div class="row">
+        <div class="col">
+          <h1>How to use the Great Wall</h1>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h6>
+            Fill out the card below and watch it become a permanent part of our wall!
+          </h6>
+        </div>
+
+      </div>
+
+    </div>
 
     <!-- Add Post Form -->
     <section class="container py-5">
       <div id="form" class="form">
         <div class="form-content">
-          <div id="error-message"></div>
           <div class="row">
             <div class="col">
               <div class="mb-2">
@@ -150,6 +166,9 @@
     <section class="container my-4">
       <button type="button" class="btn btn-primary" id="load-more-btn">Load More</button>
     </section>
+
+    <div id="alert-container"></div>
+
   </main>
 
   <footer class="footer">

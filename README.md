@@ -66,6 +66,7 @@ Our project, "The Great Wall of Gratitude", is designed to foster a community of
 * [Development Process](#development-process)
   * [Agile Methodology](#agile-methodology)
   * [Collaboration Tools](#collaboration-tools)
+    * [Team canvas](#team-canvas)
   * [Programming paradigm](#programming-paradigm)
 * [Testing](#testing)
   * [Validation](#validation)
@@ -405,6 +406,12 @@ For details please visit our project team slack [canvas](/pdf) and our [Kanban b
  ### Collaboration Tools
  
 The team used [Slack](https://slack.com/) for quick collaboration purposes and Github projects to track User Stories, Bugs and Time plan.
+
+#### Team Canvas
+
+Lorem Ipsum
+
+[GratiDudes Canvas](#)
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 

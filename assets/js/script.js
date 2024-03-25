@@ -104,13 +104,13 @@ function validateUserMessage() {
     let userMessage = document.getElementById("message-input").value.trim();
     let userSender = document.getElementById("sender-input").value.trim();
     if (userName === "") {
-        errorMessage.innerText = "ERROR: Please write the name of who you want to write a message";
+        showAlert("ERROR: Please write the name of who you want to write a message", "danger");
         return false;
     } else if (userMessage === "") {
-        errorMessage.innerText = "ERROR: Please write your message";
+        showAlert("ERROR: Please write your message", "danger");
         return false;
     } else if (userSender === "") {
-        errorMessage.innerText = "ERROR: Please write your name";
+        showAlert("ERROR: Please write your name", "danger");
         return false;
     } else {
         return true;
@@ -197,6 +197,37 @@ function handleLoadMoreButton() {
         }
     });
 }
+
+/**
+   * Shows an alert message on the UI.
+   * The method creates a new alert element, appends it to the alert container,
+   * and removes it after 2 seconds.
+   * @param {string} message
+   * @param {string} type
+   * @returns {void}
+   * @static
+   */
+function showAlert(message, type) {
+    const alertContainer = document.getElementById("alert-container");
+    const alertDiv = document.createElement("div");
+
+    if (type === "danger") {
+      alertDiv.classList.add("alert", "alert--danger");
+    } else if (type === "success") {
+      alertDiv.classList.add("alert", "alert--success");
+    } else {
+      alertDiv.classList.add("alert", "alert--info");
+    }
+
+    alertDiv.innerText = message;
+
+    alertContainer.appendChild(alertDiv);
+
+    // Remove the alert after 2 seconds
+    setTimeout(() => {
+      alertContainer.removeChild(alertDiv);
+    }, 3000);
+  }
 
 // Initialize functions on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", (event) => {

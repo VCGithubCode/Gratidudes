@@ -20,6 +20,7 @@
  *  6.1 - Buttons
  *  6.2 - Divider
  *  6.3 - Key Frames
+ *  6.4 - Alerts
  
  * 10.0  - Media min 768px
  *  11.0 - General
@@ -250,6 +251,10 @@ main {
   margin: 0;
 }
 
+.menu li {
+  margin: 0 8px;
+}
+
 .menu li a {
   display: inline-block;
   position: relative;
@@ -312,8 +317,8 @@ input:checked~.hamburger span:nth-child(3) {
   display: block;
   position: absolute;
   left: 0;
-  bottom: 14px;
-  background: var(--color-primary-200);
+  bottom: 24px;
+  background: var(--color-voodoo-600);
   width: 0;
   height: 16px;
   z-index: -1;
@@ -426,18 +431,6 @@ main {
   background-color: var(--color-cabaret-500);
   color: var(--color-text-light);
   padding: var(--spacing-lg) 0;
-}
-
-.contact-container {
-  background: #FA6D48ed;
-}
-
-.contact-container h1 {
-  color: #fff;
-}
-
-.contact-container p {
-  color: #fff;
 }
 
 /* ================================================== */
@@ -606,22 +599,26 @@ main {
   color: white;
 }
 
-.btn-primary:hover {
-  background-color: var(--color-cabaret-500);
-  border-color: var(--color-cabaret-500);
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus-visible {
+  background-color: var(--color-cabaret-700) !important;
+  border-color: var(--color-cabaret-700) !important;
   color: white;
 }
 
 .btn-light {
   background-color: var(--color-neutral-100);
   border-color: var(--color-neutral-100);
-  color: var(--color-text);
+  color: var(--color-cabaret-500);
 }
 
-.btn-light:hover {
-  background-color: var(--color-neutral-100);
-  border-color: var(--color-neutral-100);
-  color: var(--color-text);
+.btn-light:hover,
+.btn-light:active,
+.btn-light:focus-visible {
+  background-color: var(--color-neutral-300) !important;
+  border-color: var(--color-neutral-300) !important;
+  color: var(--color-cabaret-500) !important;
 }
 
 
@@ -705,7 +702,7 @@ main {
 }
 
 /* ================================================== */
-/* #6.4 Key Frames ================================== */
+/* #6.3 Key Frames ================================== */
 /* ================================================== */
 
 /* Sticky note animation. Amended from, */
@@ -774,11 +771,7 @@ main {
 }
 
 /* ================================================== */
-/* #6.5 Add Post ==================================== */
-/* ================================================== */
-
-/* ================================================== */
-/* Alerts =========================================== */
+/* #6.4 Alerts ====================================== */
 /* ================================================== */
 
 #alert-container {
@@ -799,6 +792,7 @@ main {
 
 .alert--success {
   background-color: var(--color-success);
+  color: var(--color-text-light);
 }
 
 .alert--info {
@@ -808,7 +802,7 @@ main {
 
 .alert--danger {
   background-color: var(--color-danger);
-    
+  color: var(--color-text-light);
 }
 
 
@@ -936,7 +930,7 @@ main {
   /* Link hover animation */
 
   .menu li a::after {
-    bottom: 6px;
+    bottom: 2px;
     height: 12px;
   }
 

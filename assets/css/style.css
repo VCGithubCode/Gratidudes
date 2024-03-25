@@ -20,6 +20,7 @@
  *  6.1 - Buttons
  *  6.2 - Divider
  *  6.3 - Key Frames
+ *  6.4 - Alerts
  
  * 10.0  - Media min 768px
  *  11.0 - General
@@ -606,22 +607,26 @@ main {
   color: white;
 }
 
-.btn-primary:hover {
-  background-color: var(--color-cabaret-500);
-  border-color: var(--color-cabaret-500);
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus-visible {
+  background-color: var(--color-cabaret-700) !important;
+  border-color: var(--color-cabaret-700) !important;
   color: white;
 }
 
 .btn-light {
   background-color: var(--color-neutral-100);
   border-color: var(--color-neutral-100);
-  color: var(--color-text);
+  color: var(--color-cabaret-500);
 }
 
-.btn-light:hover {
-  background-color: var(--color-neutral-100);
-  border-color: var(--color-neutral-100);
-  color: var(--color-text);
+.btn-light:hover,
+.btn-light:active,
+.btn-light:focus-visible {
+  background-color: var(--color-neutral-300) !important;
+  border-color: var(--color-neutral-300) !important;
+  color: var(--color-cabaret-500) !important;
 }
 
 
@@ -705,7 +710,7 @@ main {
 }
 
 /* ================================================== */
-/* #6.4 Key Frames ================================== */
+/* #6.3 Key Frames ================================== */
 /* ================================================== */
 
 /* Sticky note animation. Amended from, */
@@ -774,11 +779,7 @@ main {
 }
 
 /* ================================================== */
-/* #6.5 Add Post ==================================== */
-/* ================================================== */
-
-/* ================================================== */
-/* Alerts =========================================== */
+/* #6.4 Alerts ====================================== */
 /* ================================================== */
 
 #alert-container {

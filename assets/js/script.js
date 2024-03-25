@@ -2,7 +2,6 @@
 // prohibited words:
 let prohibitedWords = ["fuck", "slut", "shit", "kill"];
 let wall = document.getElementById("wall");
-let errorMessage = document.getElementById("error-message");
 let deleteButtonArray = document.getElementsByClassName("delete-button");
 
 // Function to filter prohibited words 
@@ -11,7 +10,7 @@ function containsBadWords(userinput) {
 
     for (let word of prohibitedWords) {
         if (lowerCaseInput.includes(word)) {
-            errorMessage.innerText = "ERROR: Please stop using foul language";
+            showAlert("ERROR: Please stop using foul language", "danger");
             return true;
         }
     }

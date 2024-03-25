@@ -34,7 +34,7 @@ Join us in embracing the power of gratitude. Together, we can make a difference,
 
 Our project, "The Great Wall of Gratitude", is designed to foster a community of positivity by allowing users to anonymously share messages of gratitude. With an intuitive user interface and robust backend, our platform stands as a testament to the power of collective appreciation. We're excited to share how our team has effectively met and exceeded the key project objectives. We're excited to share how our team has effectively met and exceeded the key project objectives:
 
--  we've crafted an immersive and intuitive user interface. This creative approach ensures our design stands out, offering a seamless and engaging user experience.
+-  We've crafted an immersive and intuitive user interface. This creative approach ensures our design stands out, offering a seamless and engaging user experience.
 -   Our project's success stems from meticulous planning and execution. We utilized GitHub Projects for organization, complemented by a comprehensive README.md, to keep our development process transparent and on track.
 -   Our efforts were closely aligned with the Hackathon's theme, bringing forward-looking and creative solutions to the forefront. Our project embodies innovation, setting a benchmark for future endeavors.
 -   We've achieved a responsive, accessible, and thoroughly tested application, prioritizing user experience across different devices and accessibility needs.
@@ -110,7 +110,7 @@ These EPICs collectively cover the journey of users from their initial encounter
 3.  EPIC 3: Frequent Visitor Experience  
     Goal: To provide a rich and dynamic experience for users who frequently visit and contribute to "The Great Wall of Gratitude".
 
-Pls visit our Kanban board for details [[link](https://github.com/users/VCGithubCode/projects/3/views/1)].
+Pls visit our Kanban board for [details](https://github.com/users/VCGithubCode/projects/3/views/1).
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
@@ -357,6 +357,7 @@ Please visit [AmIResonsive](https://ui.dev/amiresponsive?url=https://vcgithubcod
 -   [Google Fonts](https://fonts.google.com/) - To import the fonts used on the website
 -   [Illustrator]([https://www.adobe.com/ie/products/illustrator.html](https://www.adobe.com/ie/products/illustrator.html)) - Used for graphics, icons i.e. site design
 -   [JSHint]([https://jshint.com/](https://jshint.com/)) - JSHint is a static code analysis tool used in software development for checking if JavaScript source code complies with coding rules.
+-   [LeonardoAI](https://leonardo.ai/) - To produce images for hackathon page and hackathon presentation
 -   [Markup Validation Service](https://validator.w3.org/) - Used to check code ensuring that my HTML is error-free and adheres to the latest web standards.
 -   [Slack](https://slack.com/) - is a cloud-based team communication platform.
 -   [TinyPNG](https://tinypng.com/) - WebP, PNG and JPEG Compression
@@ -452,8 +453,6 @@ To clone “The Great Gratitude Wall”
 
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
-*<span style="color: blue;">[Back to Content](#content)</span>*
-
 #### Obtaining EmailJS API 
 
 1. Sign up for a [EmailJS](https://www.emailjs.com/docs/) account in the EmailJS website.
@@ -505,8 +504,6 @@ Throughout the development and testing phases of the project, Git and GitHub wer
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
 ## Credits and Acknowledgements
-
-*<span style="color: blue;">[Back to Content](#content)</span>*
 
 
 <details><summary><b>### Code Used</b></summary>

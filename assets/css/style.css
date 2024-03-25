@@ -429,18 +429,6 @@ main {
   padding: var(--spacing-lg) 0;
 }
 
-.contact-container {
-  background: #FA6D48ed;
-}
-
-.contact-container h1 {
-  color: #fff;
-}
-
-.contact-container p {
-  color: #fff;
-}
-
 /* ================================================== */
 /* #5.4 Error Page ================================== */
 /* ================================================== */

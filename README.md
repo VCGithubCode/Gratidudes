@@ -36,8 +36,7 @@ Our project, "The Great Wall of Gratitude", is designed to foster a community of
 
 **Content**
 
-* [Great Wall of Gratitude](#great-wall-of-
- gratitude)
+* [Great Wall of Gratitude](#great-wall-of-gratitude)
 * [Introduction](#introduction)
 * [Criteria](#criteria)
 * [Goal & UX](#goal--ux)
@@ -61,7 +60,7 @@ Our project, "The Great Wall of Gratitude", is designed to foster a community of
         * [Imagery](#imagery)
   * [Accessibility](#accessibility)
   * [Responsiveness](#responsiveness)
-* [Technologies used](#technologies-used)
+* [Technologies Stack](#technologies-stack)
   * [Language](#language)
   * [Tools](#tools)
 * [Development Process](#development-process)
@@ -129,33 +128,37 @@ Pls visit our Kanban board for details [[link](https://github.com/users/VCGithub
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
+
 ### Structure
 
-#### User Stories
+<details><b><summary> #### User Stories</b></summary>
 
-Pls visit our [Kanban board](https://github.com/users/VCGithubCode/projects/3) for details.
+This is an excerpt of our user stories, please visit our [Kanban board](https://github.com/users/VCGithubCode/projects/3) for details.
 
-| User story ID | Task| Description|
-|--|--|--|
-| US1.1 | Create Landing Page | A welcoming and informative first page that clearly conveys the website's mission and how users can participate. | 
-| US1.2 | Create About Us Page | Provides background information about the project and its creators, building trust and connection with new users. | 
-| US1.3 | Create Navbar | Ensures easy navigation across different sections of the website for a smooth user journey. | 
-| US1.4 | Viewer of Hackathon Webinar | Allows new visitors to watch a presentation about "The Great Wall of Gratitude", understanding its purpose and the effort behind its creation. | 
-| US1.4 | Understanding Website in 7 Seconds | Ensures the website's design and content are intuitive enough for new visitors to quickly understand how to use it. |
-| US2.1 | Add Like Button | Allows users to interact with posts they appreciate, enhancing engagement. | 
-| US2.2 | Create 404 Error Page | Ensures that users who encounter dead links or errors are gently guided back to the active parts of the site. | 
-| US2.3 | Enhance Design of Add Card Popup Window | Improves the user interface for submitting gratitude posts, encouraging more contributions.  | 
-| US2.4 | Revamp Design of Gratitude Cards | Refreshes the appearance of posts for a more appealing and updated look. | 
-| US2.5 | Make Text Area on Cards Scrollable | Improves user experience by allowing longer messages to be easily read. |
-| US3.1 | Create Thank you Page | Rewards users with a dedicated thank you message after they contribute with feed-back. | 
-| US3.2 | Add Delete Button for Cards | Empowers users to manage their own posts, ensuring content remains relevant and personal. | 
-| US3.3 | Add Load More Button | Allows users to explore more gratitude posts without overwhelming the initial page load, enhancing site usability. | 
-| US3.4 | Create Grid Layout for Gratitude Cards | Offers an organized and visually appealing way to browse through the gratitude posts. | 
-| US3.5 | On Reload, Cards Load in Random Order Sometimes Twice | Addresses a technical challenge to ensure a seamless and predictable user experience. |
+| User story ID [epicid.usid] | Task | Description | Issue No. |
+|--|--|--|--|
+| US1.1 | Create Landing Page | A welcoming and informative first page that clearly conveys the website's mission and how users can participate. | issue #7 | 
+| US1.2 | Create About Us Page | Provides background information about the project and its creators, building trust and connection with new users. | issue #25 | 
+| US1.3 | Create Navbar | Ensures easy navigation across different sections of the website for a smooth user journey. | issue #22 | 
+| US1.4 | Viewer of Hackathon Webinar | Allows new visitors to watch a presentation about "The Great Wall of Gratitude", understanding its purpose and the effort behind its creation. | issue #55 | 
+| US1.4 | Understanding Website in 7 Seconds | Ensures the website's design and content are intuitive enough for new visitors to quickly understand how to use it. | issue #99 | 
+| US2.1 | Add Like Button | Allows users to interact with posts they appreciate, enhancing engagement. | issue #41  | 
+| US2.2 | Create 404 Error Page | Ensures that users who encounter dead links or errors are gently guided back to the active parts of the site. | issue #37 | 
+| US2.3 | Enhance Design of Add Card Popup Window | Improves the user interface for submitting gratitude posts, encouraging more contributions.  | issue #66 | 
+| US2.4 | Revamp Design of Gratitude Cards | Refreshes the appearance of posts for a more appealing and updated look. | issue #67  | 
+| US2.5 | Make Text Area on Cards Scrollable | Improves user experience by allowing longer messages to be easily read. | issue #86 | 
+| US3.1 | Create Thank you Page | Rewards users with a dedicated thank you message after they contribute with feed-back. | issue #28 | 
+| US3.2 | Add Delete Button for Cards | Empowers users to manage their own posts, ensuring content remains relevant and personal. | issue #42  | 
+| US3.3 | Add Load More Button | Allows users to explore more gratitude posts without overwhelming the initial page load, enhancing site usability. | issue #59 | 
+| US3.4 | Create Grid Layout for Gratitude Cards | Offers an organized and visually appealing way to browse through the gratitude posts. | issue #64 | 
+| US3.5 | On Reload, Cards Load in Random Order Sometimes Twice | Addresses a technical challenge to ensure a seamless and predictable user experience. | issue #85 | 
  
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-#### Feature
+
+</details>
+
+<details><b><summary>#### Feature</b></summary>
 
 The website features three main web pages:
 
@@ -197,6 +200,7 @@ This comprehensive setup not only ensures a user-friendly platform for sharing g
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
+
 #### Future Features
 
 In no specific order:
@@ -210,9 +214,11 @@ In no specific order:
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
+</details>
+
 ### Skeleton
 
-#### Wireframe
+<details><summary><b>#### Wireframe</b></summary>
 
 Our wireframe designs laid the foundation for a user-friendly layout, ensuring that posting and browsing gratitude messages is intuitive and enjoyable. We crafted a responsive design through wireframe planning. This ensured that whether on a smartphone or desktop, users would enjoy a seamless experience. Wireframes also acted as a visual guide during the development process, helping to organize the placement of elements. It has a sleek user interface that clearly displays the site board and control buttons for a seamless navigation experience.
 
@@ -254,11 +260,13 @@ Style guide
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
+</details>
+
 ### Surface
 
 #### Design Elements
 
-##### Color Scheme
+<details><summary><b>##### Color Scheme</b></summary>
 
 The website features a warm, inviting palette with gradient of each colour that reflects the spirit of gratitude and positivity.
 
@@ -290,7 +298,9 @@ Signal (danger, information, success) colour
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-##### Typography
+</details>
+
+<details><summary><b>##### Typography</b></summary>
 
 We've chosen fonts that are easy to read and convey a friendly, welcoming tone, enhancing the overall user experience. The team selected the fonts Poppins, Arial, Helvetica, and employed Sans-serif as a fallback option.
 
@@ -307,6 +317,8 @@ Poppins Extra bold+
 ![Poppins Extra bold](/documentation/doc-img/poppins-extra-bold.png)  
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
+
+</details>
 
 ##### Imagery
   
@@ -344,7 +356,7 @@ The website is fully responsive, providing a seamless experience on devices of a
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-### Tools and Libraries
+<details><b><summary>### Tools and Libraries</b></summary>
 
 -   [Am I Responsive?](http://ami.responsivedesign.is/) - To show the website image on a range of devices.
 -   [Bootstrap]([https://getbootstrap.com/docs/5.2/getting-started/introduction/](https://getbootstrap.com/docs/5.2/getting-started/introduction/)) - Responsive design.
@@ -367,6 +379,8 @@ The website is fully responsive, providing a seamless experience on devices of a
 -   [Web Disability Sim](https://chrome.google.com/webstore/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) - a google chrome extension that allows you to view your site as people with accessibility needs would see it.
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
+
+</details>
 
 ## Development Process
 
@@ -465,7 +479,8 @@ Throughout the development and testing phases of the project, Git and GitHub wer
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-### Code Used
+
+<details><summary><b>### Code Used</b></summary>
 
 #### script.js
 
@@ -626,6 +641,8 @@ This code was inspired by [GeeksforGeeks](https://www.geeksforgeeks.org/how-to-r
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
+</details>
+
 ### Acknowledgements
 
 The GratiDudes would like to thank
@@ -634,7 +651,7 @@ The GratiDudes would like to thank
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-## The GratiDudesTeam
+## The GratiDudesTeam and contributors
   
 | Dude | Role |  
 |--|--|

@@ -542,7 +542,7 @@ main {
   /* Pin relative to sticky note */
   position: absolute;
   /* Adjusts so the pin head appears at the top of the needle */
-  top: -25px;
+  top: -35px;
   /* Positions the center of the pin head */
   left: 50%;
   transform: translateX(-50%);
@@ -551,7 +551,7 @@ main {
     inset 0 0 0 1px hsla(0, 0%, 0%, .1),
     inset 3px 3px 3px hsla(0, 0%, 100%, .2),
     inset -3px -3px 3px hsla(0, 0%, 0%, .2),
-    33px 18px 6px hsla(0, 0%, 0%, .3);
+    32px 9px 6px hsla(0, 0%, 0%, .3);
   z-index: 1;
   /* Initially hides pin; fades in post-sticky-note spin */
   visibility: hidden;
@@ -565,14 +565,14 @@ main {
   content: '';
   position: absolute;
   /* horizontal position */
-  left: 9px;
+  left: 7px;
   /* vertical position */
-  top: 40px;
+  top: 26px;
   width: 30px;
   height: 1px;
   /* Makes the pseudo-element itself invisible, showing only the shadow */
   background: transparent;
-  box-shadow: -4px 6px 2px hsla(0, 0%, 0%, .2);
+  box-shadow: -4px 7px 2px hsla(0, 0%, 0%, .2);
   /* Angle of the shadow */
   transform: rotate(-35deg);
   /* Below the needle body */
@@ -587,10 +587,10 @@ main {
 .thank-you .pin::after {
   content: '';
   position: absolute;
-  left: 9px;
-  top: 23px;
+  left: 10px;
+  top: 20px;
   width: 2px;
-  height: 20px;
+  height: 23px;
   background-color: #555;
   /* Keep above shadow */
   z-index: 2;
@@ -872,7 +872,7 @@ main {
 
 .card .card-img-top {
   transition: filter 0.7s ease;
-  filter: brightness(0.7); 
+  filter: brightness(0.7);
 }
 
 .card:hover .card-img-top {
@@ -888,11 +888,11 @@ main {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 0;
-  transition: opacity 0.7s ease; 
+  transition: opacity 0.7s ease;
 }
 
 .card:hover .card-img-overlay {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .about-us-section {
@@ -1007,11 +1007,25 @@ main {
   .thank-you .pin {
     width: 24px;
     height: 24px;
-    top: -45px;
+    top: -43px;
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .1),
+      inset 3px 3px 3px hsla(0, 0%, 100%, .2),
+      inset -3px -3px 3px hsla(0, 0%, 0%, .2),
+      35px 16px 6px hsla(0, 0%, 0%, .3);
+  }
+
+  .thank-you .pin::before {
+    /* horizontal position */
+    left: 7px;
+    /* vertical position */
+    top: 37px;
+    width: 30px;
+    box-shadow: -2px 8px 2px hsla(0, 0%, 0%, .2);
   }
 
   .thank-you .pin::after {
     left: 11px;
-    height: 35px;
+    height: 33px;
+    top: 22px;
   }
 }

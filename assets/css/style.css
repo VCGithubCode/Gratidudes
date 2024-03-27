@@ -463,8 +463,8 @@ main {
   font-size: 9rem;
   margin: 0;
   font-weight: 1000;
-  background: url(/assets/images/beautiful-lavender-field-background.jpg) center no-repeat;
-  -webkit-text-fill-color: transparent;
+  background: url(/assets/images/404_bg.webp) center no-repeat;
+  color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }

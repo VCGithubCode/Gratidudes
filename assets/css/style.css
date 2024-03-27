@@ -466,7 +466,7 @@ main {
   background: url(/assets/images/404_bg.png) center no-repeat;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  z-index: 5;
+  background-clip: text;
 }
 
 .error-content h2 {

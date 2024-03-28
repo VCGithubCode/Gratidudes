@@ -134,6 +134,10 @@ body {
   font: 300 16px/1.6 Poppins, Arial, Helvetica, sans-serif;
 }
 
+.hidden-heading {
+  display: none;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -461,9 +465,9 @@ main {
 
 .error-content h1 {
   font-size: 9rem;
-  margin: 0;
+  margin: 20px;
   font-weight: 1000;
-  background: url(/assets/images/404_bg.webp) center no-repeat;
+  background: url(../images/404_bg.webp) center no-repeat;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -513,6 +517,7 @@ main {
   /* color-yellow-400 w. opacity */
   border: 0.5px solid rgba(255, 148, 32, 0.5);
   /* Set element's width to 100% of its parent */
+  height: 450px;
   width: 100%;
   /* Element does not exceed 300px. */
   max-width: 270px;
@@ -537,13 +542,13 @@ main {
 .thank-you .pin {
   /* Pin head size (width+height)*/
   width: 20px;
-  height: 20px;
+  height: 35px;
   background-color: var(--color-voodoo-400);
   border-radius: 50%;
   /* Pin relative to sticky note */
   position: absolute;
   /* Adjusts so the pin head appears at the top of the needle */
-  top: -35px;
+  top: -45px;
   /* Positions the center of the pin head */
   left: 50%;
   transform: translateX(-50%);
@@ -568,12 +573,12 @@ main {
   /* horizontal position */
   left: 7px;
   /* vertical position */
-  top: 26px;
+  top: 41px;
   width: 30px;
-  height: 1px;
+  height: 2px;
   /* Makes the pseudo-element itself invisible, showing only the shadow */
   background: transparent;
-  box-shadow: -4px 7px 2px hsla(0, 0%, 0%, .2);
+  box-shadow: -4px 5px 2px hsla(0, 0%, 0%, .2);
   /* Angle of the shadow */
   transform: rotate(-35deg);
   /* Below the needle body */
@@ -589,9 +594,9 @@ main {
   content: '';
   position: absolute;
   left: 10px;
-  top: 20px;
+  top: 29px;
   width: 2px;
-  height: 23px;
+  height: 24px;
   background-color: #555;
   /* Keep above shadow */
   z-index: 2;
@@ -1005,10 +1010,13 @@ main {
     margin: auto;
   }
 
-  .thank-you .pin {
+  /* Pin head & shadow */
+.thank-you .pin {
+  box-shadow:
+    32px 10px 5px hsla(0, 0%, 0%, .3);
     width: 24px;
-    height: 24px;
-    top: -43px;
+    height: 35px;
+    top: -30px;
     box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .1),
       inset 3px 3px 3px hsla(0, 0%, 100%, .2),
       inset -3px -3px 3px hsla(0, 0%, 0%, .2),
@@ -1019,14 +1027,20 @@ main {
     /* horizontal position */
     left: 7px;
     /* vertical position */
-    top: 37px;
+    top: 39px;
     width: 30px;
     box-shadow: -2px 8px 2px hsla(0, 0%, 0%, .2);
   }
 
   .thank-you .pin::after {
     left: 11px;
-    height: 33px;
-    top: 22px;
+    height: 23px;
+    top: 33px;
   }
+}
+
+/* Needle */
+.thank-you .pin::after {
+  height: 25px;
+  top: 33px
 }

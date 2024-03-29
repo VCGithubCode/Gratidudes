@@ -833,27 +833,10 @@ main {
 
 .card {
   width: 90%;
-}
-
-.card .card-img-top {
-  width: 100%;
-  height: auto;
-  /* Maintain aspect ratio */
-}
-
-.card-body {
-  padding: 1.25rem;
-  text-align: center;
-
-}
-
-.card-title {
-  font-size: 1.25rem;
-}
-
-.card-text {
-  font-size: 1rem;
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card .card-img-top {
@@ -861,22 +844,7 @@ main {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.card .card-img-top {
   margin: 10px auto;
-}
-
-
-.card .card-img-top {
   transition: filter 0.7s ease;
   filter: brightness(0.7);
 }
@@ -899,6 +867,41 @@ main {
 
 .card:hover .card-img-overlay {
   opacity: 1;
+}
+
+.card-body {
+  padding: 1.25rem;
+  text-align: center;
+  height: 200px; /* Set a fixed height for the card body */
+  overflow-y: auto; /* Add vertical scroll if content exceeds the fixed height */
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.card-body::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.card-body::-webkit-scrollbar-track {
+  background: var(--color-orange-300); /* Color of the scrollbar track */
+  border-radius: 5px;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+  background: var(--color-yellow-400); /* Color of the scrollbar thumb */
+  border: 1px solid var(--color-neutral-300);
+  border-radius: 5px;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-yellow-300); /* Color of the scrollbar thumb on hover */
 }
 
 .about-us-section {

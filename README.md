@@ -192,7 +192,7 @@ In no specific order:
 -   Implement features that celebrate user milestones, such as the number of gratitude posts shared or interactions received, enhancing a sense of achievement and community recognition.
 -   Expand the site's accessibility by offering multilingual support, inviting a broader audience to share and explore gratitude across cultures.
 -   Partner with wellness apps to enable users to share their gratitude posts directly from other platforms, creating a seamless experience between gratitude expression and personal health tracking.
-- Create 405 Erroor page
+- Create 405 Error page
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 

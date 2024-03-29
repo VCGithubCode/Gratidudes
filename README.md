@@ -146,47 +146,43 @@ This is an excerpt of our user stories, please visit our [Kanban board](https://
 
 <details><b><summary>#### Feature</b></summary>
 
+<details><b><summary>#### Feature</b></summary>
 
 The website features three main web pages:
 
--   The landing page, where one immediately interacts by posting messages.
--   The About Page offers insights into the “The Great Gratitude Walls” platform and its team members.
--   For further inquiries or services, users can reach out through the Contact Page
+-   **The landing page**, central to the user experience, this page invites users to share their gratitude by posting messages. Each submission becomes part of 'The Wall', a dynamic display of positive sentiments from the community.
+-   **The About Page**, offers insights into the "The Great Gratitude Walls" platform and its team members.
+-   **The Contact Page**, designed for users to make inquiries or seek assistance, featuring a straightforward form that, upon submission, employs EmailJS to ensure messages are promptly directed to the site administrators.
+
+There are two auxiliary pages:
+
+- The **404 Page Not Found** is a crucial auxiliary page designed to handle instances where a user attempts to access a non-existent section of the website. This page serves not only as a notification of an incorrect or outdated link but also as a gentle guide back to the main content, ensuring users don't feel lost.
+
+- Upon submitting the contact form, users are directed to the **Thank You page**, another essential support page that acknowledges their action with gratitude. This page plays a pivotal role in the user interaction cycle by confirming that their message has been successfully sent and is under consideration. It reinforces the platform's community-driven ethos by expressing appreciation for the user's input or inquiry. Additionally, it reassures users that their effort to reach out is valued, with an inviting option to return to the main wall, encouraging continued participation in the platform's positive exchange of messages.
     
-Key features include an anonymous posting mechanism, a searchable database of gratitude messages, and interactive elements like 'liking' and commenting on posts.
+Key Features Include:
 
-The JavaScript code underpins the functionality of "The Great Wall of Gratitude," a platform where users can express their appreciation through gratitude messages. These messages go through a filtration process to ensure the content is free from prohibited words before being publicly displayed. Users are prompted to input their name and message via a form. The script rigorously checks for prohibited words and confirms that both the name and message fields are filled out. Upon passing these checks, the message is showcased on "the wall," a dedicated section for displaying user-contributed messages, and concurrently saved to local storage for data persistence.
+- **Message Submission with Validation** 
 
-In addition to these features, the code encompasses functions for:
+Users are encouraged to share their gratitude messages through a form. The system checks for prohibited words to maintain the content's positivity and requires all fields to be filled before submission, promoting responsible community interaction.
 
--   **Retrieving and Displaying Message**
+- **Persistent Message Display**
 
-At each page load, all messages stored in local storage are retrieved and displayed, ensuring that the gratitude expressed by users remains accessible and persistent over time.
+Utilizing local storage, messages once posted are stored and displayed even after the page is reloaded, ensuring the permanence of the gratitude expressed.
 
--   **Adding Recent Messages**
+- **Dynamic Interaction**
 
-Newly submitted messages are immediately added to the wall, fostering a dynamic and evolving space of shared gratitude.
+The site integrates a 'like' button for each message, allowing users to interact with and acknowledge others' posts, fostering a supportive environment.
 
--   **Form Visibility Management**
+- **Post Management**
 
-The script handles the visibility of the submission form, enhancing the user interface by streamlining the user's journey from entering to submitting their message of gratitude.
+ Beyond adding messages, users can also remove their posts, giving them control over their contributions to the wall.
 
--   **Fetching Random Messages**
+While the site currently does not feature a searchable database or commenting system, its existing framework lays the groundwork for potential expansions, including these and other interactive elements. The clear and concise error handling, alongside a custom 404 page and a thank-you page for form submissions, ensures a smooth user experience.
 
-A feature to fetch a random message from the stored messages enriches the user experience by spotlighting different expressions of gratitude, although without any deletion to maintain the integrity of the gratitude archive.
-
--   **Interactive Elements**
-
-Incorporation of like buttons and deletion options for user-submitted posts, facilitating interaction and engagement within the community. Additionally, the load more button and scrollable text areas in posts enhance the browsing experience.
-
--   **Error Handling and Feedback**
-
-Custom 404 and a thank-you page for submissions, offer clear feedback and guidance to users during their navigation and interaction with the site.
-
-This comprehensive setup not only ensures a user-friendly platform for sharing gratitude messages but also maintains the integrity and appropriateness of content. Through continuous engagement features and meticulous data management, "The Great Wall of Gratitude" stands as a testament to the collective appreciation and positivity it aims to cultivate.
+Through these carefully designed features and a commitment to a positive community ethos, 'The Great Wall of Gratitude' serves as a beacon of appreciation and kindness in the digital landscape."
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
-
 
 #### Future Features
 
@@ -198,6 +194,7 @@ In no specific order:
 -   Implement features that celebrate user milestones, such as the number of gratitude posts shared or interactions received, enhancing a sense of achievement and community recognition.
 -   Expand the site's accessibility by offering multilingual support, inviting a broader audience to share and explore gratitude across cultures.
 -   Partner with wellness apps to enable users to share their gratitude posts directly from other platforms, creating a seamless experience between gratitude expression and personal health tracking.
+- Create 405 Erroor page
 
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
@@ -345,7 +342,7 @@ Please visit [AmIResonsive](https://ui.dev/amiresponsive?url=https://vcgithubcod
 <details><b><summary>### Tools and Libraries</b></summary>
 
 -   [Am I Responsive?](http://ami.responsivedesign.is/) - To show the website image on a range of devices.
--   [Bootstrap]([https://getbootstrap.com/docs/5.2/getting-started/introduction/](https://getbootstrap.com/docs/5.2/getting-started/introduction/)) - Responsive design.
+-    [Bootstrap][(https://getbootstrap.com/docs/5.2/getting-started/introduction/)](https://getbootstrap.com/docs/5.2/getting-started/introduction/) - Responsive design. - Responsive design.
 -   [Coolors](https://coolors.co/) - Color generator
 -   [CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input) - Used to check code ensuring that my CSS is error-free and adheres to the latest web standards.
 -   [DevTools](https://developer.chrome.com/docs/devtools) - help in edit pages on-the-fly and diagnose problems quickly.

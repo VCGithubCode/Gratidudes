@@ -142,11 +142,7 @@ This is an excerpt of our user stories, please visit our [Kanban board](https://
  
 *<span style="color: blue;">[Back to Content](#content)</span>*
 
-</details>
-
-<details><b><summary>#### Feature</b></summary>
-
-<details><b><summary>#### Feature</b></summary>
+</details<details><b><summary>#### Feature</b></summary>
 
 The website features three main web pages:
 

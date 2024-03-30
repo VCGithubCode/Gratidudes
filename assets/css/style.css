@@ -568,17 +568,16 @@ main {
 
   /* Pin head SHAPE (width+height+radius)*/
   width: 20px;
-  height: 35px;
+  height: 20px;
   border-radius: 50%;
 
   /* Sets the color of the pin head from a CSS variable */
   background-color: var(--color-voodoo-400);
 
   /* Positions the pin head above its intended location on the sticky note */
-  /* - Moves the pin head upwards outside its container */
   /* - Centers the pin head horizontally relative to its parent */
   /* - Corrects the horizontal position to truly center the pin head */
-  top: -45px;
+  top: -26px; /* Move the pin [head + needle + shadow] up or down on the page */
   left: 50%;
   transform: translateX(-50%);
 
@@ -588,7 +587,7 @@ main {
     inset 0 0 0 1px hsla(0, 0%, 0%, .1),
     inset 3px 3px 3px hsla(0, 0%, 100%, .2),
     inset -3px -3px 3px hsla(0, 0%, 0%, .2),
-    32px 9px 6px hsla(0, 0%, 0%, .3);
+    31px 7px 6px hsla(0, 0%, 0%, .3); /* Pin head SHADOW x-axis, y-axis, blur */
 
   /* Ensures the pin appears above the elements it overlaps */
   z-index: 1;
@@ -617,7 +616,7 @@ main {
   /* Moves it slightly right from the parent's left edge */
 
   /* Sets the vertical position to place the shadow below the pin head */
-  top: 41px;
+  top: 29px; /* Needle body shadow y-axis */
   /* Positions it below the pin head, starting partway down the needle */
 
   /* Sets the size of the shadow to be thin and elongated, like a needle's shadow */
@@ -631,7 +630,7 @@ main {
 
   /* Applies a shadow to the pseudo-element, creating the effect of the needle's shadow */
   /* - Position and blur of the shadow with slight transparency */
-  box-shadow: -4px 5px 2px hsla(0, 0%, 0%, .2);
+  box-shadow: -0px 1px 2px hsla(0, 0%, 0%, .2); /* Needle body SHADOW left right diagonal, up down at angle, blur */
 
   /* Rotates the shadow to create an angled effect, simulating light source and needle's angle */
   /* - Tilts the shadow to mimic the angle of a needle being pinned */
@@ -662,13 +661,13 @@ main {
   left: 10px;
 
   /* Sets the vertical start point of the needle, positioning it just below the pin head for a realistic look */
-  top: 29px;
+  top: 20px; /* Needle body y-axis */
 
   /* The width of the needle, making it appear thin and sharp */
   width: 2px;
 
   /* The height of the needle, defining how long it is */
-  height: 24px;
+  height: 20px; /* Needle body length */
 
   /* Sets the color of the needle to a dark grey, simulating a metal look */
   background-color: #555;
@@ -1098,21 +1097,17 @@ main {
   box-shadow:
     32px 10px 5px hsla(0, 0%, 0%, .3);
     width: 24px;
-    height: 35px;
-    top: -30px;
-    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .1),
-      inset 3px 3px 3px hsla(0, 0%, 100%, .2),
-      inset -3px -3px 3px hsla(0, 0%, 0%, .2),
-      35px 16px 6px hsla(0, 0%, 0%, .3);
+    height: 24px;
+    top: -32px;
+    box-shadow:
+      31px 13px 6px hsla(0, 0%, 0%, .3);
   }
 
   .thank-you .pin::before {
-    /* horizontal position */
-    left: 7px;
     /* vertical position */
-    top: 39px;
-    width: 30px;
-    box-shadow: -2px 8px 2px hsla(0, 0%, 0%, .2);
+    top: 31px;
+    width: 59px;
+    box-shadow: -4px 7px 2px hsla(0, 0%, 0%, .2);
   }
 
   .thank-you .pin::after {
@@ -1124,6 +1119,6 @@ main {
 
 /* Needle */
 .thank-you .pin::after {
-  height: 25px;
-  top: 33px
+  height: 24px;
+  top: 24px
 }

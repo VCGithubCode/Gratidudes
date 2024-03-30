@@ -492,195 +492,116 @@ main {
 /* #5.5 Thank You =================================== */
 /* ================================================== */
 
-/* Main container styling for a 'thank-you' message */
 .thank-you {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Sets a minimum height based on the viewport height to ensure it occupies a significant portion of the screen */
   min-height: 82vh;
 }
 
-/* Positions the container element relatively to allow absolute positioning of its children */
 .thank-you .container {
   position: relative;
 }
 
-/* Styles for the sticky note within the 'thank-you' message */
+/* Sticky note style*/
 .thank-you .sticky-note {
-
-  /* Creates a gradient background to mimic the look of a physical sticky note with some depth */
   background-image: radial-gradient(circle,
       var(--color-yellow-300),
       var(--color-yellow-400),
       var(--color-cabaret-500));
-
-  /* Adds spacing around the content of the sticky note */
   padding: 20px;
-
   /* Apply two levels of shadow to give a 3D effect */
   box-shadow:
     0 10px 15px rgba(0, 0, 0, 0.2),
     0 4px 6px rgba(0, 0, 0, 0.2);
-
-  /* Adds a subtle border with partial transparency for a slight separation effect */
   /* color-yellow-400 w. opacity */
   border: 0.5px solid rgba(255, 148, 32, 0.5);
-
-  /* Controls the size and proportions of the sticky note */
-  /* - Fixed height */
-  /* - Fills the width of its parent container */
-  /* - Limits the maximum width to ensure the note does not get too wide */
-  /* - Maintains a square shape regardless of size adjustments */
+  /* Set element's width to 100% of its parent */
   height: 450px;
   width: 100%;
+  /* Element does not exceed 300px. */
   max-width: 270px;
+  /* That element keeps a quadratic box shape */
   aspect-ratio: 1 / 1;
-
-  /* Centers the sticky note within its parent container */
   margin: auto;
-
-  /* Softens the corners with a slight rounding */
   border-radius: 5px;
-
-  /* Uses Flexbox to center and organize content within the sticky note */
+  /* Centers child elements using flex. */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
-
-  /* Enables absolute positioning for child elements relative to the sticky note */
   position: relative;
-
-  /* Applies an animation that makes the sticky note fade in and spin for a dynamic entrance */
+  /* Apply animation */
   animation: fadeInSpin 2s ease-in-out forwards;
-
-  /* Sets the stacking order, ensuring the sticky note appears below overlaying elements like the pin */
+  /* Stack order of the element */
   z-index: 0;
 }
 
-/* Styling for the pin inside a 'thank-you' component */
+/* Pin head & shadow */
 .thank-you .pin {
-
-  /* Positions the pin absolutely within its parent element, allowing it to be placed precisely */
-  position: absolute;
-
-  /* Pin head SHAPE (width+height+radius)*/
+  /* Pin head size (width+height)*/
   width: 20px;
-  height: 20px;
-  border-radius: 50%;
-
-  /* Sets the color of the pin head from a CSS variable */
+  height: 35px;
   background-color: var(--color-voodoo-400);
-
-  /* Positions the pin head above its intended location on the sticky note */
-  /* - Centers the pin head horizontally relative to its parent */
-  /* - Corrects the horizontal position to truly center the pin head */
-  top: -26px; /* Move the pin [head + needle + shadow] up or down on the page */
+  border-radius: 50%;
+  /* Pin relative to sticky note */
+  position: absolute;
+  /* Adjusts so the pin head appears at the top of the needle */
+  top: -45px;
+  /* Positions the center of the pin head */
   left: 50%;
   transform: translateX(-50%);
-
-  /* Applies multiple box shadows to create the appearance of an inner shadow for depth, and an outer shadow to simulate light from the upper left */
   /* Inner shadow was modified using guidance from: https://devdevout.com/css/css-inner-shadow */
   box-shadow:
     inset 0 0 0 1px hsla(0, 0%, 0%, .1),
     inset 3px 3px 3px hsla(0, 0%, 100%, .2),
     inset -3px -3px 3px hsla(0, 0%, 0%, .2),
-    31px 7px 6px hsla(0, 0%, 0%, .3); /* Pin head SHADOW x-axis, y-axis, blur */
-
-  /* Ensures the pin appears above the elements it overlaps */
+    32px 9px 6px hsla(0, 0%, 0%, .3);
   z-index: 1;
-
-  /* Initially the pin is invisible to make way for an animation */
+  /* Initially hides pin; fades in post-sticky-note spin */
   visibility: hidden;
-
-  /* Animation to fade in the pin, creating a visual entrance after a delay */
-  /* - Defines the animation's behavior */
-  /* - Starts the animation after a slight delay for dramatic effect */
   animation: fadeIn 2s ease-in-out forwards;
   animation-delay: 2.1s;
 }
 
-/* Adds a shadow to simulate the needle's body for a pin inside a 'thank-you' component */
+/* Needle body shadow with angle */
 .thank-you .pin::before {
-
-  /* Necessary for pseudo-elements to be displayed */
+  /* to display pseudo element */
   content: '';
-
-  /* Positions the pseudo-element absolutely, allowing precise placement */
   position: absolute;
-
-  /* Sets the horizontal position relative to the parent .pin element */
+  /* horizontal position */
   left: 7px;
-  /* Moves it slightly right from the parent's left edge */
-
-  /* Sets the vertical position to place the shadow below the pin head */
-  top: 29px; /* Needle body shadow y-axis */
-  /* Positions it below the pin head, starting partway down the needle */
-
-  /* Sets the size of the shadow to be thin and elongated, like a needle's shadow */
-  /* - Length of the shadow */
-  /* - Thickness of the shadow, making it appear as a thin line */
+  /* vertical position */
+  top: 41px;
   width: 30px;
   height: 2px;
-
-  /* Makes the pseudo-element itself invisible, only the shadow will be visible */
+  /* Makes the pseudo-element itself invisible, showing only the shadow */
   background: transparent;
-
-  /* Applies a shadow to the pseudo-element, creating the effect of the needle's shadow */
-  /* - Position and blur of the shadow with slight transparency */
-  box-shadow: -0px 1px 2px hsla(0, 0%, 0%, .2); /* Needle body SHADOW left right diagonal, up down at angle, blur */
-
-  /* Rotates the shadow to create an angled effect, simulating light source and needle's angle */
-  /* - Tilts the shadow to mimic the angle of a needle being pinned */
+  box-shadow: -4px 5px 2px hsla(0, 0%, 0%, .2);
+  /* Angle of the shadow */
   transform: rotate(-35deg);
-
-  /* Ensures the shadow appears below the needle body, but above other elements it might overlap */
+  /* Below the needle body */
   z-index: 1;
-
-  /* The shadow is initially hidden to allow for a reveal animation */
+  /* Initially hides shadow; fades in post-sticky-note spin */
   visibility: hidden;
-
-  /* Animation to fade in the shadow, creating a dynamic visual entrance */
-  /* - Defines the animation's behavior */
-  /* - Delays the start of the animation to synchronize with other elements */
   animation: fadeIn 2s ease-in-out forwards;
   animation-delay: 2.1s;
 }
 
-/* Styles the needle part of the pin within a 'thank-you' message */
+/* Needle */
 .thank-you .pin::after {
-  /* Necessary for the pseudo-element to be generated, even though it doesn't have visible content */
   content: '';
-
-  /* Positions the needle absolutely within its parent, allowing precise control over its placement */
   position: absolute;
-
-  /* Positions the needle horizontally within the pin. This slight offset centers it under the pin head. */
   left: 10px;
-
-  /* Sets the vertical start point of the needle, positioning it just below the pin head for a realistic look */
-  top: 20px; /* Needle body y-axis */
-
-  /* The width of the needle, making it appear thin and sharp */
+  top: 29px;
   width: 2px;
-
-  /* The height of the needle, defining how long it is */
-  height: 20px; /* Needle body length */
-
-  /* Sets the color of the needle to a dark grey, simulating a metal look */
+  height: 24px;
   background-color: #555;
-
-  /* Ensures the needle appears above its shadow, but below the pin head, for depth and realism */
+  /* Keep above shadow */
   z-index: 2;
-
-  /* The needle starts off hidden, allowing for a visual effect where it appears to "pin" the note onto the board */
+  /* Initially hides needle; fades in post-sticky-note spin */
   visibility: hidden;
-
-  /* Animation that gradually reveals the needle, synchronized with the overall animation of the pin and note */
-  /* - Defines the fade-in animation */
-  /* - Delays the start of the animation to match the timing of other animated elements */
   animation: fadeIn 2s ease-in-out forwards;
   animation-delay: 2.1s;
 }
@@ -1097,17 +1018,21 @@ main {
   box-shadow:
     32px 10px 5px hsla(0, 0%, 0%, .3);
     width: 24px;
-    height: 24px;
-    top: -32px;
-    box-shadow:
-      31px 13px 6px hsla(0, 0%, 0%, .3);
+    height: 35px;
+    top: -30px;
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .1),
+      inset 3px 3px 3px hsla(0, 0%, 100%, .2),
+      inset -3px -3px 3px hsla(0, 0%, 0%, .2),
+      35px 16px 6px hsla(0, 0%, 0%, .3);
   }
 
   .thank-you .pin::before {
+    /* horizontal position */
+    left: 7px;
     /* vertical position */
-    top: 31px;
-    width: 59px;
-    box-shadow: -4px 7px 2px hsla(0, 0%, 0%, .2);
+    top: 39px;
+    width: 30px;
+    box-shadow: -2px 8px 2px hsla(0, 0%, 0%, .2);
   }
 
   .thank-you .pin::after {
@@ -1119,6 +1044,6 @@ main {
 
 /* Needle */
 .thank-you .pin::after {
-  height: 24px;
-  top: 24px
+  height: 25px;
+  top: 33px
 }

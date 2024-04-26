@@ -688,26 +688,28 @@ main {
 }
 
 .arrows path {
-  animation: arrow-animation 3s infinite;
   -webkit-animation: arrow-animation 3s infinite;
+  animation: arrow-animation 3s infinite;
+
 }
 
 .arrows .arrow-1 {
   fill: #663E67;
-  animation-delay: -1s;
   -webkit-animation-delay: -1s;
+  animation-delay: -1s;
 }
 
 .arrows .arrow-2 {
   fill: #D74C77;
-  animation-delay: -0.5s;
   -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+
 }
 
 .arrows .arrow-3 {
   fill: #FA6D48;
-  animation-delay: 0s;
   -webkit-animation-delay: 0s;
+  animation-delay: 0s;
 }
 
 #load-more-btn {
@@ -837,6 +839,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-wrap: stable;
+  overflow: hidden;
 }
 
 .card .card-img-top {
@@ -872,8 +876,14 @@ main {
 .card-body {
   padding: 1.25rem;
   text-align: center;
+  max-width: 300px;
+  min-height: 200px;
   height: 200px; /* Set a fixed height for the card body */
-  overflow-y: auto; /* Add vertical scroll if content exceeds the fixed height */
+  overflow-y: hidden; /* Add vertical scroll if content exceeds the fixed height */
+}
+
+.card-body:hover {
+  overflow-y: auto;
 }
 
 .card-title {

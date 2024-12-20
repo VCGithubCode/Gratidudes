@@ -92,9 +92,15 @@ function addToLocalStorage(post) {
 
 // Function to retrieve and display posts from local storage
 function retrieveAndDisplayPosts() {
-    let posts = JSON.parse(localStorage.getItem('posts')) || [];
-    wall.innerHTML = ''; // Clear the wall first
-    posts.forEach(generatePost); // Display each post on the wall
+    try {
+        let posts = JSON.parse(localStorage.getItem('posts')) || [];
+        wall.innerHTML = ''; // Clear the wall first
+        posts.forEach(generatePost); // Display each post on the wall
+    } catch (error) {
+        console.error('Error parsing posts from localStorage:', error);
+        localStorage.setItem('posts', '[]'); // Reset to empty array if corrupted
+        wall.innerHTML = ''; // Ensure wall is cleared
+    }
 }
 
 // Function to make ensure user fills input, Future feature: make sure we check alphanumeric responses.
